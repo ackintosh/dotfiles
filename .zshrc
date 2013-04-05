@@ -73,3 +73,9 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# Sublime Text
+alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+
+# PHPUnit
+alias phpunit="/Applications/MAMP/bin/php/php5.3.6/bin/phpunit"
+
