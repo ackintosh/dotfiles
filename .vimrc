@@ -67,7 +67,6 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'quickrun'
-" let g:quickrun_config={'hook/time/enable': 1}
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -103,6 +102,11 @@ set nobackup " バックアップを取らない
 set wrap     " 画面端で折り返す
 
 " --------------------------------
+"  ステータスラインに文字コードやBOM、16進表示等表示
+" --------------------------------
+set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\
+
+" --------------------------------
 "  PHP Settings
 " --------------------------------
 autocmd FileType php set tabstop=4
@@ -111,7 +115,7 @@ autocmd FileType php set softtabstop=4
 
 
 " --------------------------------
-"  PHP Settings
+"  Ruby Settings
 " --------------------------------
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set shiftwidth=2
