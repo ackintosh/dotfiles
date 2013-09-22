@@ -71,9 +71,12 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 
 setopt nonomatch
 
-# rbenv
+# rbenv & phpenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/bin:$HOME/.phpenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#eval "$(phpenv init -)"
 
 # Sublime Text
 alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
@@ -83,4 +86,7 @@ alias phpunit="/Applications/MAMP/bin/php/php5.3.6/bin/phpunit"
 
 # PHP5.4
 alias php5.4="/usr/local/php5/bin/php"
+
+# lightline.vim
+export TERM=xterm-256color
 
