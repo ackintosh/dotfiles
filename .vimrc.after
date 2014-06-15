@@ -1,3 +1,5 @@
+colorscheme jellybeans
+
 "" Configured by Ack
 " see http://d.hatena.ne.jp/kanno_kanno/20121217/1355694191
 set noswapfile
@@ -9,42 +11,34 @@ vnoremap <silent> <C-p> "0p<CR>
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-surround.git'
-Bundle 'Shougo/neocomplcache'
-Bundle 'itchyny/lightline.vim'
-
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'quickrun'
-
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-
-filetype plugin indent on     " required!
-
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" --------------------------------
+"  PHP Settings
+" --------------------------------
+autocmd FileType php set tabstop=4
+autocmd FileType php set shiftwidth=4
+autocmd FileType php set softtabstop=4
 
 
+" --------------------------------
+"  Ruby Settings
+" --------------------------------
+autocmd FileType ruby set tabstop=2
+autocmd FileType ruby set shiftwidth=2
+autocmd FileType ruby set softtabstop=2
+
+
+" --------------------------------
+"  Go Settings
+" --------------------------------
+" http://qiita.com/methane/items/d82b9f28b97b5c3bd08a
+if $GOROOT != ''
+  set rtp+=$GOROOT/misc/vim
+endif
+
+if $GOPATH != ''
+  set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+endif
 
 " --------------------------------
 "  lightline.vim
@@ -127,18 +121,31 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
 
-" --------------------------------
-"  PHP Settings
-" --------------------------------
-autocmd FileType php set tabstop=4
-autocmd FileType php set shiftwidth=4
-autocmd FileType php set softtabstop=4
+" http://inari.hatenablog.com/entry/2014/05/05/231307
+""""""""""""""""""""""""""""""
+" 全角スペースの表示
+""""""""""""""""""""""""""""""
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
 
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
+""""""""""""""""""""""""""""""
 
-" --------------------------------
-"  Ruby Settings
-" --------------------------------
-autocmd FileType ruby set tabstop=2
-autocmd FileType ruby set shiftwidth=2
-autocmd FileType ruby set softtabstop=2
+filetype plugin indent on     " required!
 
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..

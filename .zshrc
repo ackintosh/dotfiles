@@ -71,12 +71,9 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 
 setopt nonomatch
 
-# rbenv & phpenv
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-#export PATH="$HOME/.rbenv/bin:$HOME/.phpenv/bin:$PATH"
-#eval "$(rbenv init -)"
-#eval "$(phpenv init -)"
 
 # Sublime Text
 alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
@@ -84,9 +81,37 @@ alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 # PHPUnit
 alias phpunit="/Applications/MAMP/bin/php/php5.3.6/bin/phpunit"
 
+# PHP5.2
+alias php5.2="/Applications/MAMP/bin/php/php5.2.17/bin/php"
+
 # PHP5.4
 alias php5.4="/usr/local/php5/bin/php"
+
+# PHP5.5
+# http://kimikimi714.hatenablog.com/entry/2013/07/06/233518
+export PATH="/usr/local/php5/bin/:$PATH"
 
 # lightline.vim
 export TERM=xterm-256color
 
+# ctags
+alias ctags="/usr/local/bin/ctags"
+
+# vagrant-digitalocean
+# https://github.com/smdahlen/vagrant-digitalocean#install
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+
+# Go
+# http://qiita.com/methane/items/d82b9f28b97b5c3bd08a
+# http://d.hatena.ne.jp/hiro_nemu/20140113/1389620004
+if [ -x "`which go`" ]; then
+  export GOROOT=`go env GOROOT`
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+fi
+
+# AWS
+# Auto Scaling Command Line Tool
+# http://aws.amazon.com/developertools/2535
+# export PATH="$PATH:$HOME/bin/aws/bin"
+# export AWS_AUTO_SCALING_HOME="$HOME/bin/aws"
