@@ -110,6 +110,10 @@ if [ -x "`which go`" ]; then
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
+# Scala
+# conscript
+export PATH="$PATH:$HOME/bin"
+
 # AWS
 # Auto Scaling Command Line Tool
 # http://aws.amazon.com/developertools/2535
