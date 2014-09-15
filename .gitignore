@@ -1,0 +1,7 @@
+.DS_Store
+*.swp
+.vim/bundle
+.vim/vundle.git
+.vim/_backup
+.vim/_temp
+.vim/.netrwhist
