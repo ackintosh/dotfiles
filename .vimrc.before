@@ -15,6 +15,11 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'itchyny/lightline.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 
+" Golang
+" http://qiita.com/shiena/items/870ac0f1db8e9a8672a7
+" http://www.metal3d.org/ticket/2013/07/07/vim-for-golang
+Bundle 'majutsushi/tagbar'
+
 " vim-indent-guides
 " http://www.absolute-keitarou.net/blog/?p=1127
 let g:indent_guides_auto_colors=0
