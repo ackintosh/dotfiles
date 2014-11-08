@@ -106,7 +106,7 @@ export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 # http://d.hatena.ne.jp/hiro_nemu/20140113/1389620004
 if [ -x "`which go`" ]; then
   export GOROOT=`go env GOROOT`
-  export GOPATH=$HOME/go
+  export GOPATH=$HOME
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
@@ -119,3 +119,9 @@ export PATH="$PATH:$HOME/bin"
 # http://aws.amazon.com/developertools/2535
 # export PATH="$PATH:$HOME/bin/aws/bin"
 # export AWS_AUTO_SCALING_HOME="$HOME/bin/aws"
+
+# Docker
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/Ack/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
