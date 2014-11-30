@@ -11,6 +11,10 @@ vnoremap <silent> <C-p> "0p<CR>
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+" see http://msrx9.bitbucket.org/blog/html/2013/06/29/vim_nnoremap.html
+" ノーマルモード時だけ ; と : を入れ替える
+nnoremap ; :
+nnoremap : ;
 
 " --------------------------------
 "  PHP Settings
