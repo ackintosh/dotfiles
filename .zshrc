@@ -95,7 +95,9 @@ export PATH="/usr/local/php5/bin/:$PATH"
 export TERM=xterm-256color
 
 # ctags
-alias ctags="/usr/local/bin/ctags"
+# Exuberant Ctags is installed by the following command.
+# $ brew install ctags
+alias ctags="`brew --prefix`/bin/ctags"
 
 # vagrant-digitalocean
 # https://github.com/smdahlen/vagrant-digitalocean#install
