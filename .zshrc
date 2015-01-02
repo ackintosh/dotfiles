@@ -104,7 +104,7 @@ alias mysql_mamp="/Applications/MAMP/Library/bin/mysql"
 
 # vagrant-digitalocean
 # https://github.com/smdahlen/vagrant-digitalocean#install
-export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+# export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 # Go
 # http://qiita.com/methane/items/d82b9f28b97b5c3bd08a
