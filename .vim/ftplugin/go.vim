@@ -30,6 +30,8 @@ let g:tagbar_type_go = {
 
 " http://pandazx.hatenablog.com/entry/2014/05/30/232911
 " :Fmt などで gofmt の代わりに goimports を使う
+" goimports is installed by the following command.
+" $ go get golang.org/x/tools/cmd/goimports
 let g:gofmt_command = 'goimports'
 
 " Go に付属の plugin と gocode を有効にする
