@@ -41,7 +41,7 @@ syntax on
 
 " 保存時に自動的に :Fmt （コード整形）実行
 au BufWritePre *.go Fmt
-au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=2
+au BufNewFile,BufRead *.go set sw=4 expandtab ts=4
 au FileType go compiler go
 
 filetype plugin on
