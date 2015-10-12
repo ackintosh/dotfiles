@@ -35,14 +35,7 @@ autocmd FileType ruby set softtabstop=2
 " --------------------------------
 "  Go Settings
 " --------------------------------
-" http://qiita.com/methane/items/d82b9f28b97b5c3bd08a
-if $GOROOT != ''
-  set rtp+=$GOROOT/misc/vim
-endif
-
-if $GOPATH != ''
-  set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-endif
+" -> .vim/ftplugin/go.vim
 
 " --------------------------------
 "  lightline.vim

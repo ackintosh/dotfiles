@@ -28,20 +28,5 @@ let g:tagbar_type_go = {
       \ 'ctagsargs' : '-sort -silent'
       \ }
 
-" http://pandazx.hatenablog.com/entry/2014/05/30/232911
-" :Fmt などで gofmt の代わりに goimports を使う
-" goimports is installed by the following command.
-" $ go get golang.org/x/tools/cmd/goimports
-let g:gofmt_command = 'goimports'
-
-" Go に付属の plugin と gocode を有効にする
-set rtp^=${GOROOT}/misc/vim
-set rtp^=${GOPATH}/src/github.com/nsf/gocode/vim
-syntax on
-
-" 保存時に自動的に :Fmt （コード整形）実行
-au BufWritePre *.go Fmt
-au BufNewFile,BufRead *.go set sw=4 expandtab ts=4
-au FileType go compiler go
-
-filetype plugin on
+" https://github.com/fatih/vim-go
+let g:go_fmt_command = 'goimports'

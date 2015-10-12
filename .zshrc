@@ -112,7 +112,7 @@ alias mysql_mamp="/Applications/MAMP/Library/bin/mysql"
 if [ -x "`which go`" ]; then
   export GOROOT=`go env GOROOT`
   export GOPATH=$HOME
-  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 fi
 
 # Scala

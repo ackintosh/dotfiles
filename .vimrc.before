@@ -18,6 +18,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " Golang
 " http://qiita.com/shiena/items/870ac0f1db8e9a8672a7
 " http://www.metal3d.org/ticket/2013/07/07/vim-for-golang
+" :Tagbar アウトライン表示
+" カーソルを合わせて gd で定義元にジャンプ
 Bundle 'majutsushi/tagbar'
 
 " vim-indent-guides
@@ -40,6 +42,8 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 Bundle 'Shougo/neomru.vim'
+
+Bundle 'fatih/vim-go'
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """""""""""""""""""""""""""""""
