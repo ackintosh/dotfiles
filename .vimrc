@@ -177,6 +177,12 @@ colorscheme jellybeans
 set nobackup
 " 画面端で折り返す
 set wrap
+" インクリメンタル検索
+set incsearch
+" 検索時に大文字小文字を区別しない
+set ignorecase
+" 検索パターンに大文字が含まれる場合は区別する
+set smartcase
 
 " -------------------------------------------------------------------------------
 " see http://msrx9.bitbucket.org/blog/html/2013/06/29/vim_nnoremap.html
@@ -197,7 +203,9 @@ vnoremap <silent> <C-p> "0p<CR>
 " 検索結果のハイライトをESC連打で消す
 " http://blogged.e2esound.com/2010/08/18/vimrc%E3%81%AB%E5%BF%85%E3%81%9A%E6%9B%B8%E3%81%8D%E3%81%9F%E3%81%84%E5%80%8B%E4%BA%BA%E7%9A%84%E8%A8%AD%E5%AE%9A/
 " -------------------------------------------------------------------------------
+" 検索結果をハイライト
 set hlsearch
+" ESC連打設定
 noremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " -------------------------------------------------------------------------------
