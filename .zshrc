@@ -72,8 +72,9 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 setopt nonomatch
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
 
 # Sublime Text
 alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
