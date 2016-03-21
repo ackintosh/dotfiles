@@ -1,67 +1,83 @@
-colorscheme jellybeans
-
-"" Configured by Ack
-" see http://d.hatena.ne.jp/kanno_kanno/20121217/1355694191
-set noswapfile
-set clipboard=unnamed,autoselect
-vnoremap <silent> <C-p> "0p<CR>
-
-" see https://github.com/gmarik/vundle
-"     -->Quick start
+" ===============================================================================
+" *** プラグイン設定 ***
+" ===============================================================================
+" --------------------------------
+" Vundle.vim
+" https://github.com/gmarik/vundle
+"   -->Quick start
+" --------------------------------
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-" see http://msrx9.bitbucket.org/blog/html/2013/06/29/vim_nnoremap.html
-" ノーマルモード時だけ ; と : を入れ替える
-nnoremap ; :
-nnoremap : ;
-
-" --------------------------------
-"  PHP Settings
-" --------------------------------
-autocmd FileType php set tabstop=4
-autocmd FileType php set shiftwidth=4
-autocmd FileType php set softtabstop=4
-
-
-" --------------------------------
-"  Ruby Settings
-" --------------------------------
-autocmd FileType ruby set tabstop=2
-autocmd FileType ruby set shiftwidth=2
-autocmd FileType ruby set softtabstop=2
-
-
-" --------------------------------
-"  Go Settings
-" --------------------------------
-" -> .vim/ftplugin/go.vim
-
 " --------------------------------
 "  lightline.vim
-"  see  https://github.com/itchyny/lightline.vim
+"  https://github.com/itchyny/lightline.vim
 " --------------------------------
 if !has('gui_running')
   set t_Co=256
 endif
 
+" --------------------------------
+" see http://msrx9.bitbucket.org/blog/html/2013/06/29/vim_nnoremap.html
+" ノーマルモード時だけ ; と : を入れ替える
+" --------------------------------
+nnoremap ; :
+nnoremap : ;
 
 " --------------------------------
 "  neocomplcache
-"  see  http://www.karakaram.com/neocomplcache
+"  http://www.karakaram.com/neocomplcache
 " --------------------------------
 "起動時に有効
 let g:neocomplcache_enable_at_startup = 1
 "ポップアップメニューで表示される候補の数。初期値は100
 let g:neocomplcache_max_list = 20
 
-" see https://github.com/tiwakawa/dotfiles/blob/master/.vimrc
-" --------------------------------
-"  General Settings
-" --------------------------------
-set nobackup " バックアップを取らない
 
+" ===============================================================================
+" *** 言語別設定 ***
+" ===============================================================================
+" --------------------------------
+"  PHP
+" --------------------------------
+autocmd FileType php set tabstop=4
+autocmd FileType php set shiftwidth=4
+autocmd FileType php set softtabstop=4
+
+" --------------------------------
+"  Ruby
+" --------------------------------
+autocmd FileType ruby set tabstop=2
+autocmd FileType ruby set shiftwidth=2
+autocmd FileType ruby set softtabstop=2
+
+" --------------------------------
+"  Go
+" --------------------------------
+" -> .vim/ftplugin/go.vim に移動
+
+
+" ===============================================================================
+" *** その他 設定 ***
+" ===============================================================================
+colorscheme jellybeans " カラースキーマを設定
+set nobackup " バックアップを取らない
 set wrap     " 画面端で折り返す
+
+" --------------------------------
+" 他のアプリでコピーした文字をVimで貼付ける。またはその逆も。
+" http://d.hatena.ne.jp/kanno_kanno/20121217/1355694191
+" --------------------------------
+set noswapfile
+set clipboard=unnamed,autoselect
+vnoremap <silent> <C-p> "0p<CR>
+
+" --------------------------------
+" 検索結果のハイライトをESC連打で消す
+" http://blogged.e2esound.com/2010/08/18/vimrc%E3%81%AB%E5%BF%85%E3%81%9A%E6%9B%B8%E3%81%8D%E3%81%9F%E3%81%84%E5%80%8B%E4%BA%BA%E7%9A%84%E8%A8%AD%E5%AE%9A/
+" --------------------------------
+set hlsearch
+noremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " --------------------------------
 "  ステータスラインに文字コードやBOM、16進表示等表示
@@ -69,8 +85,25 @@ set wrap     " 画面端で折り返す
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L%8P\
 
 " --------------------------------
+" 全角スペースをハイライト
+" http://inari.hatenablog.com/entry/2014/05/05/231307
+" --------------------------------
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
+
+" --------------------------------
 "  タブ機能
-"  see http://qiita.com/wadako111/items/755e753677dd72d8036d
+"  http://qiita.com/wadako111/items/755e753677dd72d8036d
 " --------------------------------
 " Anywhere SID.
 function! s:SID_PREFIX()
@@ -118,23 +151,6 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
 
-" http://inari.hatenablog.com/entry/2014/05/05/231307
-""""""""""""""""""""""""""""""
-" 全角スペースの表示
-""""""""""""""""""""""""""""""
-function! ZenkakuSpace()
-    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
-endfunction
-
-if has('syntax')
-    augroup ZenkakuSpace
-        autocmd!
-        autocmd ColorScheme * call ZenkakuSpace()
-        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
-    augroup END
-    call ZenkakuSpace()
-endif
-""""""""""""""""""""""""""""""
 
 filetype plugin indent on     " required!
 
