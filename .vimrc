@@ -28,6 +28,8 @@ call dein#add('Shougo/neomru.vim')
 call dein#add('nanotech/jellybeans.vim')
 " インデントに色を付ける
 call dein#add('nathanaelkane/vim-indent-guides')
+" 補完
+call dein#add('Shougo/neocomplete.vim')
 " vim の Golang サポート
 call dein#add('fatih/vim-go')
 " Golang アウトライン表示
@@ -45,6 +47,12 @@ endif
 " ===============================================================================
 " *** プラグイン設定 ***
 " ===============================================================================
+" -------------------------------------------------------------------------------
+"  neocomplete.vim
+"  https://github.com/Shougo/neocomplete.vim
+" -------------------------------------------------------------------------------
+source ~/.vim/.vimrc.neocomplete
+
 " -------------------------------------------------------------------------------
 "  lightline.vim
 "  https://github.com/itchyny/lightline.vim
