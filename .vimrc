@@ -183,6 +183,8 @@ set number
 set cursorline
 " シンタックスハイライトを有効にする
 syntax on
+" backspace
+set backspace=indent,eol,start
 " カラースキーマを設定
 colorscheme jellybeans
 " バックアップを取らない
