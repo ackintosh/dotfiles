@@ -30,6 +30,8 @@ call dein#add('nanotech/jellybeans.vim')
 call dein#add('nathanaelkane/vim-indent-guides')
 " 補完
 call dein#add('Shougo/neocomplete.vim')
+" アウトライン表示
+call dein#add('Shougo/unite-outline')
 " vim の Golang サポート
 call dein#add('fatih/vim-go')
 " Golang アウトライン表示
