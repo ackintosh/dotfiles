@@ -32,6 +32,8 @@ call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('Shougo/neocomplete.vim')
 " アウトライン表示
 call dein#add('Shougo/unite-outline')
+" スニペット管理
+call dein#add('Shougo/neosnippet.vim')
 " vim の Golang サポート
 call dein#add('fatih/vim-go')
 " Golang アウトライン表示
@@ -99,6 +101,17 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+" -------------------------------------------------------------------------------
+" neosnippet.vim
+" https://github.com/Shougo/neosnippet.vim
+" -------------------------------------------------------------------------------
+" スニペット保存ディレクトリ
+let g:neosnippet#snippets_directory='~/.vim/snippets'
+" <C-k> でスニペット選択. プレースホルダ移動.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " -------------------------------------------------------------------------------
 " fatih/vim-go
