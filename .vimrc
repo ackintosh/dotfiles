@@ -40,6 +40,8 @@ call dein#add('fatih/vim-go')
 " :Tagbar アウトライン表示
 " カーソルを合わせて gd で定義元にジャンプ
 call dein#add('majutsushi/tagbar')
+" Puppet定義ファイル(ppファイル)のハイライト
+call dein#add('rodjek/vim-puppet')
 " 設定終了
 call dein#end()
 " 未インストールがあったらインストール
