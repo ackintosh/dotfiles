@@ -53,13 +53,14 @@ call dein#add('fatih/vim-go')
 call dein#add('majutsushi/tagbar')
 " Puppet定義ファイル(ppファイル)のハイライト
 call dein#add('rodjek/vim-puppet')
+" ファイラ
+call dein#add('Shougo/vimfiler.vim')
 " 設定終了
 call dein#end()
 " 未インストールがあったらインストール
 if dein#check_install()
   call dein#install()
 endif
-
 
 " ===============================================================================
 " *** プラグイン設定 ***
@@ -128,6 +129,15 @@ if executable('pt')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor'
   let g:unite_source_grep_recursive_opt = ''
 endif
+
+" -------------------------------------------------------------------------------
+" vimfiler.vim
+" https://github.com/Shougo/vimfiler.vim
+" -------------------------------------------------------------------------------
+" vimデフォルトのエクスプローラをvimfilerで置き換える
+let g:vimfiler_as_default_explorer = 1
+nnoremap <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
+nnoremap <F3> :VimFiler -buffer-name=vexplorer -split -horizontal -toggle -no-quit<Cr>
 
 " -------------------------------------------------------------------------------
 " neosnippet.vim
