@@ -55,6 +55,8 @@ call dein#add('majutsushi/tagbar')
 call dein#add('rodjek/vim-puppet')
 " ファイラ
 call dein#add('Shougo/vimfiler.vim')
+" gtags
+call dein#add('vim-scripts/gtags.vim')
 " 設定終了
 call dein#end()
 " 未インストールがあったらインストール
@@ -129,6 +131,15 @@ if executable('pt')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor'
   let g:unite_source_grep_recursive_opt = ''
 endif
+
+" -------------------------------------------------------------------------------
+" gtags.vim
+" https://github.com/vim-scripts/gtags.vim
+" -------------------------------------------------------------------------------
+" カーソル以下の定義元を探す
+nnoremap <C-j> :Gtags <C-r><C-w><CR><CR>
+" カーソル以下の使用箇所を探す
+nnoremap <C-k> :Gtags -r <C-r><C-w><CR><CR>
 
 " -------------------------------------------------------------------------------
 " vimfiler.vim
