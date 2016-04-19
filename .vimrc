@@ -124,6 +124,8 @@ nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 " grep検索結果の再呼出
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+" ファイル非同期検索
+nnoremap <silent> ,f  :<C-u>Unite file_rec/async:!<CR>
 
 " unite grep に pt(The Platinum Searcher) を使う
 if executable('pt')
