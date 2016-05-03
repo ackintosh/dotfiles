@@ -22,8 +22,12 @@ ackintosh/dotfiles
 			* go get -u github.com/jstemmer/gotags
 * pt
 	* http://blog.monochromegane.com/blog/2014/01/16/the-platinum-searcher/
-* gtags
-	* タグを作成
+* GNU GLOBAL
+	* http://qiita.com/yoshizow/items/9cc0236ac0249e0638ff
+	* インストール
+		* brew install global --with-exuberant-ctags --with-pygments
+	* gtags
+		* タグを作成
 		* gtags --gtagslabel=pygments -v
 * virtual box
 	* https://www.virtualbox.org/
