@@ -22,11 +22,17 @@ ackintosh/dotfiles
 			* go get -u github.com/jstemmer/gotags
 * pt
 	* http://blog.monochromegane.com/blog/2014/01/16/the-platinum-searcher/
+* gtags
+	* タグを作成
+		* gtags --gtagslabel=pygments -v
 * virtual box
 	* https://www.virtualbox.org/
 * vagrant
 	* https://www.vagrantup.com/
-
+* KeyRemap4MacBook(現Karabiner)
+	* http://pqrs.org/macosx/keyremap4macbook/index.html.ja
+	* 左右のCommandキーに「英数」と「かな」を割り当て
+	* Macの環境設定でCaps Lockキーの動作をControlキーに変更
 * Clipy
 	* クリップボード、スニペット管理
 	* https://clipy-app.com/
