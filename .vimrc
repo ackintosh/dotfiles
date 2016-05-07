@@ -137,6 +137,14 @@ if executable('pt')
 endif
 
 " -------------------------------------------------------------------------------
+" unite-outline
+" https://github.com/Shougo/unite-outline
+" -------------------------------------------------------------------------------
+" http://keyamb.hatenablog.com/entry/2013/06/15/225501
+let g:unite_split_rule = 'botright'
+noremap ,o <ESC>:Unite -vertical -winwidth=40 outline<Return>
+
+" -------------------------------------------------------------------------------
 " gtags.vim
 " https://github.com/vim-scripts/gtags.vim
 " -------------------------------------------------------------------------------
