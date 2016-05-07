@@ -151,8 +151,8 @@ nnoremap <C-k> :Gtags -r <C-r><C-w><CR><CR>
 " -------------------------------------------------------------------------------
 " vimデフォルトのエクスプローラをvimfilerで置き換える
 let g:vimfiler_as_default_explorer = 1
-nnoremap <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
-nnoremap <F3> :VimFiler -buffer-name=explorer -split -horizontal -toggle -no-quit<Cr>
+nnoremap <silent> ,w :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
+nnoremap <silent> ,e :VimFiler -buffer-name=explorer -split -horizontal -toggle -no-quit<Cr>
 
 " -------------------------------------------------------------------------------
 " neosnippet.vim
