@@ -57,6 +57,8 @@ call dein#add('rodjek/vim-puppet')
 call dein#add('Shougo/vimfiler.vim')
 " gtags
 call dein#add('vim-scripts/gtags.vim')
+" 構文チェック
+call dein#add('scrooloose/syntastic')
 " 設定終了
 call dein#end()
 " 未インストールがあったらインストール
@@ -220,6 +222,20 @@ let g:tagbar_type_go = {
       \ 'ctagsbin' : 'gotags',
       \ 'ctagsargs' : '-sort -silent'
       \ }
+
+" -------------------------------------------------------------------------------
+" syntastic
+" https://github.com/scrooloose/syntastic
+" -------------------------------------------------------------------------------
+" PHP
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_echo_current_error = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_enable_highlighting = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 
 " ===============================================================================
