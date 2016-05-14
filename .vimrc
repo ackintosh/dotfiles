@@ -54,7 +54,9 @@ call dein#add('majutsushi/tagbar')
 " Puppet定義ファイル(ppファイル)のハイライト
 call dein#add('rodjek/vim-puppet')
 " ファイラ
-call dein#add('Shougo/vimfiler.vim')
+call dein#add('Shougo/vimfiler.vim', {
+      \ 'depends': ['unite.vim']
+      \})
 " gtags
 call dein#add('vim-scripts/gtags.vim')
 " 構文チェック
