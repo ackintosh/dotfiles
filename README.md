@@ -11,6 +11,11 @@ ackintosh/dotfiles
 	* https://github.com/rbenv/rbenv
 * go
 	* http://golang-jp.org/doc/install
+* ghq
+	* go get github.com/motemen/ghq
+	* git config --global ghq.root ~/src
+* peco
+	* go get github.com/peco/peco/cmd/peco
 * vim 7.4 or above
 	* php
 		* 辞書ファイルの更新
