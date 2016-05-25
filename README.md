@@ -11,7 +11,10 @@ ackintosh/dotfiles
 	* https://github.com/rbenv/rbenv
 * go
 	* http://golang-jp.org/doc/install
+	* brew install go
 * vim 7.4 or above
+	* http://qiita.com/yu-ichiro/items/c9db44671701e7f485af
+	* brew install vim --with-lua
 	* php
 		* 辞書ファイルの更新
 			* $ php dict.php > .vim/dictionaries/php.dict
@@ -22,6 +25,7 @@ ackintosh/dotfiles
 			* go get -u github.com/jstemmer/gotags
 * pt
 	* http://blog.monochromegane.com/blog/2014/01/16/the-platinum-searcher/
+	* brew install pt
 * GNU GLOBAL
 	* http://qiita.com/yoshizow/items/9cc0236ac0249e0638ff
 	* インストール
