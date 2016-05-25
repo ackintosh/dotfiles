@@ -12,6 +12,11 @@ ackintosh/dotfiles
 * go
 	* http://golang-jp.org/doc/install
 	* brew install go
+* ghq
+	* go get github.com/motemen/ghq
+	* git config --global ghq.root ~/src
+* peco
+	* go get github.com/peco/peco/cmd/peco
 * vim 7.4 or above
 	* http://qiita.com/yu-ichiro/items/c9db44671701e7f485af
 	* brew install vim --with-lua
