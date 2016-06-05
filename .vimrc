@@ -303,7 +303,7 @@ nnoremap : ;
 " http://d.hatena.ne.jp/kanno_kanno/20121217/1355694191
 " -------------------------------------------------------------------------------
 set noswapfile
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 vnoremap <silent> <C-p> "0p<CR>
 
 " -------------------------------------------------------------------------------
