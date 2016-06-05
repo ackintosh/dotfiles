@@ -9,6 +9,10 @@ ackintosh/dotfiles
 	* brew install git
 * rbenv
 	* https://github.com/rbenv/rbenv
+* tmux
+	* brew install tmux
+	* tmuxとOS Xのクリップボードの橋渡しに必要
+		* brew install reattach-to-user-namespace
 * go
 	* http://golang-jp.org/doc/install
 * ghq
