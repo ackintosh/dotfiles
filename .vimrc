@@ -81,9 +81,23 @@ source ~/.vim/.vimrc.neocomplete
 "  lightline.vim
 "  https://github.com/itchyny/lightline.vim
 " -------------------------------------------------------------------------------
+"
 if !has('gui_running')
   set t_Co=256
 endif
+" http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc
+let g:lightline = {
+  \ 'component_function': {
+  \   'filename': 'MyFilename'
+  \ }
+  \}
+
+function! MyFilename()
+  return (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#get_status_string() :
+        \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') :
+        \ '' != expand('%') ? expand('%') : '[No Name]')
+endfunction
 
 " -------------------------------------------------------------------------------
 " vim-indent-guides
