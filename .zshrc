@@ -145,3 +145,6 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+# direnv
+eval "$(direnv hook bash)"
