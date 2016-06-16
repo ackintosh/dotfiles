@@ -100,7 +100,8 @@ export PATH="$PATH:$HOME/bin"
 # vim
 alias vi="vim"
 
-# peco
+### peco ###
+# ghq
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
@@ -111,6 +112,21 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+# history
+function peco-select-history() {
+    typeset tac
+    if which tac > /dev/null; then
+        tac=tac
+    else
+        tac='tail -r'
+    fi
+    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle redisplay
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
 # direnv
 eval "$(direnv hook bash)"
