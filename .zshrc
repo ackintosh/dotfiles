@@ -71,20 +71,20 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 
 setopt nonomatch
 
-# rbenv
+### rbenv ###
 [[ -d ~/.rbenv  ]] && \
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
-# lightline.vim
-export TERM=xterm-256color
+### direnv ###
+eval "$(direnv hook bash)"
 
-# ctags
+### ctags ###
 # Exuberant Ctags is installed by the following command.
 # $ brew install ctags
 alias ctags="`brew --prefix`/bin/ctags"
 
-# Go
+### Go ###
 # http://qiita.com/methane/items/d82b9f28b97b5c3bd08a
 # http://d.hatena.ne.jp/hiro_nemu/20140113/1389620004
 if [ -x "`which go`" ]; then
@@ -93,12 +93,10 @@ if [ -x "`which go`" ]; then
   export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 fi
 
-# Scala
-# conscript
-export PATH="$PATH:$HOME/bin"
-
-# vim
+### vim ###
 alias vi="vim"
+# lightline.vim
+export TERM=xterm-256color
 
 ### peco ###
 # ghq
@@ -127,6 +125,3 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
-
-# direnv
-eval "$(direnv hook bash)"
