@@ -76,22 +76,6 @@ setopt nonomatch
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
-# Sublime Text
-alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
-
-# PHPUnit
-alias phpunit="/Applications/MAMP/bin/php/php5.3.6/bin/phpunit"
-
-# PHP5.2
-alias php5.2="/Applications/MAMP/bin/php/php5.2.17/bin/php"
-
-# PHP5.4
-alias php5.4="/usr/local/php5/bin/php"
-
-# PHP5.5
-# http://kimikimi714.hatenablog.com/entry/2013/07/06/233518
-export PATH="/usr/local/php5/bin/:$PATH"
-
 # lightline.vim
 export TERM=xterm-256color
 
@@ -99,13 +83,6 @@ export TERM=xterm-256color
 # Exuberant Ctags is installed by the following command.
 # $ brew install ctags
 alias ctags="`brew --prefix`/bin/ctags"
-
-# MySQL in MAMP
-alias mysql_mamp="/Applications/MAMP/Library/bin/mysql"
-
-# vagrant-digitalocean
-# https://github.com/smdahlen/vagrant-digitalocean#install
-# export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 # Go
 # http://qiita.com/methane/items/d82b9f28b97b5c3bd08a
@@ -119,17 +96,6 @@ fi
 # Scala
 # conscript
 export PATH="$PATH:$HOME/bin"
-
-# AWS
-# Auto Scaling Command Line Tool
-# http://aws.amazon.com/developertools/2535
-# export PATH="$PATH:$HOME/bin/aws/bin"
-# export AWS_AUTO_SCALING_HOME="$HOME/bin/aws"
-
-# Docker
-# export DOCKER_HOST=tcp://192.168.59.103:2376
-# export DOCKER_CERT_PATH=/Users/Ack/.boot2docker/certs/boot2docker-vm
-# export DOCKER_TLS_VERIFY=1
 
 # vim
 alias vi="vim"
