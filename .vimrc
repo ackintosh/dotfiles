@@ -61,6 +61,8 @@ call dein#add('Shougo/vimfiler.vim', {
 call dein#add('vim-scripts/gtags.vim')
 " 構文チェック
 call dein#add('scrooloose/syntastic')
+" phpcs, phpmd を実行する
+call dein#add('joonty/vim-phpqa.git')
 " 設定終了
 call dein#end()
 " 未インストールがあったらインストール
@@ -253,6 +255,18 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" -------------------------------------------------------------------------------
+" vim-phpqa
+" https://github.com/joonty/vim-phpqa
+" -------------------------------------------------------------------------------
+" 保存時に messdetector を実行しない(default = 1)
+let g:phpqa_messdetector_autorun = 0
+" 保存時に codesniffer を実行しない(default = 1)
+let g:phpqa_codesniffer_autorun = 0
+" 保存時に coverage を実行しない(default = 0)
+let g:phpqa_codecoverage_autorun = 1
+" PHP Mess Detector binary (default = "phpmd")
+let g:phpqa_messdetector_cmd='php ~/.vim/commands/phpmd.phar'
 
 " ===============================================================================
 " *** インデント設定 ***
