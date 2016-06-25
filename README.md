@@ -32,6 +32,8 @@ brew install reattach-to-user-namespace
 ### git
 
 * `brew install git`
+* git コミットメッセージの文字化け防止  
+`git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'`
 
 --
 
