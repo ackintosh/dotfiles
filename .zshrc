@@ -71,6 +71,9 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 
 setopt nonomatch
 
+### git ###
+alias gs="git status"
+
 ### rbenv ###
 [[ -d ~/.rbenv  ]] && \
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
