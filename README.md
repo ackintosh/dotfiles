@@ -63,6 +63,12 @@ brew install reattach-to-user-namespace
 
 --
 
+### files
+
+* `go get github.com/mattn/files`
+
+--
+
 ### vim 7.4 or above
 
 * http://qiita.com/yu-ichiro/items/c9db44671701e7f485af
