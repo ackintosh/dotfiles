@@ -35,6 +35,29 @@ brew install reattach-to-user-namespace
 * git コミットメッセージの文字化け防止  
 `git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'`
 
+#### git showpr
+
+* Commit Hash から該当 Pull Request を見つける
+* http://qiita.com/awakia/items/f14dc6310e469964a8f7
+
+```
+$ git showpr daced1d3
+5bf98dd Merge pull request #12856 from duglin/ConfigLocation
+```
+
+* .gitconfig
+
+```
+[alias]
+  showpr = !"f() { git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1; }; f"
+```
+
+* シェルから設定する場合
+
+```
+git config --global alias.showpr \!"f() { git log --merges --oneline --reverse --ancestry-path \$1...master | grep 'Merge pull request #' | head -n 1; }; f"
+```
+
 --
 
 ### rbenv
