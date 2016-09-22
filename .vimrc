@@ -318,6 +318,8 @@ set incsearch
 set ignorecase
 " 検索パターンに大文字が含まれる場合は区別する
 set smartcase
+" 行を折り返しするときにインデントを考慮する
+set breakindent
 
 " -------------------------------------------------------------------------------
 " see http://msrx9.bitbucket.org/blog/html/2013/06/29/vim_nnoremap.html
