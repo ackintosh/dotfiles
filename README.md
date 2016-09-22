@@ -160,6 +160,13 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 
 --
 
+### f.lux
+
+* https://justgetflux.com/
+* 画面のブルーライトをカットするアプリ
+
+--
+
 ### Ergodox EZ
 
 * layout
