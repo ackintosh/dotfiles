@@ -145,3 +145,20 @@ function peco-find-file() {
 }
 zle -N peco-find-file
 bindkey '^q' peco-find-file
+
+### 便利コマンド ###
+
+# 特定のコミットが含まれるPull Requestを探す
+# http://ukstudio.jp/2015/03/26/open_pull_request/
+function find-pr() {
+    local parent=$2||'master'
+    git log $1..$2 --merges --ancestry-path --reverse --oneline | head -n1
+}
+
+# 特定のコミットが含まれるPull Requestを開く
+# http://ukstudio.jp/2015/03/26/open_pull_request/
+function open-pr() {
+    local pr="$(find-pr $1 $2 | awk '{print substr($5, 2)}')"
+    local repo="$(git config --get remote.origin.url | sed 's/git@git.pepabo.com://' | sed 's/\.git$//')"
+    open "https://git.pepabo.com/${repo}/pull/${pr}"
+}
