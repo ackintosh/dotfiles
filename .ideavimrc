@@ -1,3 +1,8 @@
 :set clipboard=unnamed
+" ノーマルモード時だけ ; と : を入れ替える
 nnoremap ; :
 nnoremap : ;
+" 検索時に大文字小文字を区別しない
+set ignorecase
+" 検索パターンに大文字が含まれる場合は区別する
+set smartcase
