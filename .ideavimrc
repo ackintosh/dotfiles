@@ -6,3 +6,5 @@ nnoremap : ;
 set ignorecase
 " 検索パターンに大文字が含まれる場合は区別する
 set smartcase
+" インクリメンタル検索
+set incsearch
