@@ -73,6 +73,16 @@ setopt nonomatch
 
 ### git ###
 alias gs="git status"
+# diff-highlight (git > 2.9)
+#   - http://qiita.com/takyam/items/d6afacc7934de9b0e85e
+#   - https://github.com/blog/2188-git-2-9-has-been-released
+#   - いい感じの色にする
+#     - git config --global pager.log 'diff-highlight | less'
+#     - git config --global pager.show 'diff-highlight | less'
+#     - git config --global pager.diff 'diff-highlight | less'
+#   - いい感じの差分にする
+#     - git config --global diff.compactionHeuristic true
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 ### rbenv ###
 [[ -d ~/.rbenv  ]] && \
