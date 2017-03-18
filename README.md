@@ -169,6 +169,6 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 
 ### Ergodox EZ
 
-* layout
-* https://keyboard-configurator.massdrop.com/ext/ergodox/?referer=QKNF2S&hash=a88de9bcf2c39e617cddcf85d6e0c0b0
+* レイアウト(閲覧にはログインが必要)
+* https://www.massdrop.com/configurator/ergodox?referer=QKNF2S&hash=f845a48d2539881741e562e719370157
 
