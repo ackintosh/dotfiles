@@ -74,12 +74,14 @@ setopt nonomatch
 ### git ###
 alias gs="git status"
 # diff-highlight (git > 2.9)
-#   - http://qiita.com/takyam/items/d6afacc7934de9b0e85e
-#   - https://github.com/blog/2188-git-2-9-has-been-released
-#   - いい感じの色にする
-#     - git config --global pager.log 'diff-highlight | less'
-#     - git config --global pager.show 'diff-highlight | less'
-#     - git config --global pager.diff 'diff-highlight | less'
+#   - 参考
+#     - http://qiita.com/takyam/items/d6afacc7934de9b0e85e
+#     - https://github.com/blog/2188-git-2-9-has-been-released
+#   - いい感じの色/差分にする
+#     - utf-8 以外のファイルでも文字化けしないように変換してから差分表示
+#     - git config --global pager.log 'nkf -w | diff-highlight | LESSCHARSET=utf-8 less'
+#     - git config --global pager.show 'nkf -w | diff-highlight | LESSCHARSET=utf-8 less'
+#     - git config --global pager.diff 'nkf -w | diff-highlight | LESSCHARSET=utf-8 less'
 #   - いい感じの差分にする
 #     - git config --global diff.compactionHeuristic true
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
