@@ -63,6 +63,8 @@ call dein#add('vim-scripts/gtags.vim')
 call dein#add('scrooloose/syntastic')
 " phpcs, phpmd を実行する
 call dein#add('joonty/vim-phpqa.git')
+" mustache ファイルのハイライトなど
+call dein#add('mustache/vim-mustache-handlebars')
 " 設定終了
 call dein#end()
 " 未インストールがあったらインストール
