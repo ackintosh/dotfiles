@@ -92,6 +92,9 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 ### direnv ###
 eval "$(direnv hook bash)"
 
+### nodebrew
+export PATH=${PATH}:${HOME}/.nodebrew/current/bin
+
 ### ctags ###
 # Exuberant Ctags is installed by the following command.
 # $ brew install ctags
