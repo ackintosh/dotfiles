@@ -165,6 +165,11 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 * https://justgetflux.com/
 * 画面のブルーライトをカットするアプリ
 
+### GIPHY
+
+* 画面をキャプチャしてgitアニメーションを作る
+* https://itunes.apple.com/jp/app/giphy-capture-the-gif-maker/id668208984?mt=12
+
 --
 
 ### Ergodox EZ
