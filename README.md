@@ -146,11 +146,29 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 
 --
 
-### KeyRemap4MacBook(現Karabiner)
+### ~~KeyRemap4MacBook(現Karabiner)~~
 
-* http://pqrs.org/macosx/keyremap4macbook/index.html.ja
-* 左右のCommandキーに「英数」と「かな」を割り当て
-* Macの環境設定でCaps Lockキーの動作をControlキーに変更
+* ~~http://pqrs.org/macosx/keyremap4macbook/index.html.ja~~
+* ~~左右のCommandキーに「英数」と「かな」を割り当て~~
+* ~~Macの環境設定でCaps Lockキーの動作をControlキーに変更~~
+
+--
+
+### ⌘英かな
+
+* https://ei-kana.appspot.com/
+* コマンドキー単体で英数/かなを切り替える
+
+--
+
+### キーボード関係の環境設定
+
+* caps lock に control を割り当てる
+  * キーボード -> キーボード -> 修飾キー -> Caps Lock キー のプルダウンで Control を選択する
+* スペルの自動変換を OFF
+  * キーボード -> ユーザー辞書 -> "英字入力中にスペルを自動変換" のチェックを外す
+* スマート引用符を OFF
+  * キーボード -> ユーザー辞書 -> "スマート引用符とスマートダッシュを使用" のチェックを外す
 
 --
 
@@ -165,10 +183,19 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 * https://justgetflux.com/
 * 画面のブルーライトをカットするアプリ
 
+--
+
 ### GIPHY
 
 * 画面をキャプチャしてgitアニメーションを作る
 * https://itunes.apple.com/jp/app/giphy-capture-the-gif-maker/id668208984?mt=12
+
+--
+
+### App Cleaner & Uninstaller
+
+* アプリケーションフォルダから削除しただけでは残ってしまうゴミを削除できる
+* https://itunes.apple.com/jp/app/app-cleaner-uninstaller/id1013897218?mt=12
 
 --
 
