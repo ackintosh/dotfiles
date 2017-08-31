@@ -92,7 +92,7 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
   eval "$(rbenv init -)"
 
 ### direnv ###
-eval "$(direnv hook bash)"
+eval "$(direnv hook zsh)"
 
 ### ctags ###
 # Exuberant Ctags is installed by the following command.
