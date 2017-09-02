@@ -204,3 +204,16 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 * レイアウト(閲覧にはログインが必要)
 * https://www.massdrop.com/configurator/ergodox?referer=QKNF2S&hash=f845a48d2539881741e562e719370157
 
+-- 
+
+### iTranslate
+
+- [iTranslate - 言語翻訳と辞書を App Store で](https://itunes.apple.com/jp/app/itranslate-%E8%A8%80%E8%AA%9E%E7%BF%BB%E8%A8%B3%E3%81%A8%E8%BE%9E%E6%9B%B8/id288113403?mt=8)
+
+-- 
+
+### Chrome 拡張
+
+- [ImTranslator: 翻訳アプリ、辞書、音声](https://chrome.google.com/webstore/detail/imtranslator-translator-d/noaijdpnepcgjemiklgfkcfbkokogabh?hl=ja)
+- [Stylish - ウェブサイト用カスタムテーマ](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
+- [Copy URL+](https://chrome.google.com/webstore/detail/copy-url%20/capojgaalppngkaagaobmigigcgnidmn?hl=ja)
