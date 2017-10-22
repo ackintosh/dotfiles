@@ -204,6 +204,14 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 * レイアウト(閲覧にはログインが必要)
 * https://www.massdrop.com/configurator/ergodox?referer=QKNF2S&hash=f845a48d2539881741e562e719370157
 
+--
+
+### Keyboardio
+
+* レイアウト定義ファイル: KeyboardioModel01-Firmware.ino
+* wiki
+  * https://github.com/keyboardio/Kaleidoscope/wiki/Install-Arduino-support-on-a-Mac
+
 -- 
 
 ### iTranslate
