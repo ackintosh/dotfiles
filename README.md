@@ -33,7 +33,10 @@ brew install reattach-to-user-namespace
 
 * `brew install git`
 * git コミットメッセージの文字化け防止  
-`git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'`
+  * `git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'`
+* 個人の環境特有の除外設定
+  * `git config --global core.excludesfile ~/.gitignore_global`
+  * [gitignore に書くべきでないものは gitignore_global へ - Qiita](https://qiita.com/elzup/items/4c92a2abdab56db3fb4e)
 
 #### git showpr
 
