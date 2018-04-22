@@ -6,4 +6,5 @@
 .vim/_temp
 .vim/.netrwhist
 .idea
+*.iml
 composer.phar
