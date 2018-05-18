@@ -80,14 +80,14 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 
 ### ghq
 
-* `go get github.com/motemen/ghq`
+* `brew install ghq`
 * `git config --global ghq.root ~/src`
 
 --
 
 ### peco
 
-* `go get github.com/peco/peco/cmd/peco`
+* `brew install peco`
 
 --
 
@@ -151,14 +151,6 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 
 --
 
-### ~~KeyRemap4MacBook(現Karabiner)~~
-
-* ~~http://pqrs.org/macosx/keyremap4macbook/index.html.ja~~
-* ~~左右のCommandキーに「英数」と「かな」を割り当て~~
-* ~~Macの環境設定でCaps Lockキーの動作をControlキーに変更~~
-
---
-
 ### ⌘英かな
 
 * https://ei-kana.appspot.com/
@@ -218,10 +210,6 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
   * https://github.com/keyboardio/Kaleidoscope/wiki/Install-Arduino-support-on-a-Mac
 
 -- 
-
-### iTranslate
-
-- [iTranslate - 言語翻訳と辞書を App Store で](https://itunes.apple.com/jp/app/itranslate-%E8%A8%80%E8%AA%9E%E7%BF%BB%E8%A8%B3%E3%81%A8%E8%BE%9E%E6%9B%B8/id288113403?mt=8)
 
 ### spectacle
 
