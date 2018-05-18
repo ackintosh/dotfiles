@@ -91,6 +91,12 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 
 --
 
+### direnv
+
+* `brew install direnv`
+
+--
+
 ### files
 
 * `go get github.com/mattn/files`
