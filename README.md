@@ -1,5 +1,7 @@
 ackintosh/dotfiles
 
+TODO: コマンド一発でシュッとインストールされるようにする
+
 ### iterm2
 
 ターミナルソフト
