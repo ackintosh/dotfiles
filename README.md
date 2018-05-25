@@ -18,6 +18,8 @@ TODO: コマンド一発でシュッとインストールされるようにす�
 #### Alfred
 
 * https://www.alfredapp.com/
+* アプリ起動: cmd + space
+* クリップボード: shift + cmd + space
 
 #### f.lux
 
