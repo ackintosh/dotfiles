@@ -132,6 +132,13 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 * http://blog.monochromegane.com/blog/2014/01/16/the-platinum-searcher/
 * `brew install pt`
 
+-- 
+
+### htop
+
+* https://github.com/hishamhm/htop
+* brew install htop
+
 --
 
 ###  GNU GLOBAL
