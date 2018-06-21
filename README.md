@@ -61,6 +61,7 @@ TODO: コマンド一発でシュッとインストールされるようにす�
   * `git config --global core.excludesfile ~/.gitignore_global`
   * dotfilesの設定ファイルを使う
     * `cd ~ && mv .gitignore_global .gitignore_global.default && ln -s ~/src/github.com/ackintosh/dotfiles/.gitignore_global .gitignore_global`
+    * `git config --global core.excludesfile ~/.gitignore_global`
   * [gitignore に書くべきでないものは gitignore_global へ - Qiita](https://qiita.com/elzup/items/4c92a2abdab56db3fb4e)
 
 #### git showpr
