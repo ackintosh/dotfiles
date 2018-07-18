@@ -163,8 +163,6 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 
 #### Chrome 拡張
 
-- [ImTranslator: 翻訳アプリ、辞書、音声](https://chrome.google.com/webstore/detail/imtranslator-translator-d/noaijdpnepcgjemiklgfkcfbkokogabh?hl=ja)
-- [Stylish - ウェブサイト用カスタムテーマ](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
-  - [Github dark](https://userstyles.org/styles/37035/github-dark)
+- [Stylus](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
 - [Copy URL+](https://chrome.google.com/webstore/detail/copy-url%20/capojgaalppngkaagaobmigigcgnidmn?hl=ja)
   - `Shift+V` : `${title}${n}${URL}`
