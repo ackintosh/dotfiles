@@ -171,9 +171,9 @@ function find-pr() {
 }
 
 # 特定のコミットが含まれるPull Requestを開く
-# http://ukstudio.jp/2015/03/26/open_pull_request/
+# http://ukstudio.jp/2015/03/26/open_pull_request/ をベースに調整
 function open-pr() {
     local pr="$(find-pr $1 $2 | awk '{print substr($5, 2)}')"
-    local repo="$(git config --get remote.origin.url | sed 's/git@git.pepabo.com://' | sed 's/\.git$//')"
+    local repo="$(pwd | rev | cut -d '/' -f 1-2 | rev)"
     open "https://git.pepabo.com/${repo}/pull/${pr}"
 }
