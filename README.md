@@ -119,6 +119,11 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 	* phpmd
 		* `curl -L -o ~/.vim/commands/phpmd.phar http://static.phpmd.org/php/latest/phpmd.phar`
 
+### Intellij IDEA
+
+- Solarized Colorscheme for IntelliJ IDEA
+  - https://github.com/jkaving/intellij-colors-solarized
+
 --
 
 ### pt
