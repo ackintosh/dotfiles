@@ -1,35 +1,58 @@
 ackintosh/dotfiles
 
-### iterm2
+TODO: コマンド一発でシュッとインストールされるようにする
 
-ターミナルソフト
+#### iterm2
+
 * https://www.iterm2.com/
+* 設定メモ
+  *  command + w を押してもすぐに閉じないようにする
+  * Preference -> Profiles -> Session -> Closing
+  * `Always prompt before closing` を選択する
 
-#### command + w を押してもすぐに閉じないようにする
-Preference -> Profiles -> Session -> Closing
-`Always prompt before closing` を選択する
+#### ⌘英かな
 
---
+* https://ei-kana.appspot.com/
+* コマンドキー単体で英数/かなを切り替える
 
+#### Alfred
 
-### homebrew
+* https://www.alfredapp.com/
+* アプリ起動: cmd + space
+* クリップボード: shift + cmd + space
+
+#### f.lux
+
+* https://justgetflux.com/
+* 画面のブルーライトをカットするアプリ
+
+#### GIPHY
+
+* 画面をキャプチャしてgitアニメーションを作る
+* https://itunes.apple.com/jp/app/giphy-capture-the-gif-maker/id668208984?mt=12
+
+#### App Cleaner & Uninstaller
+
+* アプリケーションフォルダから削除しただけでは残ってしまうゴミを削除できる
+* https://itunes.apple.com/jp/app/app-cleaner-uninstaller/id1013897218?mt=12
+
+#### spectacle
+
+* ウィンドウの移動, リサイズ
+* https://www.spectacleapp.com/
+
+#### homebrew
 
 パッケージマネージャー
 * http://brew.sh/index_ja.html
 
---
-
-### tmux
+#### tmux
 
 * `brew install tmux`
-* tmuxとOS Xのクリップボードの橋渡しをする  
-```
-brew install reattach-to-user-namespace
-```
+* tmuxとOS Xのクリップボードの橋渡しをするツールを入れる
+  * `brew install reattach-to-user-namespace`
 
---
-
-### git
+#### git
 
 * `brew install git`
 * git コミットメッセージの文字化け防止  
@@ -38,6 +61,7 @@ brew install reattach-to-user-namespace
   * `git config --global core.excludesfile ~/.gitignore_global`
   * dotfilesの設定ファイルを使う
     * `cd ~ && mv .gitignore_global .gitignore_global.default && ln -s ~/src/github.com/ackintosh/dotfiles/.gitignore_global .gitignore_global`
+    * `git config --global core.excludesfile ~/.gitignore_global`
   * [gitignore に書くべきでないものは gitignore_global へ - Qiita](https://qiita.com/elzup/items/4c92a2abdab56db3fb4e)
 
 #### git showpr
@@ -63,47 +87,30 @@ $ git showpr daced1d3
 git config --global alias.showpr \!"f() { git log --merges --oneline --reverse --ancestry-path \$1...master | grep 'Merge pull request #' | head -n 1; }; f"
 ```
 
---
-
-### rbenv
+#### rbenv
 
 * https://github.com/rbenv/rbenv
 
---
-
-### go
+#### go
 
 * http://golang-jp.org/doc/install
 * `brew install go`
+* ghq
+  * `brew install ghq`
+  * `git config --global ghq.root ~/src`
+* peco
+  * `brew install peco`
+* files
+  * `go get github.com/mattn/files`
+* pt
+  * http://blog.monochromegane.com/blog/2014/01/16/the-platinum-searcher/
+  * `brew install pt`
 
---
+#### direnv
 
-### ghq
+* `brew install direnv`
 
-* `go get github.com/motemen/ghq`
-* `git config --global ghq.root ~/src`
-
---
-
-### peco
-
-* `go get github.com/peco/peco/cmd/peco`
-
---
-
-### files
-
-* `go get github.com/mattn/files`
-
---
-
-### sshrc
-
-* https://github.com/Russell91/sshrc
-
---
-
-### vim 7.4 or above
+#### vim 7.4 or above
 
 * http://qiita.com/yu-ichiro/items/c9db44671701e7f485af
 * `brew install vim --with-lua`
@@ -119,21 +126,23 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 	* phpmd
 		* `curl -L -o ~/.vim/commands/phpmd.phar http://static.phpmd.org/php/latest/phpmd.phar`
 
-### Intellij IDEA
+#### Intellij IDEA
 
-- Solarized Colorscheme for IntelliJ IDEA
-  - https://github.com/jkaving/intellij-colors-solarized
+* Solarized Colorscheme for IntelliJ IDEA
+  * https://github.com/jkaving/intellij-colors-solarized
 
---
 
-### pt
+#### pt
 
 * http://blog.monochromegane.com/blog/2014/01/16/the-platinum-searcher/
 * `brew install pt`
 
---
+#### htop
 
-###  GNU GLOBAL
+* https://github.com/hishamhm/htop
+* brew install htop
+
+####  GNU GLOBAL
 
 * http://qiita.com/yoshizow/items/9cc0236ac0249e0638ff
 * インストール
@@ -142,36 +151,7 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 	* タグを作成
 	* `gtags --gtagslabel=pygments -v`
 
---
-
-### VirtualBox
-
-* https://www.virtualbox.org/
-
---
-
-### Vagrant
-
-* https://www.vagrantup.com/
-
---
-
-### ~~KeyRemap4MacBook(現Karabiner)~~
-
-* ~~http://pqrs.org/macosx/keyremap4macbook/index.html.ja~~
-* ~~左右のCommandキーに「英数」と「かな」を割り当て~~
-* ~~Macの環境設定でCaps Lockキーの動作をControlキーに変更~~
-
---
-
-### ⌘英かな
-
-* https://ei-kana.appspot.com/
-* コマンドキー単体で英数/かなを切り替える
-
---
-
-### キーボード関係の環境設定
+#### キーボード関係の環境設定
 
 * caps lock に control を割り当てる
   * キーボード -> キーボード -> 修飾キー -> Caps Lock キー のプルダウンで Control を選択する
@@ -180,63 +160,20 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 * スマート引用符を OFF
   * キーボード -> ユーザー辞書 -> "スマート引用符とスマートダッシュを使用" のチェックを外す
 
---
 
-### Alfred
-
-* https://www.alfredapp.com/
-
---
-
-### f.lux
-
-* https://justgetflux.com/
-* 画面のブルーライトをカットするアプリ
-
---
-
-### GIPHY
-
-* 画面をキャプチャしてgitアニメーションを作る
-* https://itunes.apple.com/jp/app/giphy-capture-the-gif-maker/id668208984?mt=12
-
---
-
-### App Cleaner & Uninstaller
-
-* アプリケーションフォルダから削除しただけでは残ってしまうゴミを削除できる
-* https://itunes.apple.com/jp/app/app-cleaner-uninstaller/id1013897218?mt=12
-
---
-
-### Ergodox EZ
+#### Ergodox EZ
 
 * レイアウト(閲覧にはログインが必要)
 * https://www.massdrop.com/configurator/ergodox?referer=QKNF2S&hash=f845a48d2539881741e562e719370157
 
---
-
-### Keyboardio
+#### Keyboardio
 
 * レイアウト定義ファイル: KeyboardioModel01-Firmware.ino
 * wiki
   * https://github.com/keyboardio/Kaleidoscope/wiki/Install-Arduino-support-on-a-Mac
 
--- 
+#### Chrome 拡張
 
-### iTranslate
-
-- [iTranslate - 言語翻訳と辞書を App Store で](https://itunes.apple.com/jp/app/itranslate-%E8%A8%80%E8%AA%9E%E7%BF%BB%E8%A8%B3%E3%81%A8%E8%BE%9E%E6%9B%B8/id288113403?mt=8)
-
-### spectacle
-
-* ウィンドウの移動, リサイズ
-* https://www.spectacleapp.com/
-
--- 
-
-### Chrome 拡張
-
-- [ImTranslator: 翻訳アプリ、辞書、音声](https://chrome.google.com/webstore/detail/imtranslator-translator-d/noaijdpnepcgjemiklgfkcfbkokogabh?hl=ja)
-- [Stylish - ウェブサイト用カスタムテーマ](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
+- [Stylus](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
 - [Copy URL+](https://chrome.google.com/webstore/detail/copy-url%20/capojgaalppngkaagaobmigigcgnidmn?hl=ja)
+  - `Shift+V` : `${title}${n}${URL}`

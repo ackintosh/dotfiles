@@ -35,8 +35,6 @@ call dein#add('Shougo/unite.vim', {
       \ 'lazy': 1})
 " unite.vim で最近使ったファイルを表示できるようにする
 call dein#add('Shougo/neomru.vim')
-" カラースキーマ
-call dein#add('nanotech/jellybeans.vim')
 " インデントに色を付ける
 call dein#add('nathanaelkane/vim-indent-guides')
 " 補完
@@ -309,7 +307,7 @@ syntax on
 " backspace
 set backspace=indent,eol,start
 " カラースキーマを設定
-colorscheme jellybeans
+colorscheme pablo
 " バックアップを取らない
 set nobackup
 " 画面端で折り返す
