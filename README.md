@@ -2,13 +2,16 @@ ackintosh/dotfiles
 
 TODO: コマンド一発でシュッとインストールされるようにする
 
-#### iterm2
+#### iTerm2
 
 * https://www.iterm2.com/
 * 設定メモ
   *  command + w を押してもすぐに閉じないようにする
   * Preference -> Profiles -> Session -> Closing
   * `Always prompt before closing` を選択する
+* 設定のエクスポート/インポート
+  * https://qiita.com/reoring/items/a0f3d6186efd11c87f1b 
+  * このリポジトリの iterm2 ディレクトリを指定する
 
 #### ⌘英かな
 
