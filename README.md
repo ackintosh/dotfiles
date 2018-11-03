@@ -49,6 +49,23 @@ TODO: コマンド一発でシュッとインストールされるようにす�
 パッケージマネージャー
 * http://brew.sh/index_ja.html
 
+#### シェル
+
+###### [fish](https://github.com/fish-shell/fish-shell)
+
+* インストール
+  * install_homebrew_packages.sh
+  * shellsにfishを追記
+    * `sudo vi /etc/shells `
+    * fishのパスを追記 `which fish`
+  * デフォルトシェルを変更
+    * chsh -s `which fish` 
+
+###### [fisher](https://github.com/jorgebucaran/fisher)
+
+* fishのパッケージマネージャ
+* [インストール](https://github.com/jorgebucaran/fisher#installation)
+
 #### tmux
 
 * `brew install tmux`
@@ -134,25 +151,10 @@ git config --global alias.showpr \!"f() { git log --merges --oneline --reverse -
 * Solarized Colorscheme for IntelliJ IDEA
   * https://github.com/jkaving/intellij-colors-solarized
 
-
-#### pt
-
-* http://blog.monochromegane.com/blog/2014/01/16/the-platinum-searcher/
-* `brew install pt`
-
 #### htop
 
 * https://github.com/hishamhm/htop
 * brew install htop
-
-####  GNU GLOBAL
-
-* http://qiita.com/yoshizow/items/9cc0236ac0249e0638ff
-* インストール
-	* `brew install global --with-exuberant-ctags --with-pygments`
-* gtags
-	* タグを作成
-	* `gtags --gtagslabel=pygments -v`
 
 #### キーボード関係の環境設定
 
