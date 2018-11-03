@@ -21,3 +21,8 @@ fisher add decors/fish-ghq
 # 
 # - コマンド履歴やファイル検索をfzfで行う
 fisher add jethrokuan/fzf
+
+# oshiori/fish-peco_select_ghq_repository
+#
+# - ghqでcloneしたリポジトリをpecoで検索する
+fisher add oshiori/fish-peco_select_ghq_repository

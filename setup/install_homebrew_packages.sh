@@ -22,3 +22,4 @@ brew install htop
 brew install fzf
 
 brew install tig
+brew install jq
