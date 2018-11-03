@@ -16,3 +16,8 @@ fisher add jethrokuan/z
 #
 # - Ctrl + g でclone済みリポジトリを検索&移動
 fisher add decors/fish-ghq
+
+# jethrokuan/fzf
+# 
+# - コマンド履歴やファイル検索をfzfで行う
+fisher add jethrokuan/fzf
