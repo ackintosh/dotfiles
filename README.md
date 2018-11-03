@@ -2,6 +2,11 @@ ackintosh/dotfiles
 
 TODO: コマンド一発でシュッとインストールされるようにする
 
+#### setup
+
+install_homebrew_packages.sh
+install_fish_plugins.sh
+
 #### iTerm2
 
 * https://www.iterm2.com/
@@ -51,6 +56,19 @@ TODO: コマンド一発でシュッとインストールされるようにす�
 
 #### シェル
 
+###### powerline
+
+* powerline-status
+  * `pip install --user powerline-status`
+* [powerline-fonts](https://github.com/powerline/fonts)
+  * [インストール](https://github.com/powerline/fonts#quick-installation)
+  * `git clone https://github.com/powerline/fonts.git --depth=1`
+  * `cd fonts`
+  * `./install.sh`
+  * `cd ..`
+  * `rm -rf fonts`
+  * iTerm -> Preference -> Text -> "Font" と "Non-ASCII Font" を Source code pro for Powerline に変更する
+
 ###### [fish](https://github.com/fish-shell/fish-shell)
 
 * インストール
@@ -59,12 +77,16 @@ TODO: コマンド一発でシュッとインストールされるようにす�
     * `sudo vi /etc/shells `
     * fishのパスを追記 `which fish`
   * デフォルトシェルを変更
-    * chsh -s `which fish` 
+    * chsh -s $(which fish)
 
 ###### [fisher](https://github.com/jorgebucaran/fisher)
 
-* fishのパッケージマネージャ
+* fishのプラグインマネージャ
 * [インストール](https://github.com/jorgebucaran/fisher#installation)
+
+###### fishプラグイン
+
+* install_fish_plugin.sh
 
 #### tmux
 
