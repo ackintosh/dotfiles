@@ -26,3 +26,8 @@ fisher add jethrokuan/fzf
 #
 # - ghqでcloneしたリポジトリをpecoで検索する
 fisher add oshiori/fish-peco_select_ghq_repository
+
+# oh-my-fish/plugin-balias
+#
+# エイリアスを定義した上で、登録したエイリアスも他のコマンドと同じように補完する
+fisher add oh-my-fish/plugin-balias
