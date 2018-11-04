@@ -1,11 +1,78 @@
 ackintosh/dotfiles
 
-TODO: コマンド一発でシュッとインストールされるようにする
-
-#### setup
+## setup
 
 - setup/install_homebrew_packages.sh
 - setup/install_fish_plugins.sh
+- setup/put_symbolic_links.sh
+
+## シェル
+
+#### homebrew
+
+* http://brew.sh/index_ja.html
+
+#### powerline
+
+* powerline-status
+  * `pip install --user powerline-status`
+* [powerline-fonts](https://github.com/powerline/fonts)
+  * [インストール](https://github.com/powerline/fonts#quick-installation)
+  * `git clone https://github.com/powerline/fonts.git --depth=1`
+  * `cd fonts`
+  * `./install.sh`
+  * `cd ..`
+  * `rm -rf fonts`
+  * iTerm -> Preference -> Text -> "Font" と "Non-ASCII Font" を Source code pro for Powerline に変更する
+
+#### [fish](https://github.com/fish-shell/fish-shell)
+
+* インストール
+  * setup/install_homebrew_packages.sh
+  * shellsにfishを追記
+    * `sudo vi /etc/shells `
+    * fishのパスを追記 `which fish`
+  * デフォルトシェルを変更
+    * chsh -s $(which fish)
+
+###### [fisher](https://github.com/jorgebucaran/fisher)
+
+* fishのプラグインマネージャ
+* [インストール](https://github.com/jorgebucaran/fisher#installation)
+
+###### fishプラグイン
+
+* setup/install_fish_plugins.sh
+
+#### tmux
+
+* tmuxとOS Xのクリップボードの橋渡しをするツールを入れる
+  * `brew install reattach-to-user-namespace`
+
+#### git
+
+  * dotfilesの設定ファイルを使う
+    * `cd ~ && mv .gitignore_global .gitignore_global.default && ln -s ~/src/github.com/ackintosh/dotfiles/.gitignore_global .gitignore_global`
+    * `git config --global core.excludesfile ~/.gitignore_global`
+  * [gitignore に書くべきでないものは gitignore_global へ - Qiita](https://qiita.com/elzup/items/4c92a2abdab56db3fb4e)
+
+###### git config
+
+```
+# git コミットメッセージの文字化け防止
+git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'
+
+# 個人の環境特有の除外設定
+git config --global core.excludesfile ~/.gitignore_global
+
+# キレイなdiff
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+
+# ghq
+git config --global ghq.root ~/src
+```
+
+## アプリ
 
 #### iTerm2
 
@@ -49,72 +116,7 @@ TODO: コマンド一発でシュッとインストールされるようにす�
 * ウィンドウの移動, リサイズ
 * https://www.spectacleapp.com/
 
-#### homebrew
-
-パッケージマネージャー
-* http://brew.sh/index_ja.html
-
-#### シェル
-
-###### powerline
-
-* powerline-status
-  * `pip install --user powerline-status`
-* [powerline-fonts](https://github.com/powerline/fonts)
-  * [インストール](https://github.com/powerline/fonts#quick-installation)
-  * `git clone https://github.com/powerline/fonts.git --depth=1`
-  * `cd fonts`
-  * `./install.sh`
-  * `cd ..`
-  * `rm -rf fonts`
-  * iTerm -> Preference -> Text -> "Font" と "Non-ASCII Font" を Source code pro for Powerline に変更する
-
-###### [fish](https://github.com/fish-shell/fish-shell)
-
-* インストール
-  * install_homebrew_packages.sh
-  * shellsにfishを追記
-    * `sudo vi /etc/shells `
-    * fishのパスを追記 `which fish`
-  * デフォルトシェルを変更
-    * chsh -s $(which fish)
-
-###### [fisher](https://github.com/jorgebucaran/fisher)
-
-* fishのプラグインマネージャ
-* [インストール](https://github.com/jorgebucaran/fisher#installation)
-
-###### fishプラグイン
-
-* install_fish_plugin.sh
-
-#### tmux
-
-* tmuxとOS Xのクリップボードの橋渡しをするツールを入れる
-  * `brew install reattach-to-user-namespace`
-
-#### git
-
-  * dotfilesの設定ファイルを使う
-    * `cd ~ && mv .gitignore_global .gitignore_global.default && ln -s ~/src/github.com/ackintosh/dotfiles/.gitignore_global .gitignore_global`
-    * `git config --global core.excludesfile ~/.gitignore_global`
-  * [gitignore に書くべきでないものは gitignore_global へ - Qiita](https://qiita.com/elzup/items/4c92a2abdab56db3fb4e)
-
-###### git設定
-
-```
-# git コミットメッセージの文字化け防止
-git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'
-
-# 個人の環境特有の除外設定
-git config --global core.excludesfile ~/.gitignore_global
-
-# キレイなdiff
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
-
-# ghq
-git config --global ghq.root ~/src
-```
+## ***env
 
 #### rbenv
 
@@ -124,28 +126,22 @@ git config --global ghq.root ~/src
 
 * `brew install direnv`
 
+## エディタ
+
 #### vim 7.4 or above
 
 * http://qiita.com/yu-ichiro/items/c9db44671701e7f485af
 * `brew install vim --with-lua`
 * go
-	* goimports
-		* `go get code.google.com/p/go.tools/cmd/goimports`
-	* gotags
-		* `go get -u github.com/jstemmer/gotags`
-
-	* phpmd
-		* `curl -L -o ~/.vim/commands/phpmd.phar http://static.phpmd.org/php/latest/phpmd.phar`
+  * goimports
+    * `go get code.google.com/p/go.tools/cmd/goimports`
+  * gotags
+    * `go get -u github.com/jstemmer/gotags`
 
 #### Intellij IDEA
 
 * Solarized Colorscheme for IntelliJ IDEA
   * https://github.com/jkaving/intellij-colors-solarized
-
-#### htop
-
-* https://github.com/hishamhm/htop
-* brew install htop
 
 #### キーボード関係の環境設定
 
@@ -156,6 +152,7 @@ git config --global ghq.root ~/src
 * スマート引用符を OFF
   * キーボード -> ユーザー辞書 -> "スマート引用符とスマートダッシュを使用" のチェックを外す
 
+## その他
 
 #### Ergodox EZ
 
