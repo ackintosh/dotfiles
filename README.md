@@ -103,7 +103,7 @@ git config --global ghq.root ~/src
 
 #### GIPHY
 
-* 画面をキャプチャしてgitアニメーションを作る
+* 画面をキャプチャしてgifアニメーションを作る
 * https://itunes.apple.com/jp/app/giphy-capture-the-gif-maker/id668208984?mt=12
 
 #### App Cleaner & Uninstaller
@@ -143,6 +143,8 @@ git config --global ghq.root ~/src
 * Solarized Colorscheme for IntelliJ IDEA
   * https://github.com/jkaving/intellij-colors-solarized
 
+## その他
+
 #### キーボード関係の環境設定
 
 * caps lock に control を割り当てる
@@ -152,12 +154,13 @@ git config --global ghq.root ~/src
 * スマート引用符を OFF
   * キーボード -> ユーザー辞書 -> "スマート引用符とスマートダッシュを使用" のチェックを外す
 
-## その他
-
 #### Ergodox EZ
 
 * レイアウト(閲覧にはログインが必要)
 * https://www.massdrop.com/configurator/ergodox?referer=QKNF2S&hash=f845a48d2539881741e562e719370157
+
+![image](https://user-images.githubusercontent.com/1885716/47960233-12543180-e03b-11e8-8b20-2d91cc3e61d7.png)
+
 
 #### Keyboardio
 
