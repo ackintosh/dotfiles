@@ -128,9 +128,6 @@ git config --global ghq.root ~/src
 
 * http://qiita.com/yu-ichiro/items/c9db44671701e7f485af
 * `brew install vim --with-lua`
-* php
-	* 辞書ファイルの更新
-		* $ `php dict.php > .vim/dictionaries/php.dict`
 * go
 	* goimports
 		* `go get code.google.com/p/go.tools/cmd/goimports`
