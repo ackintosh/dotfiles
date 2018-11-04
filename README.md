@@ -4,8 +4,8 @@ TODO: コマンド一発でシュッとインストールされるようにす�
 
 #### setup
 
-install_homebrew_packages.sh
-install_fish_plugins.sh
+- setup/install_homebrew_packages.sh
+- setup/install_fish_plugins.sh
 
 #### iTerm2
 
@@ -90,63 +90,35 @@ install_fish_plugins.sh
 
 #### tmux
 
-* `brew install tmux`
 * tmuxとOS Xのクリップボードの橋渡しをするツールを入れる
   * `brew install reattach-to-user-namespace`
 
 #### git
 
-* `brew install git`
-* git コミットメッセージの文字化け防止  
-  * `git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'`
-* 個人の環境特有の除外設定
-  * `git config --global core.excludesfile ~/.gitignore_global`
   * dotfilesの設定ファイルを使う
     * `cd ~ && mv .gitignore_global .gitignore_global.default && ln -s ~/src/github.com/ackintosh/dotfiles/.gitignore_global .gitignore_global`
     * `git config --global core.excludesfile ~/.gitignore_global`
   * [gitignore に書くべきでないものは gitignore_global へ - Qiita](https://qiita.com/elzup/items/4c92a2abdab56db3fb4e)
 
-#### git showpr
-
-* Commit Hash から該当 Pull Request を見つける
-* http://qiita.com/awakia/items/f14dc6310e469964a8f7
+###### git設定
 
 ```
-$ git showpr daced1d3
-5bf98dd Merge pull request #12856 from duglin/ConfigLocation
-```
+# git コミットメッセージの文字化け防止
+git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'
 
-* .gitconfig
+# 個人の環境特有の除外設定
+git config --global core.excludesfile ~/.gitignore_global
 
-```
-[alias]
-  showpr = !"f() { git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1; }; f"
-```
+# キレイなdiff
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
-* シェルから設定する場合
-
-```
-git config --global alias.showpr \!"f() { git log --merges --oneline --reverse --ancestry-path \$1...master | grep 'Merge pull request #' | head -n 1; }; f"
+# ghq
+git config --global ghq.root ~/src
 ```
 
 #### rbenv
 
 * https://github.com/rbenv/rbenv
-
-#### go
-
-* http://golang-jp.org/doc/install
-* `brew install go`
-* ghq
-  * `brew install ghq`
-  * `git config --global ghq.root ~/src`
-* peco
-  * `brew install peco`
-* files
-  * `go get github.com/mattn/files`
-* pt
-  * http://blog.monochromegane.com/blog/2014/01/16/the-platinum-searcher/
-  * `brew install pt`
 
 #### direnv
 

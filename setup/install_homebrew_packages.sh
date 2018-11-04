@@ -7,19 +7,21 @@ brew install reattach-to-user-namespace
 brew install git
 # Go
 brew install go
-# git$B$G(Bclone$B$9$k%j%]%8%H%j$r4IM}$9$k(B
+# gitでcloneするリポジトリを管理する
 brew install ghq
-# $BF~NO9T$r%$%s%?%i%/%F%#%V$K9J$j9~$`(B
+# 入力行をインタラクティブに絞り込む
 brew install peco
-# $B9bB.$J%U%!%$%k8!:w(B
+# 高速なファイル検索
 brew install pt
 brew install direnv
 # Vim
 brew install vim --with-lua
-# top$B%3%^%s%I$N9b5!G=HG(B
+# topコマンドの高機能版
 brew install htop
-# $BF~NO9T$r%$%s%?%i%/%F%#%V$K[#Kf8!:w$9$k(B
+# 入力行をインタラクティブに曖昧検索する
 brew install fzf
 
 brew install tig
 brew install jq
+# キレイなdiff
+brew install diff-so-fancy
