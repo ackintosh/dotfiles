@@ -2,6 +2,7 @@
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 balias g 'git'
+balias gb 'git branch'
 balias gco 'git checkout'
 balias gcm 'git checkout master'
 balias gs 'git status'
