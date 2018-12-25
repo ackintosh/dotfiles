@@ -86,7 +86,11 @@ git config --local user.email "sora.akatsuki@gmail.com"
 # - 毎回入力するのは手間なのでOSXキーチェーンを使う
 # see https://help.github.com/articles/accessing-github-using-two-factor-authentication/#using-two-factor-authentication-with-the-command-line
 # see https://help.github.com/articles/caching-your-github-password-in-git/
+
 git config --local credential.helper osxkeychain
+
+# その後、初回のpushなどでuser/password(personal access token)を求められる
+# それ以降は入力不要になる
 ```
 
 ## アプリ
