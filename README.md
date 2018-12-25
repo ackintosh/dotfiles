@@ -74,8 +74,19 @@ git config --global ghq.root ~/src
 
 ```bash
 # 仕事用マシンでOSSにコミットするとき
+# サブアカウントとしてgithub.comのアカウントを設定する
 git config --local user.name "ackintosh"
 git config --local user.email "sora.akatsuki@gmail.com"
+```
+
+```bash
+# HTTPSでリポジトリアクセスする場合
+# - リポジトリの操作時にuser/passwordを尋ねられる
+# - 2FAを有効にしているので、passwordにはpersonal access tokenを入れなければならない
+# - 毎回入力するのは手間なのでOSXキーチェーンを使う
+# see https://help.github.com/articles/accessing-github-using-two-factor-authentication/#using-two-factor-authentication-with-the-command-line
+# see https://help.github.com/articles/caching-your-github-password-in-git/
+git config --local credential.helper osxkeychain
 ```
 
 ## アプリ
