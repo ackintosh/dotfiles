@@ -58,7 +58,7 @@ ackintosh/dotfiles
 
 ###### git config
 
-```
+```bash
 # git コミットメッセージの文字化け防止
 git config --global core.editor '/usr/local/bin/vim -c "set fenc=utf-8"'
 
@@ -70,6 +70,12 @@ git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
 # ghq
 git config --global ghq.root ~/src
+```
+
+```bash
+# 仕事用マシンでOSSにコミットするとき
+git config --local user.name "ackintosh"
+git config --local user.email "sora.akatsuki@gmail.com"
 ```
 
 ## アプリ
