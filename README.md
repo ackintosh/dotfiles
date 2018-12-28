@@ -194,3 +194,4 @@ git config --local credential.helper osxkeychain
 - [Stylus](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
 - [Copy URL+](https://chrome.google.com/webstore/detail/copy-url%20/capojgaalppngkaagaobmigigcgnidmn?hl=ja)
   - `Shift+V` : `${title}${n}${URL}`
+  - `Shift+Cmd+V` : `[${title}](${URL})`
