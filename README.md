@@ -163,6 +163,9 @@ git config --local credential.helper osxkeychain
 
 * Solarized Colorscheme for IntelliJ IDEA
   * https://github.com/jkaving/intellij-colors-solarized
+* Java/Kotlin
+  * ワイルドカードでのimportを無効化する
+  * https://pleiades.io/help/idea/creating-and-optimizing-imports.html#disable-wildcard-imports
 
 ## その他
 
