@@ -116,6 +116,8 @@ git config --local credential.helper osxkeychain
 * https://www.alfredapp.com/
 * アプリ起動: cmd + space
 * クリップボード: shift + cmd + space
+* スニペットを↓にエクスポートしている
+  * https://github.com/ackintosh/dotfiles/tree/master/alfred
 
 #### f.lux
 
