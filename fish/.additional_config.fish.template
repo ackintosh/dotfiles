@@ -3,3 +3,5 @@
 #
 # set PATH /usr/local/bin /usr/sbin $PATH
 # set HTTP_PROXY http://example.com
+# set HTTPS_PROXY http://example.com
+# set NO_PROXY 127.0.0.1,localhost,example.com
