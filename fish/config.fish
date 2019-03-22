@@ -21,3 +21,7 @@ balias ll 'ls -lh'
 balias 1 'cd -'
 balias 2 'cd -2'
 balias vi 'vim'
+
+if test -e ~/.additional_config.fish
+  source ~/.additional_config.fish
+end

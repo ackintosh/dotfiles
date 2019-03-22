@@ -1,0 +1,5 @@
+# マシン固有の設定はここに書く
+# $HOME/.additional_config.fish に配置する
+#
+# set PATH /usr/local/bin /usr/sbin $PATH
+# set HTTP_PROXY http://example.com
