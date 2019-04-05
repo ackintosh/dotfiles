@@ -1,6 +1,9 @@
 # fzf
 set -U FZF_LEGACY_KEYBINDINGS 0
 
+# python3 via homebrew
+set PATH /usr/local/opt/python/libexec/bin $PATH
+
 balias g 'git'
 balias gb 'git branch'
 balias gco 'git checkout'
