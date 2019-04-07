@@ -1,8 +1,10 @@
 # fzf
 set -U FZF_LEGACY_KEYBINDINGS 0
 
-# python3 via homebrew
-set PATH /usr/local/opt/python/libexec/bin $PATH
+# python3 installed via homebrew
+if test -d /usr/local/opt/python/libexec/bin
+  set PATH /usr/local/opt/python/libexec/bin $PATH
+end
 # nodejs installed via nodebrew
 if test -d ~/.nodebrew/current/bin
   set PATH ~/.nodebrew/current/bin $PATH
