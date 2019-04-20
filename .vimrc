@@ -20,47 +20,16 @@ call dein#begin(s:dein_dir)
 call dein#add('Shougo/dein.vim')
 " ステータスラインの表示をわかりやすく
 call dein#add('itchyny/lightline.vim')
-" unite.vim で ptを使用した検索のため
-call dein#add('Shougo/vimproc', {
-      \ 'build': {
-      \     'windows': 'tools\\update-dll-mingw',
-      \     'cygwin': 'make -f make_cygwin.mak',
-      \     'mac': 'make -f make_mac.mak',
-      \     'linux': 'make',
-      \     'unix': 'gmake'}})
-" ファイル、バッファ、レジスタ操作
-call dein#add('Shougo/unite.vim', {
-      \ 'depends': ['vimproc'],
-      \ 'on_cmd': ['Unite'],
-      \ 'lazy': 1})
-" unite.vim で最近使ったファイルを表示できるようにする
-call dein#add('Shougo/neomru.vim')
 " インデントに色を付ける
 call dein#add('nathanaelkane/vim-indent-guides')
 " 補完
 call dein#add('Shougo/neocomplete.vim')
-" アウトライン表示
-call dein#add('Shougo/unite-outline')
 " スニペット管理
 call dein#add('Shougo/neosnippet.vim')
-" vim の Golang サポート
-call dein#add('fatih/vim-go')
-" Golang アウトライン表示
-" :Tagbar アウトライン表示
-" カーソルを合わせて gd で定義元にジャンプ
-call dein#add('majutsushi/tagbar')
 " Puppet定義ファイル(ppファイル)のハイライト
 call dein#add('rodjek/vim-puppet')
-" ファイラ
-call dein#add('Shougo/vimfiler.vim', {
-      \ 'depends': ['unite.vim']
-      \})
-" gtags
-call dein#add('vim-scripts/gtags.vim')
 " 構文チェック
 call dein#add('scrooloose/syntastic')
-" phpcs, phpmd を実行する
-call dein#add('joonty/vim-phpqa.git')
 " mustache ファイルのハイライトなど
 call dein#add('mustache/vim-mustache-handlebars')
 " 設定終了
@@ -113,56 +82,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 " 幅の設定
 " let g:indent_guides_guide_size = 1
 
-" -------------------------------------------------------------------------------
-" unite.vim
-" https://github.com/Shougo/unite.vim
-" http://blog.remora.cx/2010/12/vim-ref-with-unite.html
-" -------------------------------------------------------------------------------
-" 入力モードで開始する
-let g:unite_enable_start_insert=1
-" バッファ一覧
-noremap <C-P> :Unite buffer<CR>
-" ファイル一覧
-noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
-noremap <C-H> :Unite file_mru<CR>
-" sourcesを「今開いているファイルのディレクトリ」とする
-noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-" ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
-" grep検索
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-" カーソル位置の単語をgrep検索
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-" grep検索結果の再呼出
-nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
-" ファイル非同期検索
-nnoremap <silent> ,f  :<C-u>Unite file_rec/async:!<CR>
-" カレントディレクトリを表示
-nnoremap <silent> ,c :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-
-" unite grep に pt(The Platinum Searcher) を使う
-if executable('pt')
-  let g:unite_source_grep_command = 'pt'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-
-" -------------------------------------------------------------------------------
-" unite-outline
-" https://github.com/Shougo/unite-outline
-" -------------------------------------------------------------------------------
-" http://keyamb.hatenablog.com/entry/2013/06/15/225501
-let g:unite_split_rule = 'botright'
-noremap ,o <ESC>:Unite -vertical -winwidth=40 outline<Return>
 
 " -------------------------------------------------------------------------------
 " gtags.vim
