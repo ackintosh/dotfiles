@@ -182,6 +182,7 @@ git config --local credential.helper osxkeychain
 
 #### Ergodox EZ
 
+* Gateron Red
 * レイアウト(閲覧にはログインが必要)
 * https://www.massdrop.com/configurator/ergodox?referer=QKNF2S&hash=f845a48d2539881741e562e719370157
 
