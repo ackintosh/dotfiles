@@ -1,10 +1,10 @@
 ackintosh/dotfiles
 
-## setup
+## setup scripts
 
-- setup/install_homebrew_packages.sh
-- setup/install_fish_plugins.sh
-- setup/put_symbolic_links.sh
+- [setup/install_homebrew_packages.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_homebrew_packages.sh)
+- [setup/install_fish_plugins.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_fish_plugins.sh)
+- [setup/put_symbolic_links.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/put_symbolic_links.sh)
 
 ## シェル
 
@@ -28,7 +28,7 @@ ackintosh/dotfiles
 #### [fish](https://github.com/fish-shell/fish-shell)
 
 * インストール
-  * setup/install_homebrew_packages.sh
+  * [setup/install_homebrew_packages.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_homebrew_packages.sh)
   * shellsにfishを追記
     * `sudo vi /etc/shells `
     * fishのパスを追記 `which fish`
@@ -155,11 +155,6 @@ git config --local credential.helper osxkeychain
 
 * http://qiita.com/yu-ichiro/items/c9db44671701e7f485af
 * `brew install vim --with-lua`
-* go
-  * goimports
-    * `go get code.google.com/p/go.tools/cmd/goimports`
-  * gotags
-    * `go get -u github.com/jstemmer/gotags`
 
 #### Intellij IDEA
 
