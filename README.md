@@ -183,6 +183,14 @@ git config --local credential.helper osxkeychain
 
 ![image](https://user-images.githubusercontent.com/1885716/47960233-12543180-e03b-11e8-8b20-2d91cc3e61d7.png)
 
+* https://www.pjrc.com/teensy/loader_mac.html から Teensy Loader Disk Image (teensy.dmg) をダウンロードする
+* massdropのサイトからレイアウトをダウンロードする(.HEX)
+* teensy.dmgを起動する
+* Ergodox右上の穴を押してプログラムモードにする
+* File -> Open Hex File でダウンロードしたHEXファイルを読み込む
+* Operation -> Program
+* Operation -> Reboot
+* 変更が反映されたことを確認する
 
 #### Keyboardio
 
