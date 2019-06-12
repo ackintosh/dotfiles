@@ -139,6 +139,12 @@ git config --local credential.helper osxkeychain
 * ウィンドウの移動, リサイズ
 * https://www.spectacleapp.com/
 
+#### Charles
+
+* 通信のモニタリング、シミュレーションなど
+* https://www.charlesproxy.com/
+* ローカルに起動したアプリケーションと外部サービスとの通信のデバッグなどに便利
+
 ## ***env
 
 #### rbenv
