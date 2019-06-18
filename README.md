@@ -169,6 +169,13 @@ git config --local credential.helper osxkeychain
 * Java/Kotlin
   * ワイルドカードでのimportを無効化する
   * https://pleiades.io/help/idea/creating-and-optimizing-imports.html#disable-wildcard-imports
+* 設定
+  * http://kzdev.hatenablog.com/entry/2017/09/03/213423
+  * https://github.com/FoxxMD/intellij-jvm-options-explained
+  * Help -> Edit Custom VM Options...
+  * `-Xms2G`
+  * `-Xmx4G`
+
 
 ## その他
 
