@@ -10,6 +10,11 @@ if test -d ~/.nodebrew/current/bin
   set PATH ~/.nodebrew/current/bin $PATH
 end
 
+# Cargo
+if test -e ~/.cargo
+  source ~/.cargo/env
+end
+
 balias g 'git'
 balias gb 'git branch'
 balias gco 'git checkout'
