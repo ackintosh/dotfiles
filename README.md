@@ -129,6 +129,11 @@ git config --local credential.helper osxkeychain
 * 画面をキャプチャしてgifアニメーションを作る
 * https://itunes.apple.com/jp/app/giphy-capture-the-gif-maker/id668208984?mt=12
 
+#### Skitch
+
+* キャプチャ&加工
+* https://apps.apple.com/jp/app/skitch-%E6%92%AE%E3%82%8B-%E6%8F%8F%E3%81%8D%E8%BE%BC%E3%82%80-%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B/id425955336
+
 #### App Cleaner & Uninstaller
 
 * アプリケーションフォルダから削除しただけでは残ってしまうゴミを削除できる
