@@ -219,6 +219,6 @@ git config --local credential.helper osxkeychain
 #### Chrome 拡張
 
 - [Stylus](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
-- [Copy URL+](https://chrome.google.com/webstore/detail/copy-url%20/capojgaalppngkaagaobmigigcgnidmn?hl=ja)
-  - `Shift+V` : `${title}${n}${URL}`
-  - `Shift+Cmd+V` : `[${title}](${URL})`
+- [keymapper](https://chrome.google.com/webstore/detail/keymapper/gddmjjinakgblokjagbcehkccngffpdj)
+  - `Shift+V` : `[${title}](${URL})`
+  - `Shift+Cmd+V` : `[${title} ${URL}]`
