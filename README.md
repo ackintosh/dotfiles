@@ -180,6 +180,7 @@ git config --local credential.helper osxkeychain
   * Help -> Edit Custom VM Options...
   * `-Xms2G`
   * `-Xmx4G`
+  * `-XX:MaxInlineLevel=3` [ref](https://youtrack.jetbrains.com/issue/IDEA-207243#focus=streamItem-27-3480124.0-0)
 
 
 ## その他
