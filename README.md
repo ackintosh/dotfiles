@@ -223,3 +223,7 @@ git config --local credential.helper osxkeychain
 - [keymapper](https://chrome.google.com/webstore/detail/keymapper/gddmjjinakgblokjagbcehkccngffpdj)
   - `Shift+V` : `[${title}](${URL})`
   - `Shift+Cmd+V` : `[${title} ${URL}]`
+
+#### 簡易メモ帳
+
+- ブラウザのアドレスバーに `data:text/html, <body contenteditable>`
