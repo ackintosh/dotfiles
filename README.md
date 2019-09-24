@@ -181,6 +181,10 @@ git config --local credential.helper osxkeychain
   * `-Xms2G`
   * `-Xmx4G`
   * `-XX:MaxInlineLevel=3` [ref](https://youtrack.jetbrains.com/issue/IDEA-207243#focus=streamItem-27-3480124.0-0)
+* Font
+  * Menlo
+  * Size: 11
+  * Line spacing: 1.2
 
 
 ## その他
