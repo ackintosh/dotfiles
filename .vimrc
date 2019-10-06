@@ -24,8 +24,6 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('nathanaelkane/vim-indent-guides')
 " 補完
 call dein#add('Shougo/neocomplete.vim')
-" スニペット管理
-call dein#add('Shougo/neosnippet.vim')
 " Puppet定義ファイル(ppファイル)のハイライト
 call dein#add('rodjek/vim-puppet')
 " 構文チェック
@@ -100,17 +98,6 @@ nnoremap <C-k> :Gtags -r <C-r><C-w><CR><CR>
 let g:vimfiler_as_default_explorer = 1
 nnoremap <silent> ,w :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
 nnoremap <silent> ,e :VimFiler -buffer-name=explorer -split -horizontal -toggle -no-quit<Cr>
-
-" -------------------------------------------------------------------------------
-" neosnippet.vim
-" https://github.com/Shougo/neosnippet.vim
-" -------------------------------------------------------------------------------
-" スニペット保存ディレクトリ
-let g:neosnippet#snippets_directory='~/.vim/snippets'
-" <C-k> でスニペット選択. プレースホルダ移動.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " -------------------------------------------------------------------------------
 " fatih/vim-go
