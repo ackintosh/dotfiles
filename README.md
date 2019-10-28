@@ -93,6 +93,13 @@ git config --local credential.helper osxkeychain
 # それ以降は入力不要になる
 ```
 
+#### コマンドを並列実行
+
+- xargs
+- parallel
+  - [コマンドを並列に実行するGNU parallelがとても便利 - りんごがでている](http://bicycle1885.hatenablog.com/entry/2014/08/10/143612)
+  - `echo -e "alice\nbob" | parallel echo -e`
+
 ## アプリ
 
 #### iTerm2
