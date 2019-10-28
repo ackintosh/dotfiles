@@ -15,6 +15,11 @@ if test -e ~/.cargo
   source ~/.cargo/env
 end
 
+# tools installed via `go install`
+if test -d ~/go/bin
+  set PATH $PATH ~/go/bin
+end
+
 balias g 'git'
 balias gb 'git branch'
 balias gco 'git checkout'

@@ -189,6 +189,12 @@ git config --local credential.helper osxkeychain
 
 ## その他
 
+#### ブログ
+
+- ジェネレータ
+  - [gohugoio/hugo: The world’s fastest framework for building websites.](https://github.com/gohugoio/hugo)
+
+
 #### キーボード関係の環境設定
 
 * caps lock に control を割り当てる
