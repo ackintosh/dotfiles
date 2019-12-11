@@ -1,3 +1,4 @@
+" コピーしたタイミングでOS(Mac)のクリップボードにコピーする
 :set clipboard=unnamed
 " ノーマルモード時だけ ; と : を入れ替える
 nnoremap ; :
@@ -8,3 +9,9 @@ set ignorecase
 set smartcase
 " インクリメンタル検索
 set incsearch
+" 高機能な連結
+" https://github.com/JetBrains/ideavim/wiki/%60ideajoin%60-examples
+set ideajoin
+" multiple-cursorsプラグインを有効にする
+" https://github.com/terryma/vim-multiple-cursors
+" set multiple-cursors
