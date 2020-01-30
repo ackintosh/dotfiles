@@ -20,6 +20,10 @@ if test -d ~/go/bin
   set PATH $PATH ~/go/bin
 end
 
+# direnv
+# https://github.com/direnv/direnv
+eval (direnv hook fish)
+
 balias g 'git'
 balias gb 'git branch'
 balias gco 'git checkout'
