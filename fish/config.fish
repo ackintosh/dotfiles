@@ -29,6 +29,10 @@ if which -s go
   set PATH $PATH:$GOROOT/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 end
 
+# direnv
+# https://github.com/direnv/direnv
+eval (direnv hook fish)
+
 balias g 'git'
 balias gb 'git branch'
 balias gco 'git checkout'
