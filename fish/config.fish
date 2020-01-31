@@ -31,7 +31,9 @@ end
 
 # direnv
 # https://github.com/direnv/direnv
-eval (direnv hook fish)
+if which -s direnv
+  eval (direnv hook fish)
+end
 
 balias g 'git'
 balias gb 'git branch'
