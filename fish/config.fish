@@ -1,26 +1,32 @@
-# fzf
+### fzf ###
+# 新キーバインディングを有効にする
+# キーバインディングは別途、 .config/fish/functions/fish_user_key_bindings.fish で設定している
 set -U FZF_LEGACY_KEYBINDINGS 0
 
+### Python ###
 # python3 installed via homebrew
 if test -d /usr/local/opt/python/libexec/bin
   set PATH /usr/local/opt/python/libexec/bin $PATH
 end
+
+### Node.js ###
 # nodejs installed via nodebrew
 if test -d ~/.nodebrew/current/bin
   set PATH ~/.nodebrew/current/bin $PATH
 end
 
+### Rust ###
 # Cargo
 if test -e ~/.cargo
   source ~/.cargo/env
 end
 
+### Go ###
 # tools installed via `go install`
 if test -d ~/go/bin
   set PATH $PATH ~/go/bin
 end
 
-# Go
 # http://qiita.com/methane/items/d82b9f28b97b5c3bd08a
 # http://d.hatena.ne.jp/hiro_nemu/20140113/1389620004
 if which -s go
@@ -29,12 +35,14 @@ if which -s go
   set PATH $PATH:$GOROOT/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 end
 
-# direnv
+### direnv ###
 # https://github.com/direnv/direnv
 if which -s direnv
   eval (direnv hook fish)
 end
 
+### aliases ###
+# baliasを使うことで、通常のコマンドと同じように補完される
 balias g 'git'
 balias gb 'git branch'
 balias gco 'git checkout'
@@ -60,6 +68,7 @@ balias python3 'python'
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f ~/google-cloud-sdk/path.fish.inc ]; if type source > /dev/null; source ~/google-cloud-sdk/path.fish.inc; else; . ~/google-cloud-sdk/path.fish.inc; end; end
 
+### 職場用の設定などを読み込む ###
 if test -e ~/.additional_config.fish
   source ~/.additional_config.fish
 end
