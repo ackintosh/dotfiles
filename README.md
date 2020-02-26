@@ -38,16 +38,14 @@ ackintosh/dotfiles
 ###### [fisher](https://github.com/jorgebucaran/fisher)
 
 * fishのプラグインマネージャ
-* [インストール](https://github.com/jorgebucaran/fisher#installation)
-
-###### fishプラグイン
-
-* setup/install_fish_plugins.sh
+* [fisherのインストール](https://github.com/jorgebucaran/fisher#installation)
+* [プラグインのインストールスクリプト](./blob/master/setup/install_fish_plugins.sh)
 
 #### tmux
 
+* [.tmux.conf](./blob/master/.tmux.conf)
 * tmuxとOS Xのクリップボードの橋渡しをするツールを入れる
-  * `brew install reattach-to-user-namespace`
+  * [brew install reattach-to-user-namespace](./blob/master/setup/install_homebrew_packages.sh)
 
 #### git
 
@@ -169,10 +167,10 @@ git config --local credential.helper osxkeychain
 
 ## エディタ
 
-#### vim 7.4 or above
+#### vim
 
-* http://qiita.com/yu-ichiro/items/c9db44671701e7f485af
-* `brew install vim --with-lua`
+* [.vimrc](./blob/master/.vimrc)
+* [`brew install vim --with-lua`](./blob/master/setup/install_homebrew_packages.sh)
 
 #### Intellij IDEA
 
@@ -192,7 +190,8 @@ git config --local credential.helper osxkeychain
   * Menlo
   * Size: 11
   * Line spacing: 1.2
-
+* Plugin
+  * IdeaVim : [.ideavimrc](./blob/master/.ideavimrc)
 
 ## その他
 
@@ -219,16 +218,17 @@ git config --local credential.helper osxkeychain
 
 ![image](https://user-images.githubusercontent.com/1885716/47960233-12543180-e03b-11e8-8b20-2d91cc3e61d7.png)
 
-* https://www.pjrc.com/teensy/loader_mac.html から Teensy Loader Disk Image (teensy.dmg) をダウンロードする
-* massdropのサイトからレイアウトをダウンロードする(.HEX)
-* teensy.dmgを起動する
-* Ergodox右上の穴を押してプログラムモードにする
-* File -> Open Hex File でダウンロードしたHEXファイルを読み込む
-* Operation -> Program
-* Operation -> Reboot
-* 変更が反映されたことを確認する
+* レイアウトの更新手順
+  * https://www.pjrc.com/teensy/loader_mac.html から Teensy Loader Disk Image (teensy.dmg) をダウンロードする
+  * massdropのサイトからレイアウトをダウンロードする(.HEX)
+  * teensy.dmgを起動する
+  * Ergodox右上の穴を押してプログラムモードにする
+  * File -> Open Hex File でダウンロードしたHEXファイルを読み込む
+  * Operation -> Program
+  * Operation -> Reboot
+  * 変更が反映されたことを確認する
 
-#### Keyboardio
+#### [Keyboardio](https://shop.keyboard.io/)
 
 * レイアウト定義ファイル: KeyboardioModel01-Firmware.ino
 * wiki
