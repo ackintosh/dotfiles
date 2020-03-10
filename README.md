@@ -200,6 +200,7 @@ git config --local credential.helper osxkeychain
 
 - ジェネレータ
   - [gohugoio/hugo: The world’s fastest framework for building websites.](https://github.com/gohugoio/hugo)
+  - https://github.com/gohugoio/hugo/releases/tag/v0.55.6 をダウンロードして ~/bin に配置する
 
 
 #### キーボード関係の環境設定
