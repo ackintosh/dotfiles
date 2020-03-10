@@ -64,6 +64,10 @@ balias 1 'cd -'
 balias 2 'cd -2'
 balias vi 'vim'
 balias python3 'python'
+# キレイなls
+if which -s exa
+  balias ls 'exa'
+end
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f ~/google-cloud-sdk/path.fish.inc ]; if type source > /dev/null; source ~/google-cloud-sdk/path.fish.inc; else; . ~/google-cloud-sdk/path.fish.inc; end; end
