@@ -156,6 +156,11 @@ git config --local credential.helper osxkeychain
 * https://www.charlesproxy.com/
 * ローカルに起動したアプリケーションと外部サービスとの通信のデバッグなどに便利
 
+#### Medis
+
+* Redisクライアント
+* https://github.com/luin/medis
+
 ## ***env
 
 #### rbenv
@@ -242,6 +247,10 @@ git config --local credential.helper osxkeychain
 - [keymapper](https://chrome.google.com/webstore/detail/keymapper/gddmjjinakgblokjagbcehkccngffpdj)
   - `Shift+V` : `[${title}](${URL})`
   - `Shift+Cmd+V` : `[${title} ${URL}]`
+
+#### Unshaky
+
+* 設定ファイル: [unshaky.config](https://github.com/ackintosh/dotfiles/blob/master/unshaky.config)
 
 #### 簡易メモ帳
 
