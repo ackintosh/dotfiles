@@ -1,4 +1,4 @@
-ackintosh/dotfiles
+# ackintosh/dotfiles
 
 ## setup scripts
 
