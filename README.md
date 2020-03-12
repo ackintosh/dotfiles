@@ -27,6 +27,7 @@ ackintosh/dotfiles
 
 #### [fish](https://github.com/fish-shell/fish-shell)
 
+* [チュートリアル](http://fish.rubikitch.com/tutorial/)
 * インストール
   * [setup/install_homebrew_packages.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_homebrew_packages.sh)
   * shellsにfishを追記
