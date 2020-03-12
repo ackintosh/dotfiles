@@ -28,6 +28,8 @@ brew install jq
 brew install diff-so-fancy
 # キレイなls
 brew install exa
+# イケてるcat
+brew install bat
 
 # Gitクライアント
 # Jetbrains製品で諸々やるようになったのでコメントアウト

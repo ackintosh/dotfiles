@@ -64,9 +64,15 @@ balias 1 'cd -'
 balias 2 'cd -2'
 balias vi 'vim'
 balias python3 'python'
+
 # キレイなls
 if which -s exa
   balias ls 'exa'
+end
+
+# イケてるcat
+if which -s bat
+  balias cat 'bat'
 end
 
 # The next line updates PATH for the Google Cloud SDK.
