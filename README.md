@@ -245,8 +245,8 @@ git config --local credential.helper osxkeychain
 
 - [Stylus](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
 - [keymapper](https://chrome.google.com/webstore/detail/keymapper/gddmjjinakgblokjagbcehkccngffpdj)
-  - `Shift+V` : `[${title}](${URL})`
-  - `Shift+Cmd+V` : `[${title} ${URL}]`
+  - `Shift+V` : `[${title}](${url})`
+  - `Shift+Cmd+V` : `[${title} ${url}]`
 - [Talend API Tester](https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm)
 
 #### Unshaky
