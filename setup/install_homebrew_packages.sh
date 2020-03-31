@@ -30,6 +30,8 @@ brew install diff-so-fancy
 brew install exa
 # イケてるcat
 brew install bat
+# クレデンシャル情報をリポジトリにコミットしてしまうのを防ぐ
+brew install git-secrets
 
 # Gitクライアント
 # Jetbrains製品で諸々やるようになったのでコメントアウト
