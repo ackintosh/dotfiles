@@ -58,9 +58,9 @@
   * [クラウド破産しないように git-secrets を使う - Qiita](https://qiita.com/pottava/items/4c602c97aacf10c058f1)
   * brew install git-secrets 
   * AWSのクレデンシャル情報をコミットしてしまうのを防ぐ
-    * > cd /path/to/my/repo
-    * > git secrets --install
-    * > git secrets --register-aws
+    * > git secrets --register-aws --global
+    * > git secrets --install ~/.git-templates/git-secrets
+    * > git config --global init.templatedir '~/.git-templates/git-secrets'
 
 ###### git config
 
@@ -177,6 +177,10 @@ git config --local credential.helper osxkeychain
 #### direnv
 
 * `brew install direnv`
+
+#### tfenv
+
+* `brew install tfenv`
 
 ## エディタ
 
