@@ -50,10 +50,17 @@
 
 #### git
 
-  * dotfilesの設定ファイルを使う
-    * `cd ~ && mv .gitignore_global .gitignore_global.default && ln -s ~/src/github.com/ackintosh/dotfiles/.gitignore_global .gitignore_global`
-    * `git config --global core.excludesfile ~/.gitignore_global`
-  * [gitignore に書くべきでないものは gitignore_global へ - Qiita](https://qiita.com/elzup/items/4c92a2abdab56db3fb4e)
+* dotfilesの設定ファイルを使う
+  * `cd ~ && mv .gitignore_global .gitignore_global.default && ln -s ~/src/github.com/ackintosh/dotfiles/.gitignore_global .gitignore_global`
+  * `git config --global core.excludesfile ~/.gitignore_global`
+* [gitignore に書くべきでないものは gitignore_global へ - Qiita](https://qiita.com/elzup/items/4c92a2abdab56db3fb4e)
+* git-secrets
+  * [クラウド破産しないように git-secrets を使う - Qiita](https://qiita.com/pottava/items/4c602c97aacf10c058f1)
+  * brew install git-secrets 
+  * AWSのクレデンシャル情報をコミットしてしまうのを防ぐ
+    * > cd /path/to/my/repo
+    * > git secrets --install
+    * > git secrets --register-aws
 
 ###### git config
 
