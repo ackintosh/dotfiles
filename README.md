@@ -173,6 +173,7 @@ git config --local credential.helper osxkeychain
 #### rbenv
 
 * https://github.com/rbenv/rbenv
+* `brew install rbenv`
 
 #### direnv
 

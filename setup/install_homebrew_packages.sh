@@ -16,6 +16,8 @@ brew install peco
 brew install pt
 # ディレクトリごとに環境変数を変える
 brew install direnv
+# Ruby
+brew install rbenv
 # Vim
 brew install vim --with-lua
 # topコマンドの高機能版

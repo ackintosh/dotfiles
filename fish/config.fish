@@ -41,6 +41,22 @@ if which -s direnv
   eval (direnv hook fish)
 end
 
+### rbenv ###
+if which -s rbenv
+  # `rbenv init` で出力されたコマンド
+  # ----------------------------------------------------------
+  # $ rbenv init
+  # # Load rbenv automatically by appending
+  # # the following to ~/.config/fish/config.fish:
+  # 
+  # status --is-interactive; and source (rbenv init -|psub)
+  # ----------------------------------------------------------
+  status --is-interactive; and source (rbenv init -|psub)
+  # 動作しない場合は下記を参照する
+  # https://github.com/rbenv/rbenv#homebrew-on-macos
+  # > 4. Verify that rbenv is properly set up using this rbenv-doctor script:
+end
+
 ### aliases ###
 # baliasを使うことで、通常のコマンドと同じように補完される
 balias g 'git'
