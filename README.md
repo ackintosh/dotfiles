@@ -258,6 +258,9 @@ git config --local credential.helper osxkeychain
 - 英語辞書 : [Mouse Dictionary](https://chrome.google.com/webstore/detail/mouse-dictionary/dnclbikcihnpjohihfcmmldgkjnebgnj)
   - [Chrome拡張の高速な英語辞書ツールをつくりました(Mouse Dictionary) - Qiita](https://qiita.com/wtetsu/items/c43232c6c44918e977c9)
   - [英辞郎のデータ](https://booth.pm/ja/items/777563)
+  - 起動ショートカットキー
+    - chrome://extensions/shortcuts で設定ページを開く
+    - `Cmd + D`
 - [keymapper](https://chrome.google.com/webstore/detail/keymapper/gddmjjinakgblokjagbcehkccngffpdj)
   - `Shift+V` : `[${title}](${url})`
   - `Shift+Cmd+V` : `[${title} ${url}]`
