@@ -210,6 +210,9 @@ git config --local credential.helper osxkeychain
   * Line spacing: 1.2
 * Plugin
   * IdeaVim : [.ideavimrc](./blob/master/.ideavimrc)
+* Keymap
+  * Run: `Cmd + Ctrl + 4`
+  * Debug: `Cmd + Ctrl + 5`
 
 ## その他
 
