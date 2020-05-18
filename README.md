@@ -168,6 +168,11 @@ git config --local credential.helper osxkeychain
 * Redisクライアント
 * https://github.com/luin/medis
 
+#### DeepL
+
+* 翻訳ツール
+* https://www.deepl.com/app/
+
 ## ***env
 
 #### rbenv
