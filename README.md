@@ -61,6 +61,9 @@
     * > git secrets --register-aws --global
     * > git secrets --install ~/.git-templates/git-secrets
     * > git config --global init.templatedir '~/.git-templates/git-secrets'
+  * IntelliJでコミットしたときに `'secrets' is not a git command` というエラーが出てしまうのでgitのパスを指定する
+    * IntelliJ Preference → Version Control → Git
+    * `which git` で出るパスを入れる（ `/usr/local/bin/` のはず）
 
 ###### git config
 
