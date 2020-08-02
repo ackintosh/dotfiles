@@ -61,6 +61,9 @@
     * > git secrets --register-aws --global
     * > git secrets --install ~/.git-templates/git-secrets
     * > git config --global init.templatedir '~/.git-templates/git-secrets'
+  * IntelliJでコミットしたときに `'secrets' is not a git command` というエラーが出てしまうのでgitのパスを指定する
+    * IntelliJ Preference → Version Control → Git
+    * `which git` で出るパスを入れる（ `/usr/local/bin/` のはず）
 
 ###### git config
 
@@ -168,6 +171,11 @@ git config --local credential.helper osxkeychain
 * Redisクライアント
 * https://github.com/luin/medis
 
+#### DeepL
+
+* 翻訳ツール
+* https://www.deepl.com/app/
+
 ## ***env
 
 #### rbenv
@@ -210,6 +218,9 @@ git config --local credential.helper osxkeychain
   * Line spacing: 1.2
 * Plugin
   * IdeaVim : [.ideavimrc](./blob/master/.ideavimrc)
+* Keymap
+  * Run: `Cmd + Ctrl + 4`
+  * Debug: `Cmd + Ctrl + 5`
 
 ## その他
 
@@ -256,10 +267,16 @@ git config --local credential.helper osxkeychain
 
 #### Chrome 拡張
 
-- [Stylus](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
+- 英語辞書 : [Mouse Dictionary](https://chrome.google.com/webstore/detail/mouse-dictionary/dnclbikcihnpjohihfcmmldgkjnebgnj)
+  - [Chrome拡張の高速な英語辞書ツールをつくりました(Mouse Dictionary) - Qiita](https://qiita.com/wtetsu/items/c43232c6c44918e977c9)
+  - [英辞郎のデータ](https://booth.pm/ja/items/777563)
+  - 起動ショートカットキー
+    - chrome://extensions/shortcuts で設定ページを開く
+    - `Cmd + D`
 - [keymapper](https://chrome.google.com/webstore/detail/keymapper/gddmjjinakgblokjagbcehkccngffpdj)
   - `Shift+V` : `[${title}](${url})`
   - `Shift+Cmd+V` : `[${title} ${url}]`
+- [Stylus](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
 - [Talend API Tester](https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm)
 
 #### Unshaky
