@@ -250,6 +250,7 @@ git config --local credential.helper osxkeychain
 #### [Keyboardio](https://shop.keyboard.io/)
 
 * レイアウト定義ファイル: KeyboardioModel01-Firmware.ino
+  * [デフォルトのレイアウト](https://github.com/keyboardio/Kaleidoscope/wiki/Default-Model-01-QWERTY-Layout)
 * wiki
   * https://github.com/keyboardio/Kaleidoscope/wiki/Install-Arduino-support-on-a-Mac
 
