@@ -278,6 +278,8 @@ git config --local credential.helper osxkeychain
   - `Shift+Cmd+V` : `[${title} ${url}]`
 - [Stylus](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?hl=ja)
 - [Talend API Tester](https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm)
+- [AWS Extend Switch Roles](https://chrome.google.com/webstore/detail/aws-extend-switch-roles/jpmkfafbacpgapdghgdpembnojdlgkdl)
+  - [Switch Roleの履歴が・・・消えた・・・？ って焦る前に入れておくと幸せになれるAWS Extend Switch Rolesの紹介 | Developers.IO](https://dev.classmethod.jp/articles/introduction-aws-extend-switch-role/)
 
 #### Unshaky
 
