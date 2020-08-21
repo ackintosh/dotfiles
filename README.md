@@ -6,6 +6,9 @@
 - [setup/install_fish_plugins.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_fish_plugins.sh)
 - [setup/put_symbolic_links.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/put_symbolic_links.sh)
 
+TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
+
+
 ## シェル
 
 #### homebrew
