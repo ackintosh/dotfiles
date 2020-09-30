@@ -158,10 +158,14 @@ git config --local credential.helper osxkeychain
 * アプリケーションフォルダから削除しただけでは残ってしまうゴミを削除できる
 * https://itunes.apple.com/jp/app/app-cleaner-uninstaller/id1013897218?mt=12
 
-#### spectacle
+#### Spectacle
 
 * ウィンドウの移動, リサイズ
 * https://www.spectacleapp.com/
+* 設定
+  * Fullscreen: Cmd + Ctrl + F
+  * Left Half: Cmd + Ctrl + H
+  * Right Half: Cmd + Ctrl + L
 
 #### Charles
 
