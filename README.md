@@ -105,6 +105,14 @@ git config --local credential.helper osxkeychain
 # それ以降は入力不要になる
 ```
 
+```bash
+# gitのmerge --no-ff のススメ - Qiita https://qiita.com/nog/items/c79469afbf3e632f10a1
+git config --global --add merge.ff false
+# pullのときはfast forwardのみ受け入れる
+git config --global --add pull.ff only
+```
+
+
 #### コマンドを並列実行
 
 - xargs
