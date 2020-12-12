@@ -91,6 +91,12 @@ if which -s bat
   balias cat 'bat'
 end
 
+# ghコマンドのコマンド補完を設定する
+# https://cli.github.com/manual/gh_completion
+if which -s gh
+  eval (gh completion -s fish)
+end
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f ~/google-cloud-sdk/path.fish.inc ]; if type source > /dev/null; source ~/google-cloud-sdk/path.fish.inc; else; . ~/google-cloud-sdk/path.fish.inc; end; end
 

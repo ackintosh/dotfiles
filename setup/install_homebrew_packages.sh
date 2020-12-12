@@ -34,6 +34,8 @@ brew install exa
 brew install bat
 # クレデンシャル情報をリポジトリにコミットしてしまうのを防ぐ
 brew install git-secrets
+# GitHub CLI
+brew install gh
 
 # Gitクライアント
 # Jetbrains製品で諸々やるようになったのでコメントアウト
