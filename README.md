@@ -186,6 +186,10 @@ git config --global --add pull.ff only
 * Redisクライアント
 * https://github.com/luin/medis
 
+#### DBeaver
+
+* [DBeaver Community | Free Universal Database Tool](https://dbeaver.io/)
+
 #### DeepL
 
 * 翻訳ツール
