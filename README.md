@@ -249,6 +249,15 @@ git config --global --add pull.ff only
   - [gohugoio/hugo: The world’s fastest framework for building websites.](https://github.com/gohugoio/hugo)
   - https://github.com/gohugoio/hugo/releases/tag/v0.55.6 をダウンロードして ~/bin に配置する
 
+```bash
+mkdir blog && cd $_
+git clone https://github.com/ackintosh/ackintosh.github.com-content.git content
+mkdir themes
+git clone https://github.com/ackintosh/ackintosh.github.com-theme themes/casper
+ln -s themes/casper/config.toml config.toml
+git clone https://github.com/ackintosh/ackintosh.github.com.git public
+```
+
 
 #### キーボード関係の環境設定
 
