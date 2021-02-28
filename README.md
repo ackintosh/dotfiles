@@ -256,6 +256,8 @@ mkdir themes
 git clone https://github.com/ackintosh/ackintosh.github.com-theme themes/casper
 ln -s themes/casper/config.toml config.toml
 git clone https://github.com/ackintosh/ackintosh.github.com.git public
+hugo server -w
+hugo
 ```
 
 
