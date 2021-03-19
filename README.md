@@ -318,3 +318,16 @@ hugo
 #### 簡易メモ帳
 
 - ブラウザのアドレスバーに `data:text/html, <body contenteditable>`
+
+## スニペット
+
+
+```bash
+# ランダムな文字列を生成する
+# https://qiita.com/Vit-Symty/items/5be5326c9db9de755184
+cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 5000
+> tr -dc 'a-zA-Z0-9' 含める文字種
+> fold -w 16 生成する文字列の文字数
+> head -n 32 生成する件数
+
+```
