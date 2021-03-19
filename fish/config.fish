@@ -62,7 +62,7 @@ end
 balias g 'git'
 balias gb 'git branch'
 balias gco 'git checkout'
-balias gcm 'git checkout master'
+balias gcm 'git checkout master || git checkout main'
 balias gs 'git status'
 balias ga 'git add'
 balias gd 'git diff'
