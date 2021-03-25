@@ -296,6 +296,15 @@ hugo
 * wiki
   * https://github.com/keyboardio/Kaleidoscope/wiki/Install-Arduino-support-on-a-Mac
 
+#### Kinesis Advantage2
+
+* キーのリマップ
+  * https://www.edikun.co.jp/kinesis/
+  * progm + shift + EscでパワーユーザーモードをOnにする
+  * progm + f1でvドライブをPCに認識させる
+  * SmartSet App for Advantage2でリマップする
+  * アプリを終了したら、再度 progm + f1でvドライブを閉じる
+
 #### Chrome 拡張
 
 - 英語辞書 : [Mouse Dictionary](https://chrome.google.com/webstore/detail/mouse-dictionary/dnclbikcihnpjohihfcmmldgkjnebgnj)
