@@ -41,6 +41,14 @@ if which -s direnv
   eval (direnv hook fish)
 end
 
+### jenv ###
+if which -s jenv
+  # `jenv init` で出力されたコマンド
+  # Load jenv automatically by adding
+  # the following to ~/.config/fish/config.fish:
+  status --is-interactive; and source (jenv init -|psub)
+end
+
 ### rbenv ###
 if which -s rbenv
   # `rbenv init` で出力されたコマンド
