@@ -9,7 +9,15 @@
 TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
 
 
-## シェル
+## 目次
+
+- [CLI](#CLI)
+- [GUIアプリケーション](#GUIアプリケーション)
+- [env](#env)
+- [エディタ](#エディタ)
+- [その他](#その他)
+
+## CLI
 
 #### homebrew
 
@@ -121,7 +129,11 @@ git config --global --add pull.ff only
   - [コマンドを並列に実行するGNU parallelがとても便利 - りんごがでている](http://bicycle1885.hatenablog.com/entry/2014/08/10/143612)
   - `echo -e "alice\nbob" | parallel echo -e`
 
-## アプリ
+#### AWS assume role
+
+- https://github.com/remind101/assume-role
+
+## GUIアプリケーション
 
 #### iTerm2
 
