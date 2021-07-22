@@ -67,46 +67,50 @@ end
 
 ### aliases ###
 # baliasを使うことで、通常のコマンドと同じように補完される
-balias g 'git'
-balias gb 'git branch'
-balias gco 'git checkout'
-balias gcm 'git checkout master || git checkout main'
-balias gs 'git status'
-balias ga 'git add'
-balias gd 'git diff'
-balias gr 'git remote'
-balias gc 'git commit -v'
-balias gp 'git push'
-balias gm 'git merge'
-balias gl 'git pull'
-balias gf 'git fetch'
-balias gfa 'git fetch --all --prune'
-balias glg 'git log --stat'
-balias l 'ls -lah'
-balias ll 'ls -lh'
-balias 1 'cd -'
-balias 2 'cd -2'
-balias vi 'vim'
-balias python3 'python'
 
-# キレイなls
-if which -s exa
-  balias ls 'exa'
+# interactiveモードの時だけ balias でエイリアスを設定する
+# https://github.com/jorgebucaran/fisher/issues/528#issuecomment-467810844
+# 本当は config.fish でnon-builtinコマンドを使うのは避けたほうが良い
+if status is-interactive
+  balias g 'git'
+  balias gb 'git branch'
+  balias gco 'git checkout'
+  balias gcm 'git checkout master || git checkout main'
+  balias gs 'git status'
+  balias ga 'git add'
+  balias gd 'git diff'
+  balias gr 'git remote'
+  balias gc 'git commit -v'
+  balias gp 'git push'
+  balias gm 'git merge'
+  balias gl 'git pull'
+  balias gf 'git fetch'
+  balias gfa 'git fetch --all --prune'
+  balias glg 'git log --stat'
+  balias l 'ls -lah'
+  balias ll 'ls -lh'
+  balias 1 'cd -'
+  balias 2 'cd -2'
+  balias vi 'vim'
+  balias python3 'python'
+
+  # キレイなls
+  if which -s exa
+    balias ls 'exa'
+  end
+  
+  # イケてるcat
+  if which -s bat
+    balias cat 'bat'
+  end
 end
 
-# イケてるcat
-if which -s bat
-  balias cat 'bat'
-end
 
 # ghコマンドのコマンド補完を設定する
 # https://cli.github.com/manual/gh_completion
 if which -s gh
   eval (gh completion -s fish)
 end
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f ~/google-cloud-sdk/path.fish.inc ]; if type source > /dev/null; source ~/google-cloud-sdk/path.fish.inc; else; . ~/google-cloud-sdk/path.fish.inc; end; end
 
 ### 職場用の設定などを読み込む ###
 if test -e ~/.additional_config.fish
