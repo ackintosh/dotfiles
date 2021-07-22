@@ -3,7 +3,7 @@
 
 function fish_user_key_bindings
     # Ctrl + ] : ghq
-    bind \c] __ghq_crtl_g
+    bind \c] __ghq_repository_search
     # Ctrl + f : カーソルを前にすすめる (デフォルトはファイル検索)
     bind \cf forward-char 
     # Ctrl + t : ファイル検索
