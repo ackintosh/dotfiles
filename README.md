@@ -317,6 +317,11 @@ hugo
   * SmartSet App for Advantage2でリマップする
   * アプリを終了したら、再度 progm + f1でvドライブを閉じる
 
+#### Kensington
+
+- Expert Mouse Wireless TrackBall
+- 設定ファイル: KensingtonWorks.json
+
 #### Chrome 拡張
 
 - 英語辞書 : [Mouse Dictionary](https://chrome.google.com/webstore/detail/mouse-dictionary/dnclbikcihnpjohihfcmmldgkjnebgnj)
