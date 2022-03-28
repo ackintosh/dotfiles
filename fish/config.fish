@@ -1,3 +1,8 @@
+### homebrew ###
+if test -d /opt/homebrew/bin
+  set PATH /opt/homebrew/bin $PATH
+end
+
 ### fzf ###
 # 新キーバインディングを有効にする
 # キーバインディングは別途、 .config/fish/functions/fish_user_key_bindings.fish で設定している
@@ -18,7 +23,10 @@ end
 ### Rust ###
 # Cargo
 if test -e ~/.cargo
-  source ~/.cargo/env
+  # fishでは ~/.cargo/env の読み込みがエラーになるので、代わりに明示的にパスの設定をしている
+  # 参考: https://github.com/rust-lang/rustup/issues/478
+  # source ~/.cargo/env
+  set PATH ~/.cargo/bin $PATH
 end
 
 ### Go ###
