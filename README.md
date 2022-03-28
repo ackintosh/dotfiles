@@ -35,7 +35,7 @@ TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
   * `./install.sh`
   * `cd ..`
   * `rm -rf fonts`
-  * iTerm -> Preference -> Text -> "Font" と "Non-ASCII Font" を Source code pro for Powerline に変更する
+  * iTerm2 -> Profiles -> Text -> "Font" を Source code pro for Powerline に変更する
 
 #### [fish](https://github.com/fish-shell/fish-shell)
 
