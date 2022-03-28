@@ -184,12 +184,12 @@ git config --global --add pull.ff only
 * アプリケーションフォルダから削除しただけでは残ってしまうゴミを削除できる
 * https://itunes.apple.com/jp/app/app-cleaner-uninstaller/id1013897218?mt=12
 
-#### Spectacle
+#### Rectangle
 
 * ウィンドウの移動, リサイズ
-* https://www.spectacleapp.com/
+* https://rectangleapp.com/
 * 設定
-  * Fullscreen: Cmd + Ctrl + F
+  * Fullscreen: Cmd + Ctrl + J
   * Left Half: Cmd + Ctrl + H
   * Right Half: Cmd + Ctrl + L
 
