@@ -4,6 +4,7 @@
 
 - [setup/install_homebrew_packages.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_homebrew_packages.sh)
 - [setup/install_fish_plugins.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_fish_plugins.sh)
+  - 実行はfishコマンドで行う `fish setup/install_fish_plugins.sh`
 - [setup/put_symbolic_links.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/put_symbolic_links.sh)
 
 TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
