@@ -151,13 +151,18 @@ git config --global --add pull.ff only
 * https://ei-kana.appspot.com/
 * コマンドキー単体で英数/かなを切り替える
 
-#### Alfred
+#### ~~Alfred~~ (Alfred 4で再度有料化されたタイミングで使用をやめた)
 
-* https://www.alfredapp.com/
-* アプリ起動: cmd + space
+* ~~https://www.alfredapp.com/~~
+* ~~アプリ起動: cmd + space~~
+* ~~クリップボード: shift + cmd + space~~
+* ~~スニペットを↓にエクスポートしている~~
+  * ~~https://github.com/ackintosh/dotfiles/tree/master/alfred~~
+
+#### Clippy
+
+* https://clipy-app.com/
 * クリップボード: shift + cmd + space
-* スニペットを↓にエクスポートしている
-  * https://github.com/ackintosh/dotfiles/tree/master/alfred
 
 #### f.lux
 
