@@ -26,8 +26,8 @@ TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
 
 #### powerline
 
-* powerline-status
-  * `pip install --user powerline-status`
+* ~~powerline-status~~ (現在は入れなくても問題ない)
+  * ~~`pip install --user powerline-status`~~
 * [powerline-fonts](https://github.com/powerline/fonts)
   * [インストール](https://github.com/powerline/fonts#quick-installation)
   * `git clone https://github.com/powerline/fonts.git --depth=1`
