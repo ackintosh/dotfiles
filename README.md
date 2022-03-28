@@ -57,8 +57,8 @@ TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
 #### tmux
 
 * [.tmux.conf](./blob/master/.tmux.conf)
-* tmuxとOS Xのクリップボードの橋渡しをするツールを入れる
-  * [brew install reattach-to-user-namespace](./blob/master/setup/install_homebrew_packages.sh)
+* ~~tmuxとOS Xのクリップボードの橋渡しをするツールを入れる~~ (現在は入れなくても問題ない)
+  * ~~[brew install reattach-to-user-namespace](./blob/master/setup/install_homebrew_packages.sh)~~
 * [rothgar/awesome-tmux: A list of awesome resources for tmux](https://github.com/rothgar/awesome-tmux)
 
 #### git
