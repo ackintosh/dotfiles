@@ -334,6 +334,7 @@ hugo
   - [Chrome拡張の高速な英語辞書ツールをつくりました(Mouse Dictionary) - Qiita](https://qiita.com/wtetsu/items/c43232c6c44918e977c9)
   - [英辞郎のデータ](https://booth.pm/ja/items/777563)
   - 起動ショートカットキー
+    - [設定手順](https://qiita.com/wtetsu/items/c43232c6c44918e977c9#%E8%B5%B7%E5%8B%95%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88%E3%82%AD%E3%83%BC%E3%81%AE%E8%A8%AD%E5%AE%9A%E8%BF%BD%E8%A8%98)
     - chrome://extensions/shortcuts で設定ページを開く
     - `Cmd + D`
 - [keymapper](https://chrome.google.com/webstore/detail/keymapper/gddmjjinakgblokjagbcehkccngffpdj)
