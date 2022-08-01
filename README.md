@@ -204,6 +204,7 @@ git config --global --add pull.ff only
 
 * Redisクライアント
 * https://github.com/luin/medis
+* 現在は App Store でインストール可能
 
 #### DBeaver
 
