@@ -160,10 +160,16 @@ git config --global --add pull.ff only
 * ~~スニペットを↓にエクスポートしている~~
   * ~~https://github.com/ackintosh/dotfiles/tree/master/alfred~~
 
-#### Clippy
+#### AppCleaner
 
-* https://clipy-app.com/
-* クリップボード: shift + cmd + space
+* https://freemacsoft.net/appcleaner/
+* Macのアプリをゴミを残さずにアンインストールする
+
+#### Raycast
+
+* https://www.raycast.com/
+* option + space で起動
+* デフォルトでclipboard historyも入っている
 
 #### f.lux
 
