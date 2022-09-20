@@ -20,9 +20,10 @@ TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
 
 ## CLI
 
-#### homebrew
+#### Homebrew
 
-* http://brew.sh/index_ja.html
+* Homebrewのインストール http://brew.sh/index_ja.html
+* [setup/install_homebrew_packages.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_homebrew_packages.sh) を実行して各種ソフトウェアをインストールする
 
 #### powerline
 
@@ -41,7 +42,7 @@ TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
 
 * [チュートリアル](http://fish.rubikitch.com/tutorial/)
 * インストール
-  * [setup/install_homebrew_packages.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_homebrew_packages.sh)
+  * [setup/install_homebrew_packages.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_homebrew_packages.sh) に含まれている
   * shellsにfishを追記
     * `sudo vi /etc/shells `
     * fishのパスを追記 `which fish`
@@ -168,8 +169,11 @@ git config --global --add pull.ff only
 #### Raycast
 
 * https://www.raycast.com/
-* option + space で起動
-* デフォルトでclipboard historyも入っている
+* cmd + space で起動設定
+  * Spacesの無効化方法が設定ウィンドウに書いてあるので参照する
+* Clipboard history拡張機能
+  * デフォルトで入っている
+  * cmd + alt + space で起動設定
 
 #### f.lux
 
