@@ -3,6 +3,7 @@
 ## setup scripts
 
 - [setup/install_homebrew_packages.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_homebrew_packages.sh)
+- fisherをインストールする
 - [setup/install_fish_plugins.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_fish_plugins.sh)
   - 実行はfishコマンドで行う `fish setup/install_fish_plugins.sh`
 - [setup/put_symbolic_links.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/put_symbolic_links.sh)
