@@ -300,7 +300,9 @@ hugo
 * スマート引用符を OFF
   * キーボード -> ユーザー辞書 -> "スマート引用符とスマートダッシュを使用" のチェックを外す
 
-#### Ergodox EZ
+#### [Ergodox EZ](https://ergodox-ez.com/)
+
+<details>
 
 * Gateron Red
 * レイアウト(閲覧にはログインが必要)
@@ -318,7 +320,11 @@ hugo
   * Operation -> Reboot
   * 変更が反映されたことを確認する
 
+</details>
+
 #### [Keyboardio](https://shop.keyboard.io/)
+
+<details>
 
 * レイアウト定義ファイル: KeyboardioModel01-Firmware.ino
   * [デフォルトのレイアウト](https://github.com/keyboardio/Kaleidoscope/wiki/Default-Model-01-QWERTY-Layout)
@@ -333,6 +339,8 @@ hugo
   * progm + f1でvドライブをPCに認識させる
   * SmartSet App for Advantage2でリマップする
   * アプリを終了したら、再度 progm + f1でvドライブを閉じる
+
+</details>
 
 #### Kensington
 
@@ -357,6 +365,7 @@ hugo
 
 #### Unshaky
 
+* Macのチャタリングを緩和するためのアプリ
 * 設定ファイル: [unshaky.config](https://github.com/ackintosh/dotfiles/blob/master/unshaky.config)
 
 #### 簡易メモ帳
