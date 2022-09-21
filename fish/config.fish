@@ -51,10 +51,34 @@ end
 
 ### jenv ###
 if which -s jenv
-  # `jenv init` で出力されたコマンド
-  # Load jenv automatically by adding
-  # the following to ~/.config/fish/config.fish:
-  status --is-interactive; and source (jenv init -|psub)
+  set JENV_ROOT /opt/homebrew/bin/jenv
+  # 以下、`jenv init -` で出力されたコマンド
+  # NOTE: 下記ファイルを一部(下記の3行)コメントアウトした (`command` の出力がターミナルにでてしまうため)
+  # /opt/homebrew/Cellar/jenv/0.5.5_2/libexec/available-plugins/export/etc/jenv.d/init/export_jenv_hook.fish
+  #   # if not command -s jenv
+  #   #   return
+  #   # end
+
+  set -gx PATH '/Users/abi01357/.jenv/shims' $PATH
+  set -gx JENV_SHELL fish
+  set -gx JENV_LOADED 1
+  set -e JAVA_HOME
+  set -e JDK_HOME
+  source '/opt/homebrew/Cellar/jenv/0.5.5_2/libexec/libexec/../completions/jenv.fish'
+  jenv rehash 2>/dev/null
+  jenv refresh-plugins
+  source "/Users/abi01357/.jenv/plugins/export/etc/jenv.d/init/export_jenv_hook.fish"
+  function jenv
+    set command $argv[1]
+    set -e argv[1]
+  
+    switch "$command"
+    case enable-plugin rehash shell shell-options
+      jenv "sh-$command" $argv | source
+    case '*'
+      command jenv "$command" $argv
+    end
+  end
 end
 
 ### rbenv ###
