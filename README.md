@@ -174,7 +174,7 @@ git config --global --add pull.ff only
   * Spacesの無効化方法が設定ウィンドウに書いてあるので参照する
 * Clipboard history拡張機能
   * デフォルトで入っている
-  * cmd + alt + space で起動設定
+  * cmd + shift + space で起動設定
 
 #### f.lux
 
