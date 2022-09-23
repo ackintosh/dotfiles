@@ -250,8 +250,10 @@ git config --global --add pull.ff only
 
 #### Intellij IDEA
 
-* Solarized Colorscheme for IntelliJ IDEA
-  * https://github.com/jkaving/intellij-colors-solarized
+* IDEのテーマ
+  * [Solarized Themes](https://plugins.jetbrains.com/plugin/12784-solarized-themes/)
+* エディタのカラースキーム
+  * [Solarized Colorscheme for IntelliJ IDEA](https://github.com/jkaving/intellij-colors-solarized)
 * Java/Kotlin
   * ワイルドカードでのimportを無効化する
   * https://pleiades.io/help/idea/creating-and-optimizing-imports.html#disable-wildcard-imports
