@@ -9,10 +9,11 @@ end
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 ### Python ###
+# パスが `/opt/homebrew/bin/python3` に変わったのでコメントアウト
 # python3 installed via homebrew
-if test -d /usr/local/opt/python/libexec/bin
-  set PATH /usr/local/opt/python/libexec/bin $PATH
-end
+# if test -d /usr/local/opt/python/libexec/bin
+#   set PATH /usr/local/opt/python/libexec/bin $PATH
+# end
 
 ### Node.js ###
 # nodejs installed via nodebrew
@@ -124,7 +125,6 @@ if status is-interactive
   balias 1 'cd -'
   balias 2 'cd -2'
   balias vi 'vim'
-  balias python3 'python'
 
   # キレイなls
   if which -s exa
