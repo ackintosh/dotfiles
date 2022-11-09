@@ -19,6 +19,13 @@ TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
 - [エディタ](#エディタ)
 - [その他](#その他)
 
+## macOSシステム環境設定
+
+* キーボード
+  * キーのリピート：最も速い
+  * リピート入力認識までの時間：最も速い
+  * Touch Barに表示する項目：F1, F2などのキー
+
 ## CLI
 
 #### Homebrew
@@ -368,7 +375,7 @@ hugo
 
 #### Unshaky
 
-* Macのチャタリングを緩和するためのアプリ
+* Mac備え付けキーボードのチャタリングを緩和するために利用
 * 設定ファイル: [unshaky.config](https://github.com/ackintosh/dotfiles/blob/master/unshaky.config)
 
 #### 簡易メモ帳
