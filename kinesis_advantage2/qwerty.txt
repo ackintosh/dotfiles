@@ -1,0 +1,7 @@
+[caps]>[lctrl]
+[lctrl]>[lwin]
+[rctrl]>[rwin]
+[bspace]>[space]
+[delete]>[escape]
+[end]>[null]
+[pdown]>[bspace]

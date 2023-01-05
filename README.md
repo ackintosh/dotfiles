@@ -341,16 +341,22 @@ hugo
 * wiki
   * https://github.com/keyboardio/Kaleidoscope/wiki/Install-Arduino-support-on-a-Mac
 
+</details>
+
 #### Kinesis Advantage2
 
 * キーのリマップ
-  * https://www.edikun.co.jp/kinesis/
-  * progm + shift + EscでパワーユーザーモードをOnにする
-  * progm + f1でvドライブをPCに認識させる
-  * SmartSet App for Advantage2でリマップする
-  * アプリを終了したら、再度 progm + f1でvドライブを閉じる
 
-</details>
+<img width="1084" alt="image" src="https://user-images.githubusercontent.com/1885716/210710817-9563fac5-9c97-4274-94ee-2c116ea4fe37.png">
+
+* https://www.edikun.co.jp/kinesis/
+* progm + shift + Esc でパワーユーザーモードをOnにする (初回のみ必要)
+* progm + F1 でvドライブをPCに認識させる
+* [SmartSet App for Advantage2](https://kinesis-ergo.com/support/advantage2/) を起動してリマップを設定する
+* アプリを終了したら、再度 progm + F1でvドライブを閉じる
+* リマップ設定のバックアップが [qwerty.txt](blob/master/kinesis_advantage2/qwerty.txt) にある
+  * vドライブの `active/qwerty.txt` のバックアップ
+
 
 #### Kensington
 
