@@ -354,7 +354,7 @@ hugo
 * progm + F1 でvドライブをPCに認識させる
 * [SmartSet App for Advantage2](https://kinesis-ergo.com/support/advantage2/) を起動してリマップを設定する
 * アプリを終了したら、再度 progm + F1でvドライブを閉じる
-* リマップ設定のバックアップが [qwerty.txt](blob/master/kinesis_advantage2/qwerty.txt) にある
+* リマップ設定のバックアップが [qwerty.txt](./blob/master/kinesis_advantage2/qwerty.txt) にある
   * vドライブの `active/qwerty.txt` のバックアップ
 
 
