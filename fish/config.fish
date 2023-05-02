@@ -1,3 +1,8 @@
+# PATHを通す
+# https://zenn.dev/estra/articles/zenn-fish-add-path-final-answer#%E7%B5%90%E8%AB%96
+# * config.fish でパスを通す場合には fish_add_path 関数を使用
+# * PATH 以外の環境変数を定義するには set -gx を使用して定義
+
 ### homebrew ###
 if test -d /opt/homebrew/bin
   set PATH /opt/homebrew/bin $PATH

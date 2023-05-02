@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="geoffgarside"
+#ZSH_THEME="geoffgarside"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -34,42 +34,42 @@ ZSH_THEME="geoffgarside"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
 # zsh で Git の作業コピーに変更があるかどうかをプロンプトに表示する
 # http://mollifier.hatenablog.com/entry/20100906/p1
-autoload -Uz add-zsh-hook
-autoload -Uz colors
-colors
-autoload -Uz vcs_info
+#autoload -Uz add-zsh-hook
+#autoload -Uz colors
+#colors
+#autoload -Uz vcs_info
 
-zstyle ':vcs_info:*' enable git svn hg bzr
-zstyle ':vcs_info:*' formats '(%s)-[%b]'
-zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
-zstyle ':vcs_info:bzr:*' use-simple true
+#zstyle ':vcs_info:*' enable git svn hg bzr
+#zstyle ':vcs_info:*' formats '(%s)-[%b]'
+#zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+#zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
+#zstyle ':vcs_info:bzr:*' use-simple true
 
-autoload -Uz is-at-least
-if is-at-least 4.3.10; then
-  # この check-for-changes が今回の設定するところ
-  zstyle ':vcs_info:git:*' check-for-changes true
-  zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
-  zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
-  zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
-  zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
-fi
+#autoload -Uz is-at-least
+#if is-at-least 4.3.10; then
+#  # この check-for-changes が今回の設定するところ
+#  zstyle ':vcs_info:git:*' check-for-changes true
+#  zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
+#  zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
+#  zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
+#  zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
+#fi
 
 function _update_vcs_info_msg() {
   psvar=()
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-add-zsh-hook precmd _update_vcs_info_msg
-RPROMPT="%1(v|%F{green}%1v%f|)"
+#add-zsh-hook precmd _update_vcs_info_msg
+#RPROMPT="%1(v|%F{green}%1v%f|)"
 
-setopt nonomatch
+#setopt nonomatch
 
 ### git ###
 alias gs="git status"
@@ -84,7 +84,7 @@ alias gs="git status"
 #     - git config --global pager.diff 'nkf -w | diff-highlight | LESSCHARSET=utf-8 less'
 #   - いい感じの差分にする
 #     - git config --global diff.compactionHeuristic true
-export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+#export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 ### rbenv ###
 [[ -d ~/.rbenv  ]] && \
@@ -165,15 +165,15 @@ bindkey '^q' peco-find-file
 
 # 特定のコミットが含まれるPull Requestを探す
 # http://ukstudio.jp/2015/03/26/open_pull_request/
-function find-pr() {
-    local parent=$2||'master'
-    git log $1..$2 --merges --ancestry-path --reverse --oneline | head -n1
-}
+#function find-pr() {
+#    local parent=$2||'master'
+#    git log $1..$2 --merges --ancestry-path --reverse --oneline | head -n1
+#}
 
 # 特定のコミットが含まれるPull Requestを開く
 # http://ukstudio.jp/2015/03/26/open_pull_request/ をベースに調整
-function open-pr() {
-    local pr="$(find-pr $1 $2 | awk '{print substr($5, 2)}')"
-    local repo="$(pwd | rev | cut -d '/' -f 1-2 | rev)"
-    open "https://git.pepabo.com/${repo}/pull/${pr}"
-}
+#function open-pr() {
+#    local pr="$(find-pr $1 $2 | awk '{print substr($5, 2)}')"
+#    local repo="$(pwd | rev | cut -d '/' -f 1-2 | rev)"
+#    open "https://git.pepabo.com/${repo}/pull/${pr}"
+#}
