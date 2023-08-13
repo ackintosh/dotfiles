@@ -8,6 +8,16 @@ if test -d /opt/homebrew/bin
   set PATH /opt/homebrew/bin $PATH
 end
 
+### BSD版コマンド ###
+# grep, fgrep, egrep
+if test -d /opt/homebrew/opt/grep/libexec/gnubin
+  set PATH /opt/homebrew/opt/grep/libexec/gnubin $PATH
+end
+# sed
+if test -d /opt/homebrew/opt/gnu-sed/libexec/gnubin
+  set PATH /opt/homebrew/opt/gnu-sed/libexec/gnubin $PATH
+end
+
 ### fzf ###
 # 新キーバインディングを有効にする
 # キーバインディングは別途、 .config/fish/functions/fish_user_key_bindings.fish で設定している
