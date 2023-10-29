@@ -218,6 +218,11 @@ git config --global --add pull.ff only
 * https://www.charlesproxy.com/
 * ローカルに起動したアプリケーションと外部サービスとの通信のデバッグなどに便利
 
+#### RedisInsight
+
+* Redisクライアント
+* https://github.com/RedisInsight/RedisInsight
+
 #### Medis
 
 * Redisクライアント
