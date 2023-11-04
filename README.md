@@ -264,7 +264,7 @@ git config --global --add pull.ff only
 
 * [IDE間やチームで設定を共有する方法 - 株式会社サムライズム](https://support.samuraism.com/jetbrains/ide/shareidesettings)
 * IDEのテーマ
-  * ~~[Solarized Themes](https://plugins.jetbrains.com/plugin/12784-solarized-themes/)~~ 404
+  * [Solarized Themes](https://plugins.jetbrains.com/plugin/12112-solarized-theme)
 * エディタのカラースキーム
   * [Solarized Colorscheme for IntelliJ IDEA](https://github.com/jkaving/intellij-colors-solarized)
 * Java/Kotlin
