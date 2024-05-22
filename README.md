@@ -369,6 +369,12 @@ hugo
 - Expert Mouse Wireless TrackBall
 - 設定ファイル: KensingtonWorks.json
 
+|||
+| ---- | ---- |
+|ボタン| <img width="750" alt="image" src="https://github.com/ackintosh/dotfiles/assets/1885716/11b1f4a6-cf78-41ad-80b3-8ea9053f5c98"> |
+|ポインター| <img width="1127" alt="image" src="https://github.com/ackintosh/dotfiles/assets/1885716/8dbda563-7658-449e-8340-284ec16bb12c"> |
+|スクロール| <img width="1007" alt="image" src="https://github.com/ackintosh/dotfiles/assets/1885716/f5899194-0381-4c97-afba-0a9bb3a0b6ad"> |
+
 #### Chrome 拡張
 
 - 英語辞書 : [Mouse Dictionary](https://chrome.google.com/webstore/detail/mouse-dictionary/dnclbikcihnpjohihfcmmldgkjnebgnj)
