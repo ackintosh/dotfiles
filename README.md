@@ -287,6 +287,12 @@ git config --global --add pull.ff only
   * Run: `Cmd + Ctrl + 4`
   * Debug: `Cmd + Ctrl + 5`
 
+* エディタで開いているファイルを自動的にプロジェクトツリーでそのファイルを選択状態にする
+
+https://x.com/kumagi/status/1761457618449760512
+<img width="706" alt="image" src="https://github.com/ackintosh/dotfiles/assets/1885716/2c5edc86-51b9-40cf-9bfc-fd9bf7be9382">
+
+
 ## その他
 
 #### ブログ
