@@ -140,6 +140,7 @@ if status is-interactive
   balias 1 'cd -'
   balias 2 'cd -2'
   balias vi 'vim'
+  balias ... 'cd ../..'
 
   # キレイなls
   if which -s exa
