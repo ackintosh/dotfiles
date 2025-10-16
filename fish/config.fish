@@ -143,8 +143,8 @@ if status is-interactive
   balias ... 'cd ../..'
 
   # キレイなls
-  if which -s exa
-    balias ls 'exa'
+  if which -s eza
+    balias ls 'eza'
   end
   
   # イケてるcat
@@ -164,3 +164,4 @@ end
 if test -e ~/.additional_config.fish
   source ~/.additional_config.fish
 end
+
