@@ -1,11 +1,23 @@
+# ##################################################################################
 # PATHを通す
 # https://zenn.dev/estra/articles/zenn-fish-add-path-final-answer#%E7%B5%90%E8%AB%96
 # * config.fish でパスを通す場合には fish_add_path 関数を使用
 # * PATH 以外の環境変数を定義するには set -gx を使用して定義
+# ##################################################################################
 
 ### homebrew ###
 if test -d /opt/homebrew/bin
   set PATH /opt/homebrew/bin $PATH
+end
+
+### claudeなど ###
+if test -d ~/.local/bin
+  set PATH ~/.local/bin $PATH
+end
+
+### Flutter ###
+if test -d ~/flutter/bin
+  set PATH ~/flutter/bin $PATH
 end
 
 ### BSD版コマンド ###
@@ -165,3 +177,15 @@ if test -e ~/.additional_config.fish
   source ~/.additional_config.fish
 end
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/anaconda3/bin/conda
+    eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/opt/anaconda3/etc/fish/conf.d/conda.fish"
+        . "/opt/anaconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/opt/anaconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
