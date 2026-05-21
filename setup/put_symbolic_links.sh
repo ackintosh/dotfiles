@@ -20,7 +20,7 @@ cd ~; ln -s ~/src/github.com/ackintosh/dotfiles/.vimrc
 cd ~; ln -s ~/src/github.com/ackintosh/dotfiles/.vim
 
 # nvim
-ln -s ~/src/github.com/ackintosh/dotfiles ~/.config/nvim
+ln -s ~/src/github.com/ackintosh/dotfiles/nvim ~/.config/nvim
 
 # IDEA
 cd ~; ln -s ~/src/github.com/ackintosh/dotfiles/.ideavimrc

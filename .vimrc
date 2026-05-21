@@ -30,6 +30,15 @@ call dein#add('rodjek/vim-puppet')
 call dein#add('scrooloose/syntastic')
 " mustache ファイルのハイライトなど
 call dein#add('mustache/vim-mustache-handlebars')
+" Neovim 専用: 補完 (LSP は Neovim 0.11+ 組み込みを使用) + カラースキーム
+if has('nvim')
+  call dein#add('folke/tokyonight.nvim')
+  call dein#add('hrsh7th/nvim-cmp')
+  call dein#add('hrsh7th/cmp-nvim-lsp')
+  call dein#add('hrsh7th/cmp-buffer')
+  call dein#add('L3MON4D3/LuaSnip')
+  call dein#add('saadparwaiz1/cmp_luasnip')
+endif
 " 設定終了
 call dein#end()
 " 未インストールがあったらインストール
