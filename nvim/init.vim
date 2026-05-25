@@ -3,6 +3,12 @@ source ~/.vimrc
 colorscheme tokyonight
 
 lua << EOF
+-- nvim-autopairs
+local ok_autopairs, autopairs = pcall(require, 'nvim-autopairs')
+if ok_autopairs then
+  autopairs.setup()
+end
+
 -- nvim-cmp 補完設定
 local ok_cmp, cmp = pcall(require, 'cmp')
 local ok_luasnip, luasnip = pcall(require, 'luasnip')
@@ -23,7 +29,7 @@ if ok_cmp and ok_luasnip then
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-Space>'] = cmp.mapping.complete(),
-      ['<CR>']      = cmp.mapping.confirm({ select = true }),
+      ['<CR>']      = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
       ['<Tab>']     = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
@@ -50,6 +56,12 @@ if ok_cmp and ok_luasnip then
       { name = 'buffer' },
     }),
   })
+
+  -- nvim-cmp と nvim-autopairs の連携: 補完確定時にペアが重複しないようにする
+  local ok_cmp_autopairs, cmp_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
+  if ok_cmp_autopairs then
+    cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
+  end
 end
 
 -- PHP LSP (intelephense) - vim.lsp.config は Neovim 0.11+ 組み込み

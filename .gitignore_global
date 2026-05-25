@@ -9,3 +9,5 @@
 .idea
 *.iml
 composer.phar
+
+**/.claude/settings.local.json

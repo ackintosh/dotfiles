@@ -38,6 +38,7 @@ if has('nvim')
   call dein#add('hrsh7th/cmp-buffer')
   call dein#add('L3MON4D3/LuaSnip')
   call dein#add('saadparwaiz1/cmp_luasnip')
+  call dein#add('windwp/nvim-autopairs')
 endif
 " 設定終了
 call dein#end()
@@ -190,6 +191,8 @@ let g:phpqa_messdetector_cmd='php ~/.vim/commands/phpmd.phar'
 filetype plugin on
 " そのファイルタイプにあわせたインデントを利用する
 filetype indent on
+" 新しい行のインデントを現在行に合わせる
+set autoindent
 " インデント設定
 autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
 autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
