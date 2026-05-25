@@ -187,6 +187,17 @@ let g:phpqa_messdetector_cmd='php ~/.vim/commands/phpmd.phar'
 " ===============================================================================
 " *** インデント設定 ***
 " ===============================================================================
+" PHP メソッドチェーン（-> で始まる行）の上で o したとき、前の行のインデントをコピーする。
+" それ以外は PHP 組み込みのスマートインデントを使う。
+function! PhpIndentWithChain()
+  let prev = prevnonblank(v:lnum - 1)
+  let prev_line = getline(prev)
+  if prev_line =~# '^\s*->' && prev_line !~# ';\s*$'
+    return indent(prev)
+  endif
+  return GetPhpIndent()
+endfunction
+
 " ファイルタイプの検索を有効にする
 filetype plugin on
 " そのファイルタイプにあわせたインデントを利用する
@@ -202,7 +213,7 @@ autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
 autocmd FileType json       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType md         setlocal sw=2 sts=2 ts=2 et
-autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
+autocmd FileType php        setlocal sw=4 sts=4 ts=4 et indentexpr=PhpIndentWithChain()
 autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType sql        setlocal sw=4 sts=4 ts=4 et
