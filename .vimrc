@@ -24,8 +24,6 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('nathanaelkane/vim-indent-guides')
 " 補完
 call dein#add('Shougo/neocomplete.vim')
-" Puppet定義ファイル(ppファイル)のハイライト
-call dein#add('rodjek/vim-puppet')
 " 構文チェック
 call dein#add('scrooloose/syntastic')
 " mustache ファイルのハイライトなど

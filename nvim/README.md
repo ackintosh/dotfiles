@@ -20,7 +20,6 @@
 | [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim) | ステータスライン |
 | [nathanaelkane/vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) | インデントの可視化 |
 | [Shougo/neocomplete.vim](https://github.com/Shougo/neocomplete.vim) | 補完（Vim のみ有効、Neovim は非対応） |
-| [rodjek/vim-puppet](https://github.com/rodjek/vim-puppet) | Puppet `.pp` ファイルのハイライト |
 | [scrooloose/syntastic](https://github.com/scrooloose/syntastic) | 構文チェック |
 | [mustache/vim-mustache-handlebars](https://github.com/mustache/vim-mustache-handlebars) | Mustache/Handlebars のハイライト |
 
