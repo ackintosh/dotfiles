@@ -39,6 +39,10 @@ if has('nvim')
   call dein#add('L3MON4D3/LuaSnip')
   call dein#add('saadparwaiz1/cmp_luasnip')
   call dein#add('windwp/nvim-autopairs')
+  " noice.nvim: UI の置き換え（コマンドライン・メッセージ・通知）
+  call dein#add('MunifTanjim/nui.nvim')
+  call dein#add('rcarriga/nvim-notify')
+  call dein#add('folke/noice.nvim')
 endif
 " 設定終了
 call dein#end()

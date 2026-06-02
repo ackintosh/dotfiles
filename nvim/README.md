@@ -33,6 +33,9 @@
 | [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) | バッファ内単語ソース（nvim-cmp 用） |
 | [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) | スニペットエンジン（nvim-cmp に必要） |
 | [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) | LuaSnip ソース（nvim-cmp 用） |
+| [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) | noice.nvim 依存（UI コンポーネント） |
+| [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) | 通知 UI |
+| [folke/noice.nvim](https://github.com/folke/noice.nvim) | コマンドライン・メッセージ・通知 UI の置き換え |
 
 ## Language Server
 
