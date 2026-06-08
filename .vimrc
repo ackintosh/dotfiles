@@ -22,8 +22,10 @@ call dein#add('Shougo/dein.vim')
 call dein#add('itchyny/lightline.vim')
 " インデントに色を付ける
 call dein#add('nathanaelkane/vim-indent-guides')
-" 補完
-call dein#add('Shougo/neocomplete.vim')
+" 補完（Vim のみ、Neovim は非対応）
+if !has('nvim')
+  call dein#add('Shougo/neocomplete.vim')
+endif
 " 構文チェック
 call dein#add('scrooloose/syntastic')
 " mustache ファイルのハイライトなど
@@ -58,7 +60,9 @@ endif
 "  neocomplete.vim
 "  https://github.com/Shougo/neocomplete.vim
 " -------------------------------------------------------------------------------
-source ~/.vim/.vimrc.neocomplete
+if !has('nvim')
+  source ~/.vim/.vimrc.neocomplete
+endif
 
 " -------------------------------------------------------------------------------
 "  lightline.vim
