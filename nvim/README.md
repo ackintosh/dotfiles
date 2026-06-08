@@ -35,7 +35,7 @@
 | [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) | noice.nvim 依存（UI コンポーネント） |
 | [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) | 通知 UI |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) | コマンドライン・メッセージ・通知 UI の置き換え |
-| [wallabra/md-render.nvim](https://github.com/delphinus/md-render.nvim) | Markdown レンダリング |
+| [delphinus/md-render.nvim](https://github.com/delphinus/md-render.nvim) | Markdown レンダリング |
 
 ## Language Server
 
