@@ -43,8 +43,6 @@ if has('nvim')
   call dein#add('MunifTanjim/nui.nvim')
   call dein#add('rcarriga/nvim-notify')
   call dein#add('folke/noice.nvim')
-  " md-render.nvim: Markdown レンダリング
-  call dein#add('delphinus/md-render.nvim')
 endif
 " 設定終了
 call dein#end()
