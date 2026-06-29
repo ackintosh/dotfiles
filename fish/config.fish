@@ -159,10 +159,11 @@ if status is-interactive
     balias ls 'eza'
   end
   
-  # イケてるcat
-  if which -s bat
-    balias cat 'bat'
-  end
+  # AIエージェントが cat コマンドをつかうときに
+  # batのページング機能が邪魔になってしまうのでコメントアウト
+  #if which -s bat
+  #  balias cat 'bat'
+  #end
 end
 
 
