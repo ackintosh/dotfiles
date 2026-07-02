@@ -35,6 +35,10 @@ end
 # キーバインディングは別途、 .config/fish/functions/fish_user_key_bindings.fish で設定している
 set -U FZF_LEGACY_KEYBINDINGS 0
 
+### bobthefish ###
+# 右プロンプトの日時表示を無効化
+set -g theme_display_date no
+
 ### Python ###
 # パスが `/opt/homebrew/bin/python3` に変わったのでコメントアウト
 # python3 installed via homebrew
@@ -177,16 +181,3 @@ end
 if test -e ~/.additional_config.fish
   source ~/.additional_config.fish
 end
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /opt/anaconda3/bin/conda
-    eval /opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/opt/anaconda3/etc/fish/conf.d/conda.fish"
-        . "/opt/anaconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/opt/anaconda3/bin" $PATH
-    end
-end
-# <<< conda initialize <<<
