@@ -7,7 +7,7 @@ brew install reattach-to-user-namespace
 # Git
 brew install git
 # Go
-brew install go
+#brew install go
 # gitでcloneするリポジトリを管理する
 brew install ghq
 # 入力行をインタラクティブに絞り込む
@@ -17,7 +17,7 @@ brew install pt
 # ディレクトリごとに環境変数を変える
 brew install direnv
 # Ruby
-brew install rbenv
+#brew install rbenv
 # Vim
 brew install vim --with-lua
 # topコマンドの高機能版
@@ -31,11 +31,14 @@ brew install diff-so-fancy
 # キレイなls
 brew install exa
 # イケてるcat
-brew install bat
+# ページング機能がAIにとって邪魔になってしまうのでコメントアウト
+#brew install bat
 # クレデンシャル情報をリポジトリにコミットしてしまうのを防ぐ
 brew install git-secrets
 # GitHub CLI
 brew install gh
+# 高速/高機能なgrep
+brew install ripgrep
 
 # Gitクライアント
 # Jetbrains製品で諸々やるようになったのでコメントアウト
