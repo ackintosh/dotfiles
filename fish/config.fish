@@ -38,6 +38,9 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 ### bobthefish ###
 # 右プロンプトの日時表示を無効化
 set -g theme_display_date no
+# コマンド入力部分をプロンプトの次の行に表示する
+set -g theme_newline_cursor yes
+set -g theme_newline_prompt '❯ '
 
 ### Python ###
 # パスが `/opt/homebrew/bin/python3` に変わったのでコメントアウト
