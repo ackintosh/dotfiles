@@ -128,7 +128,25 @@ function __ghq_repository_search() {
 }
 zle -N __ghq_repository_search
 
+# Ctrl + r: history search (fish-like fuzzy picker with fallback)
+function __history_search() {
+  local selected_cmd
+
+  if command -v fzf >/dev/null 2>&1; then
+    selected_cmd="$(fc -rl 1 | sed -E 's/^[[:space:]]*[0-9]+[[:space:]]*//' | awk '!seen[$0]++' | fzf --height=40% --reverse --prompt='history> ' --query "$LBUFFER")"
+    if [[ -n "${selected_cmd}" ]]; then
+      BUFFER="${selected_cmd}"
+      CURSOR=${#BUFFER}
+    fi
+    zle redisplay
+  else
+    zle history-incremental-search-backward
+  fi
+}
+zle -N __history_search
+
 bindkey '^F' forward-char
+bindkey '^R' __history_search
 bindkey '^]' __ghq_repository_search
 if [[ -n "$(zle -la | grep '^__fzf_find_file$')" ]]; then
   bindkey '^T' __fzf_find_file
