@@ -1,0 +1,7 @@
+# マシン固有の設定はここに書く
+# $HOME/.additional_config.zsh に配置する
+#
+# export PATH="/usr/local/bin:/usr/sbin:${PATH}"
+# export HTTP_PROXY="http://example.com"
+# export HTTPS_PROXY="http://example.com"
+# export NO_PROXY="127.0.0.1,localhost,example.com"

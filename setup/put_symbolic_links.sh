@@ -12,6 +12,8 @@ cd ~/.config/fish/functions; ln -s ~/src/github.com/ackintosh/dotfiles/fish/fish
 
 # gitignore_global
 cd ~; ln -s ~/src/github.com/ackintosh/dotfiles/.gitignore_global
+# zsh
+cd ~; ln -s ~/src/github.com/ackintosh/dotfiles/.zshrc
 # tmux
 cd ~; ln -s ~/src/github.com/ackintosh/dotfiles/.tmux.conf
 
