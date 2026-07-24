@@ -96,6 +96,9 @@ fi
 autoload -Uz compinit
 compinit
 
+# 補完は大小文字を区別しない (例: "dow" -> "Downloads")
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 ### gh completion ###
 if command -v gh >/dev/null 2>&1; then
   eval "$(gh completion -s zsh)"
@@ -153,8 +156,13 @@ if [[ -n "$(zle -la | grep '^__fzf_find_file$')" ]]; then
 fi
 
 ### bobthefish の挙動を簡易再現 ###
-PROMPT='%~
-❯ '
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' (%b)'
+
+setopt PROMPT_SUBST
+PROMPT='%F{cyan}%~%f%F{green}${vcs_info_msg_0_}%f
+%(?.%F{magenta}.%F{red})❯%f '
 
 ### 職場用の設定などを読み込む ###
 if [[ -f "${HOME}/.additional_config.zsh" ]]; then
