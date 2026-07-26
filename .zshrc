@@ -86,6 +86,7 @@ if [[ -o interactive ]]; then
   alias 1='cd -'
   alias 2='cd -2'
   alias vi='vim'
+  alias ..='cd ..'
   alias ...='cd ../..'
 
   if command -v eza >/dev/null 2>&1; then
