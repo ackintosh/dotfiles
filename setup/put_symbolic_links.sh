@@ -29,3 +29,10 @@ cd ~; ln -s ~/src/github.com/ackintosh/dotfiles/.ideavimrc
 
 # Ruby
 cd ~; ln -s ~/src/github.com/ackintosh/dotfiles/.gemrc
+
+# VSCode
+VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
+if [ -f "$VSCODE_USER_DIR/settings.json" ] && [ ! -L "$VSCODE_USER_DIR/settings.json" ]; then
+	mv "$VSCODE_USER_DIR/settings.json" "$VSCODE_USER_DIR/settings.json_bk_$(date "+%Y-%m-%d-%H-%M-%S")"
+fi
+ln -s ~/src/github.com/ackintosh/dotfiles/vscode/settings.json "$VSCODE_USER_DIR/settings.json"

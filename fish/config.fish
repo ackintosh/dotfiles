@@ -1,3 +1,9 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+if test -d /Users/akihito
+    export PATH="$PATH:/Users/akihito/.docker/bin"
+end
+# End of Docker Desktop section.
+
 # ##################################################################################
 # PATHを通す
 # https://zenn.dev/estra/articles/zenn-fish-add-path-final-answer#%E7%B5%90%E8%AB%96

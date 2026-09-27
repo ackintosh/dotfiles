@@ -1,0 +1,8 @@
+{
+    "hediet.vscode-drawio.theme": "dark",
+    "git.openRepositoryInParentFolders": "never",
+    "vim.useSystemClipboard": true,
+    "dart.flutterSdkPath": "/Users/akihito/flutter",
+    "claudeCode.preferredLocation": "panel",
+    "chat.viewSessions.orientation": "stacked"
+}
