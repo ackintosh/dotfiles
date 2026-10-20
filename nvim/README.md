@@ -144,3 +144,18 @@ nvim
 - `:Lazy` でプラグインの状態確認、`:Lazy update` で更新（`lazy-lock.json` が書き換わるのでコミットする）
 - `:NvCheatsheet` / `<leader>ch` でキーマップ一覧
 - NvChad 本体の更新は `:Lazy update` に含まれる（`NvChad/NvChad` の `v2.5` ブランチ）
+
+## トラブルシューティング
+
+### シンタックスハイライトが効かない
+
+nvim-treesitter (main) はハイライト定義（クエリ）を `~/.local/share/nvim/site/queries/<言語>` にシンボリックリンクとして置く。
+リンク先はプラグイン本体なので、プラグインの置き場所が変わる（プラグインマネージャの移行など）とリンクが切れ、パーサはあるのにハイライトだけ消える。
+NvChad の `syntax` は無効化されているため、従来の正規表現ハイライトにもフォールバックしない。
+
+```vim
+" 確認: false ならクエリが見つかっていない
+:lua print(vim.treesitter.query.get("php", "highlights") ~= nil)
+" 修復: パーサとクエリを強制的に入れ直す
+:lua require("nvim-treesitter").install(require("nvim-treesitter").get_installed("parsers"), { force = true })
+```
