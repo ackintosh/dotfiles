@@ -39,6 +39,8 @@ brew install git-secrets
 brew install gh
 # 高速/高機能なgrep
 brew install ripgrep
+# nvim-treesitter のパーサをビルドするための CLI
+brew install tree-sitter-cli
 
 # Gitクライアント
 # Jetbrains製品で諸々やるようになったのでコメントアウト

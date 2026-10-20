@@ -16,20 +16,34 @@ if &runtimepath !~# '/dein.vim'
 endif
 " 設定開始
 call dein#begin(s:dein_dir)
+" dein が package.loaders の先頭に入れる on_lua 用フックは、libuv コールバック等の
+" fast event 中に require されると vim.fn を呼んで E5560 で落ちる（gitsigns などが該当）。
+" on_lua による遅延ロードは使っていないので、fast event 中はフックを素通りさせる。
+if has('nvim')
+  lua package.loaders[1] = (function(orig) return function(m) if vim.in_fast_event() then return nil end return orig(m) end end)(package.loaders[1])
+endif
 " プラグイン管理
 call dein#add('Shougo/dein.vim')
 " ステータスラインの表示をわかりやすく
 call dein#add('itchyny/lightline.vim')
-" インデントに色を付ける
-call dein#add('nathanaelkane/vim-indent-guides')
-" 補完（Vim のみ、Neovim は非対応）
-if !has('nvim')
-  call dein#add('Shougo/neocomplete.vim')
-endif
-" 構文チェック
-call dein#add('scrooloose/syntastic')
 " mustache ファイルのハイライトなど
 call dein#add('mustache/vim-mustache-handlebars')
+" fzf: ファイル・grep・バッファの曖昧検索（fzf / ripgrep は brew で導入済み）
+call dein#add('junegunn/fzf')
+call dein#add('junegunn/fzf.vim')
+" 囲み文字（括弧・クォート・タグ）の追加/変更/削除
+call dein#add('tpope/vim-surround')
+" surround などの操作を . で繰り返せるようにする
+call dein#add('tpope/vim-repeat')
+" Vim 専用
+if !has('nvim')
+  " インデントに色を付ける（Neovim は indent-blankline.nvim を使用）
+  call dein#add('nathanaelkane/vim-indent-guides')
+  " 補完
+  call dein#add('Shougo/neocomplete.vim')
+  " 非同期の構文チェック（syntastic の後継）
+  call dein#add('dense-analysis/ale')
+endif
 " Neovim 専用: 補完 (LSP は Neovim 0.11+ 組み込みを使用) + カラースキーム
 if has('nvim')
   call dein#add('folke/tokyonight.nvim')
@@ -38,11 +52,21 @@ if has('nvim')
   call dein#add('hrsh7th/cmp-buffer')
   call dein#add('L3MON4D3/LuaSnip')
   call dein#add('saadparwaiz1/cmp_luasnip')
+  " LuaSnip 用のスニペット集
+  call dein#add('rafamadriz/friendly-snippets')
   call dein#add('windwp/nvim-autopairs')
   " noice.nvim: UI の置き換え（コマンドライン・メッセージ・通知）
   call dein#add('MunifTanjim/nui.nvim')
   call dein#add('rcarriga/nvim-notify')
   call dein#add('folke/noice.nvim')
+  " treesitter による構文ハイライト（main ブランチ。tree-sitter CLI が必要）
+  call dein#add('nvim-treesitter/nvim-treesitter', {'rev': 'main'})
+  " Git の差分をサインカラムに表示
+  call dein#add('lewis6991/gitsigns.nvim')
+  " ディレクトリをバッファとして編集するファイラ
+  call dein#add('stevearc/oil.nvim')
+  " インデントの可視化
+  call dein#add('lukas-reineke/indent-blankline.nvim')
 endif
 " 設定終了
 call dein#end()
@@ -70,125 +94,58 @@ endif
 if !has('gui_running')
   set t_Co=256
 endif
-" http://qiita.com/yuyuchu3333/items/20a0acfe7e0d0e167ccc
-let g:lightline = {
-  \ 'component_function': {
-  \   'filename': 'MyFilename'
-  \ }
-  \}
-
-function! MyFilename()
-  return (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') :
-        \ '' != expand('%') ? expand('%') : '[No Name]')
-endfunction
+" vimfiler / unite / vimshell 向けの filename カスタマイズは、それらを使わなくなったので削除した
+let g:lightline = {}
 
 " -------------------------------------------------------------------------------
 " vim-indent-guides
 " https://github.com/nathanaelkane/vim-indent-guides
 " http://www.absolute-keitarou.net/blog/?p=1127
 " -------------------------------------------------------------------------------
-let g:indent_guides_auto_colors=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=234
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=242
-let g:indent_guides_enable_on_vim_startup = 1
-" 幅の設定
-" let g:indent_guides_guide_size = 1
-
-
-" -------------------------------------------------------------------------------
-" gtags.vim
-" https://github.com/vim-scripts/gtags.vim
-" -------------------------------------------------------------------------------
-" カーソル以下の定義元を探す
-nnoremap <C-j> :Gtags <C-r><C-w><CR><CR>
-" カーソル以下の使用箇所を探す
-nnoremap <C-k> :Gtags -r <C-r><C-w><CR><CR>
+if !has('nvim')
+  let g:indent_guides_auto_colors=0
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=234
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=242
+  let g:indent_guides_enable_on_vim_startup = 1
+  " 幅の設定
+  " let g:indent_guides_guide_size = 1
+endif
 
 " -------------------------------------------------------------------------------
-" vimfiler.vim
-" https://github.com/Shougo/vimfiler.vim
+" fzf.vim
+" https://github.com/junegunn/fzf.vim
 " -------------------------------------------------------------------------------
-" vimデフォルトのエクスプローラをvimfilerで置き換える
-let g:vimfiler_as_default_explorer = 1
-nnoremap <silent> ,w :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
-nnoremap <silent> ,e :VimFiler -buffer-name=explorer -split -horizontal -toggle -no-quit<Cr>
+" ファイル名で検索
+nnoremap <silent> <C-p> :Files<CR>
+" ripgrep でプロジェクト内を全文検索
+nnoremap <silent> <leader>g :Rg<CR>
+" 開いているバッファを検索
+nnoremap <silent> <leader>b :Buffers<CR>
+" 最近開いたファイルを検索
+nnoremap <silent> <leader>h :History<CR>
 
 " -------------------------------------------------------------------------------
-" fatih/vim-go
-" https://github.com/fatih/vim-go
+" ALE（Vim 専用。Neovim は組み込み LSP の診断を使用）
+" https://github.com/dense-analysis/ale
 " -------------------------------------------------------------------------------
-" goimports
-" * インストール
-"   go get code.google.com/p/go.tools/cmd/goimports
-let g:go_fmt_command = 'goimports'
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+if !has('nvim')
+  " サインカラムを常に表示してガタつきを防ぐ
+  let g:ale_sign_column_always = 1
+  " 保存時と開いたときにチェック（入力中は走らせない）
+  let g:ale_lint_on_text_changed = 'never'
+  let g:ale_lint_on_insert_leave = 0
+  let g:ale_lint_on_save = 1
+  let g:ale_lint_on_enter = 1
+endif
 
 " -------------------------------------------------------------------------------
-" gotags
-" * インストール
-"   go get -u github.com/jstemmer/gotags
-" http://www.metal3d.org/ticket/2013/07/07/vim-for-golang
+" コメントのトグル（gc）
+" Neovim は組み込み。Vim 9.1 は同梱の comment パッケージを有効化する。
 " -------------------------------------------------------------------------------
-let g:tagbar_type_go = {
-      \ 'ctagstype' : 'go',
-      \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-      \ 'e:embedded',
-      \ 'm:methods',
-      \ 'r:constructor',
-      \ 'f:functions'
-      \ ],
-      \ 'sro' : '.',
-      \ 'kind2scope' : {
-      \ 't' : 'ctype',
-      \ 'n' : 'ntype'
-      \ },
-      \ 'scope2kind' : {
-      \ 'ctype' : 't',
-      \ 'ntype' : 'n'
-      \ },
-      \ 'ctagsbin' : 'gotags',
-      \ 'ctagsargs' : '-sort -silent'
-      \ }
+if !has('nvim')
+  silent! packadd comment
+endif
 
-" -------------------------------------------------------------------------------
-" syntastic
-" https://github.com/scrooloose/syntastic
-" -------------------------------------------------------------------------------
-" PHP
-let g:syntastic_check_on_open = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_echo_current_error = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_enable_highlighting = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" -------------------------------------------------------------------------------
-" vim-phpqa
-" https://github.com/joonty/vim-phpqa
-" -------------------------------------------------------------------------------
-" 保存時に messdetector を実行しない(default = 1)
-let g:phpqa_messdetector_autorun = 0
-" 保存時に codesniffer を実行しない(default = 1)
-let g:phpqa_codesniffer_autorun = 0
-" 保存時に coverage を実行しない(default = 0)
-let g:phpqa_codecoverage_autorun = 1
-" PHP Mess Detector binary (default = "phpmd")
-let g:phpqa_messdetector_cmd='php ~/.vim/commands/phpmd.phar'
 
 " ===============================================================================
 " *** インデント設定 ***
@@ -218,7 +175,7 @@ autocmd FileType eruby      setlocal sw=2 sts=2 ts=2 et
 autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
 autocmd FileType json       setlocal sw=2 sts=2 ts=2 et
-autocmd FileType md         setlocal sw=2 sts=2 ts=2 et
+autocmd FileType markdown   setlocal sw=2 sts=2 ts=2 et
 autocmd FileType php        setlocal sw=4 sts=4 ts=4 et indentexpr=PhpIndentWithChain()
 autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
