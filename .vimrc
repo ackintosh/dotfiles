@@ -1,4 +1,6 @@
 " ===============================================================================
+" この .vimrc は Vim 専用。Neovim の設定は nvim/ (NvChad ベース) にある。
+"
 " プラグイン管理
 " dein.vim
 " https://github.com/Shougo/dein.vim
@@ -16,12 +18,6 @@ if &runtimepath !~# '/dein.vim'
 endif
 " 設定開始
 call dein#begin(s:dein_dir)
-" dein が package.loaders の先頭に入れる on_lua 用フックは、libuv コールバック等の
-" fast event 中に require されると vim.fn を呼んで E5560 で落ちる（gitsigns などが該当）。
-" on_lua による遅延ロードは使っていないので、fast event 中はフックを素通りさせる。
-if has('nvim')
-  lua package.loaders[1] = (function(orig) return function(m) if vim.in_fast_event() then return nil end return orig(m) end end)(package.loaders[1])
-endif
 " プラグイン管理
 call dein#add('Shougo/dein.vim')
 " ステータスラインの表示をわかりやすく
@@ -35,39 +31,12 @@ call dein#add('junegunn/fzf.vim')
 call dein#add('tpope/vim-surround')
 " surround などの操作を . で繰り返せるようにする
 call dein#add('tpope/vim-repeat')
-" Vim 専用
-if !has('nvim')
-  " インデントに色を付ける（Neovim は indent-blankline.nvim を使用）
-  call dein#add('nathanaelkane/vim-indent-guides')
-  " 補完
-  call dein#add('Shougo/neocomplete.vim')
-  " 非同期の構文チェック（syntastic の後継）
-  call dein#add('dense-analysis/ale')
-endif
-" Neovim 専用: 補完 (LSP は Neovim 0.11+ 組み込みを使用) + カラースキーム
-if has('nvim')
-  call dein#add('folke/tokyonight.nvim')
-  call dein#add('hrsh7th/nvim-cmp')
-  call dein#add('hrsh7th/cmp-nvim-lsp')
-  call dein#add('hrsh7th/cmp-buffer')
-  call dein#add('L3MON4D3/LuaSnip')
-  call dein#add('saadparwaiz1/cmp_luasnip')
-  " LuaSnip 用のスニペット集
-  call dein#add('rafamadriz/friendly-snippets')
-  call dein#add('windwp/nvim-autopairs')
-  " noice.nvim: UI の置き換え（コマンドライン・メッセージ・通知）
-  call dein#add('MunifTanjim/nui.nvim')
-  call dein#add('rcarriga/nvim-notify')
-  call dein#add('folke/noice.nvim')
-  " treesitter による構文ハイライト（main ブランチ。tree-sitter CLI が必要）
-  call dein#add('nvim-treesitter/nvim-treesitter', {'rev': 'main'})
-  " Git の差分をサインカラムに表示
-  call dein#add('lewis6991/gitsigns.nvim')
-  " ディレクトリをバッファとして編集するファイラ
-  call dein#add('stevearc/oil.nvim')
-  " インデントの可視化
-  call dein#add('lukas-reineke/indent-blankline.nvim')
-endif
+" インデントに色を付ける
+call dein#add('nathanaelkane/vim-indent-guides')
+" 補完
+call dein#add('Shougo/neocomplete.vim')
+" 非同期の構文チェック（syntastic の後継）
+call dein#add('dense-analysis/ale')
 " 設定終了
 call dein#end()
 " 未インストールがあったらインストール
@@ -82,9 +51,7 @@ endif
 "  neocomplete.vim
 "  https://github.com/Shougo/neocomplete.vim
 " -------------------------------------------------------------------------------
-if !has('nvim')
-  source ~/.vim/.vimrc.neocomplete
-endif
+source ~/.vim/.vimrc.neocomplete
 
 " -------------------------------------------------------------------------------
 "  lightline.vim
@@ -102,14 +69,12 @@ let g:lightline = {}
 " https://github.com/nathanaelkane/vim-indent-guides
 " http://www.absolute-keitarou.net/blog/?p=1127
 " -------------------------------------------------------------------------------
-if !has('nvim')
-  let g:indent_guides_auto_colors=0
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=234
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=242
-  let g:indent_guides_enable_on_vim_startup = 1
-  " 幅の設定
-  " let g:indent_guides_guide_size = 1
-endif
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=242
+let g:indent_guides_enable_on_vim_startup = 1
+" 幅の設定
+" let g:indent_guides_guide_size = 1
 
 " -------------------------------------------------------------------------------
 " fzf.vim
@@ -125,26 +90,22 @@ nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>h :History<CR>
 
 " -------------------------------------------------------------------------------
-" ALE（Vim 専用。Neovim は組み込み LSP の診断を使用）
+" ALE
 " https://github.com/dense-analysis/ale
 " -------------------------------------------------------------------------------
-if !has('nvim')
-  " サインカラムを常に表示してガタつきを防ぐ
-  let g:ale_sign_column_always = 1
-  " 保存時と開いたときにチェック（入力中は走らせない）
-  let g:ale_lint_on_text_changed = 'never'
-  let g:ale_lint_on_insert_leave = 0
-  let g:ale_lint_on_save = 1
-  let g:ale_lint_on_enter = 1
-endif
+" サインカラムを常に表示してガタつきを防ぐ
+let g:ale_sign_column_always = 1
+" 保存時と開いたときにチェック（入力中は走らせない）
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 1
 
 " -------------------------------------------------------------------------------
 " コメントのトグル（gc）
-" Neovim は組み込み。Vim 9.1 は同梱の comment パッケージを有効化する。
+" Vim 9.1 同梱の comment パッケージを有効化する。
 " -------------------------------------------------------------------------------
-if !has('nvim')
-  silent! packadd comment
-endif
+silent! packadd comment
 
 
 " ===============================================================================

@@ -257,8 +257,12 @@ git config --global --add pull.ff only
 
 #### vim
 
-* [.vimrc](./blob/master/.vimrc)
+* [.vimrc](./blob/master/.vimrc)（Vim 専用。プラグイン管理は dein.vim）
 * [`brew install vim --with-lua`](./blob/master/setup/install_homebrew_packages.sh)
+
+#### Neovim
+
+* [nvim/](./blob/master/nvim)（NvChad ベース。詳細は [nvim/README.md](./blob/master/nvim/README.md)）
 
 #### Intellij IDEA
 
