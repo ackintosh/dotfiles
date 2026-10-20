@@ -49,15 +49,6 @@ return {
     end,
   },
 
-  -- ディレクトリをバッファとして編集するファイラ（nvim-tree と併用。- で開く）
-  {
-    "stevearc/oil.nvim",
-    lazy = false, -- `nvim .` でディレクトリを直接開けるようにする
-    opts = {
-      view_options = { show_hidden = true },
-    },
-  },
-
   -- 囲み文字（括弧・クォート・タグ）の追加/変更/削除。vim-repeat で . 繰り返し対応
   {
     "tpope/vim-surround",

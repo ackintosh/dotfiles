@@ -25,6 +25,3 @@ map("n", "tc", "<cmd>tablast | tabnew<CR>", { desc = "tab new" })
 map("n", "tx", "<cmd>tabclose<CR>", { desc = "tab close" })
 map("n", "tn", "<cmd>tabnext<CR>", { desc = "tab next" })
 map("n", "tp", "<cmd>tabprevious<CR>", { desc = "tab prev" })
-
--- oil.nvim: - で親ディレクトリを開く
-map("n", "-", "<cmd>Oil<CR>", { desc = "oil open parent directory" })

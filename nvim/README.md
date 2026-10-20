@@ -41,7 +41,6 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 
 | プラグイン | 説明 |
 |---|---|
-| [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim) | ディレクトリをバッファとして編集するファイラ。nvim-tree と併用 |
 | [tpope/vim-surround](https://github.com/tpope/vim-surround) + vim-repeat | 囲み文字の追加/変更/削除 |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) + nui.nvim + nvim-notify | コマンドライン・メッセージ・通知 UI の置き換え |
 
@@ -82,7 +81,6 @@ nvim
 | `<C-p>`（ビジュアル） | 直前にヤンクした内容を貼り付け |
 | `t1`〜`t9` | n 番目のタブへ |
 | `tc` / `tx` / `tn` / `tp` | タブを新規 / 閉じる / 次 / 前 |
-| `-` | oil.nvim で親ディレクトリを開く |
 | `<leader>rn` | LSP リネーム（LSP が付いたバッファのみ。それ以外は NvChad 既定の相対行番号トグル） |
 
 ### NvChad 既定でよく使うもの
@@ -128,16 +126,19 @@ nvim
 | `<leader>gb` | 現在行の blame |
 | `<leader>gt` | git status（Telescope、NvChad 既定） |
 
-### ファイラ（oil.nvim）
+### ファイラ（nvim-tree / NvChad 既定）
 
 | キー | 動作 |
 |---|---|
-| `-` | 親ディレクトリを開く（oil 内でも同じ） |
-| `<CR>` | ファイル / ディレクトリを開く |
-| `<C-s>` / `<C-h>` / `<C-t>` | 縦分割 / 横分割 / タブで開く |
-| `<C-c>` | 閉じる |
-| `g?` | ヘルプ |
-| 通常の編集 + `:w` | ファイル名変更・削除・作成を反映 |
+| `<C-n>` | nvim-tree の開閉 |
+| `<leader>e` | nvim-tree にフォーカス |
+| `g?` | nvim-tree 内でヘルプ（全キー一覧） |
+| `a` / `d` / `r` | 作成 / 削除 / リネーム |
+| `x` / `c` / `p` | 切り取り / コピー / 貼り付け |
+| `<CR>` / `o` | 開く |
+| `<C-v>` / `<C-x>` / `<C-t>` | 縦分割 / 横分割 / タブで開く |
+| `H` | 隠しファイルの表示切替 |
+| `R` | 再読み込み |
 
 ## メンテナンス
 
