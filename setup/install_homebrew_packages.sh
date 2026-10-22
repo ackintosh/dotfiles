@@ -18,6 +18,8 @@ brew install pt
 brew install direnv
 # Ruby
 #brew install rbenv
+# Rust（ツールチェーンは rustup-init 後に `rustup default stable` などで入れる。rust-analyzer は setup/install_neovim.sh）
+brew install rustup
 # Vim
 brew install vim --with-lua
 # Neovim（設定は nvim/、セットアップは setup/install_neovim.sh）

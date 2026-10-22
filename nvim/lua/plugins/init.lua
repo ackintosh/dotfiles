@@ -20,6 +20,7 @@ return {
         "php", "phpdoc", "json", "yaml", "toml", "markdown", "markdown_inline",
         "html", "css", "scss", "javascript", "typescript",
         "bash", "fish", "ruby", "sql", "go", "diff", "gitcommit",
+        "rust", "ron",
       },
     },
   },
@@ -45,6 +46,76 @@ return {
         map("n", "<leader>gr", gs.reset_hunk, "git reset hunk")
         map("n", "<leader>gb", function() gs.blame_line { full = true } end, "git blame line")
       end
+      return opts
+    end,
+  },
+
+  -- rustaceanvim: rust-analyzer の設定と Rust 向けコマンド（:RustLsp ...）
+  -- setup() は不要で vim.g.rustaceanvim で設定する。nvim-lspconfig の rust_analyzer は有効化しない（二重起動になる）
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6",
+    lazy = false, -- プラグイン側で ft=rust に遅延するので lazy.nvim 側では遅延させない（作者の推奨）
+    init = function()
+      vim.g.rustaceanvim = {
+        server = {
+          -- NvChad 共通の capabilities（nvim-cmp 用）を引き継ぐ
+          capabilities = require("nvchad.configs.lspconfig").capabilities,
+          on_attach = function(_, bufnr)
+            local function map(mode, lhs, rhs, desc)
+              vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, silent = true, desc = "Rust " .. desc })
+            end
+            -- rust-analyzer のコードアクション（グループ化された UI）
+            map({ "n", "v" }, "<leader>ca", function() vim.cmd.RustLsp "codeAction" end, "code action")
+            -- カーソル位置から実行できるもの（main / テスト / ベンチ）を選んで実行
+            map("n", "<leader>rr", function() vim.cmd.RustLsp "runnables" end, "runnables")
+            map("n", "<leader>rt", function() vim.cmd.RustLsp "testables" end, "testables")
+            -- マクロ展開を別ウィンドウに表示
+            map("n", "<leader>re", function() vim.cmd.RustLsp "expandMacro" end, "expand macro")
+            -- Cargo.toml / 親モジュールを開く
+            map("n", "<leader>rc", function() vim.cmd.RustLsp "openCargo" end, "open Cargo.toml")
+            map("n", "<leader>rp", function() vim.cmd.RustLsp "parentModule" end, "parent module")
+            -- カーソル下の診断を rustc の詳細説明付きで表示
+            map("n", "<leader>rd", function() vim.cmd.RustLsp "explainError" end, "explain error")
+            -- K: アクション付きホバー（rustaceanvim 版）
+            map("n", "K", function() vim.cmd.RustLsp { "hover", "actions" } end, "hover actions")
+            -- Rust では inlay hint（型・パラメータ名）を既定で表示する。<leader>ih で切替
+            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+          end,
+          default_settings = {
+            ["rust-analyzer"] = {
+              -- 保存時のチェックを clippy で行う
+              check = { command = "clippy" },
+              cargo = { allFeatures = true },
+              procMacro = { enable = true },
+            },
+          },
+        },
+      }
+    end,
+  },
+
+  -- crates.nvim: Cargo.toml で依存クレートのバージョン表示・更新・補完
+  {
+    "saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
+    tag = "stable",
+    opts = {
+      completion = { cmp = { enabled = true } },
+      lsp = {
+        enabled = true, -- Cargo.toml 内でホバー / コードアクション（バージョン更新など）を使えるようにする
+        actions = true,
+        completion = true,
+        hover = true,
+      },
+    },
+  },
+
+  -- nvim-cmp: Cargo.toml でクレートの補完ソースを追加
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      table.insert(opts.sources, { name = "crates" })
       return opts
     end,
   },

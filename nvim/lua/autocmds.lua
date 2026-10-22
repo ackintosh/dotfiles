@@ -7,6 +7,7 @@ local augroup = vim.api.nvim_create_augroup
 local indent_by_ft = {
   c = 4, css = 2, diff = 4, eruby = 2, html = 2, javascript = 2, json = 2, markdown = 2,
   php = 4, ruby = 2, scss = 2, sql = 4, vim = 2, xhtml = 4, xml = 4, yaml = 2, zsh = 4, lua = 2,
+  rust = 4, toml = 2,
 }
 local indent_group = augroup("my_indent", { clear = true })
 for ft, width in pairs(indent_by_ft) do
@@ -43,6 +44,10 @@ autocmd("LspAttach", {
   group = augroup("my_lsp_attach", { clear = true }),
   callback = function(args)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = args.buf, desc = "LSP rename" })
+    -- inlay hint（型やパラメータ名のインライン表示）の切替
+    vim.keymap.set("n", "<leader>ih", function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = args.buf }, { bufnr = args.buf })
+    end, { buffer = args.buf, desc = "LSP toggle inlay hints" })
   end,
 })
 

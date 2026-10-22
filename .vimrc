@@ -270,4 +270,5 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
 
-set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,utf-8,sjis,cp932
+" utf-8 を JIS 系より先に置く（JIS 系が先だと ASCII だけのファイルが iso-2022-jp と判定され、日本語を追記すると JIS で保存される）
+set fileencodings=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,cp932,sjis

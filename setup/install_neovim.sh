@@ -35,6 +35,18 @@ else
   npm install -g intelephense
 fi
 
+#    Rust: rust-analyzer（rustup のコンポーネント。rustaceanvim が起動する）
+if command -v rustup >/dev/null 2>&1; then
+  if rustup component list --installed 2>/dev/null | grep -q '^rust-analyzer'; then
+    echo "rust-analyzer: installed"
+  else
+    echo "rust-analyzer: installing via rustup"
+    rustup component add rust-analyzer
+  fi
+else
+  echo "rustup が無いので rust-analyzer はスキップ（Rust を使うなら setup/install_homebrew_packages.sh の rustup を入れる）"
+fi
+
 # ------------------------------------------------------------------------------
 # 3. プラグインと treesitter パーサ
 #    初回起動で lazy.nvim がプラグインを、NvChad が ensure_installed のパーサを入れるが、

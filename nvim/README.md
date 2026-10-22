@@ -44,6 +44,8 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | [tpope/vim-surround](https://github.com/tpope/vim-surround) + vim-repeat | 囲み文字の追加/変更/削除 |
 | [stevearc/aerial.nvim](https://github.com/stevearc/aerial.nvim) | クラス・メソッドなどファイル構造のサイドバー表示（LSP / treesitter） |
 | [ChmaraX/herdr-nvim](https://github.com/ChmaraX/herdr-nvim) | herdr ワークスペース内で、コードへのコメントを AI エージェントへ送る。herdr 側プラグインも必要 |
+| [mrcjkb/rustaceanvim](https://github.com/mrcjkb/rustaceanvim) | rust-analyzer の設定と Rust 向けコマンド（runnables、マクロ展開、エラー解説など） |
+| [saecki/crates.nvim](https://github.com/saecki/crates.nvim) | Cargo.toml で依存クレートのバージョン表示・更新・補完 |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) + nui.nvim + nvim-notify | コマンドライン・メッセージ・通知 UI の置き換え |
 
 ## Language Server
@@ -51,6 +53,7 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | 言語 | Language Server | インストール |
 |---|---|---|
 | PHP | [intelephense](https://intelephense.com/) | `npm install -g intelephense` |
+| Rust | [rust-analyzer](https://rust-analyzer.github.io/) | `rustup component add rust-analyzer`（rustaceanvim が起動する。nvim-lspconfig 側では有効化しない） |
 
 Language Server は mason.nvim（`:Mason`）からも入れられる。追加する場合は `lua/configs/lspconfig.lua` の `vim.lsp.enable` に名前を足す。
 
@@ -91,6 +94,7 @@ setup/install_herdr.sh               # herdr と herdr-nvim（任意）
 | `<leader>al` | herdr: コメント一覧（Enter で編集、d で削除） |
 | `<leader>as` / `<leader>aS` | herdr: 全コメントをエージェントの入力欄へ貼り付け / 送信 |
 | `<leader>ai` | herdr: 現在行 / 選択範囲の `path:line` 参照をエージェントの入力欄へ |
+| `<leader>ih` | inlay hint の表示切替（LSP が付いたバッファ） |
 
 ### NvChad 既定でよく使うもの
 
@@ -123,6 +127,22 @@ setup/install_herdr.sh               # herdr と herdr-nvim（任意）
 | `K` | ホバー | Neovim 組み込み |
 | `grr` / `grn` / `gra` / `gri` | 参照 / リネーム / コードアクション / 実装 | Neovim 組み込み |
 | `]d` / `[d` | 次 / 前の診断 | Neovim 組み込み |
+
+### Rust（rustaceanvim / Rust バッファ内）
+
+保存時に clippy でチェックし、inlay hint は既定で表示する。フォーマットは `<leader>fm`（rustfmt）。
+
+| キー | 動作 |
+|---|---|
+| `<leader>ca` | コードアクション（rust-analyzer のグループ化 UI） |
+| `<leader>rr` / `<leader>rt` | カーソル位置から実行できるもの / テストを選んで実行 |
+| `<leader>re` | マクロ展開を表示 |
+| `<leader>rd` | カーソル下のエラーを rustc の詳細説明付きで表示 |
+| `<leader>rc` / `<leader>rp` | Cargo.toml / 親モジュールを開く |
+| `K` | アクション付きホバー |
+| `:RustLsp <Tab>` | その他のコマンド（joinLines, moveItem, ssr, view HIR/MIR など） |
+
+Cargo.toml では crates.nvim が各依存の最新バージョンを仮想テキストで表示し、`K` でバージョン一覧、`<leader>ca` 相当の `:Crates upgrade_crate` などで更新できる。
 
 ### Git（gitsigns / `lua/plugins/init.lua` で追加）
 
