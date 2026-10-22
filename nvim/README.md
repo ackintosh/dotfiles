@@ -3,6 +3,27 @@
 Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://github.com/NvChad/starter) をベースにしている。
 プラグインマネージャは [lazy.nvim](https://github.com/folke/lazy.nvim)。Vim 用の `.vimrc` とは独立している（`.vimrc` は Vim 専用・dein.vim のまま）。
 
+## よく使う操作
+
+`<leader>` は **Space**。
+
+| キー | 動作 |
+|---|---|
+| `Tab` / `Shift+Tab` | 次 / 前のバッファへ切り替え（画面上部のバー） |
+| `<leader>x` | 現在のバッファを閉じる |
+| `gd` | 定義へジャンプ |
+| `Ctrl+o` | ジャンプ前の位置に戻る（別ファイルへ飛んだ後もファイルごと戻る） |
+| `Ctrl+i` | 戻りすぎたときに進む |
+| `<leader>o` | ファイル構造（クラス・メソッド）のサイドバーを開閉 |
+| `Ctrl+p` | ファイル名で曖昧検索して開く |
+| `<leader>fw` | 全文検索（ripgrep） |
+| `Ctrl+n` | nvim-tree（ファイラ）の開閉 |
+| `K` | カーソル下のホバー（型・ドキュメント） |
+| `<leader>ch` | 全キーマップのチートシート |
+
+起動時にファイルを指定して開くと、左に nvim-tree、右に aerial のサイドバーが自動で開く（`lua/autocmds.lua` と aerial の `open_automatic`）。
+ファイル指定なし、または `nvim .` のときは nvim-tree にフォーカスした状態で始まる。
+
 ## 構成ファイル
 
 | ファイル | 説明 |

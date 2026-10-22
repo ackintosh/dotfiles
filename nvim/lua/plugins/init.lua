@@ -54,7 +54,7 @@ return {
   -- setup() は不要で vim.g.rustaceanvim で設定する。nvim-lspconfig の rust_analyzer は有効化しない（二重起動になる）
   {
     "mrcjkb/rustaceanvim",
-    version = "^6",
+    version = "^9",
     lazy = false, -- プラグイン側で ft=rust に遅延するので lazy.nvim 側では遅延させない（作者の推奨）
     init = function()
       vim.g.rustaceanvim = {
@@ -129,10 +129,17 @@ return {
       { "<leader>fs", "<cmd>Telescope aerial<CR>", desc = "telescope document symbols (aerial)" },
     },
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    -- 起動時に自動で開くため、ファイルを開いたタイミングで読み込む
+    event = { "BufReadPost", "BufNewFile" },
     opts = {
       -- LSP があれば LSP、無ければ treesitter からシンボルを取る
       backends = { "lsp", "treesitter", "markdown", "man" },
+      -- サイドバーは 1 つだけ置き、カレントバッファに追従させる（ウィンドウごとに開かない）
+      -- 起動時の自動オープンは lua/autocmds.lua で nvim-tree の後に行う
+      attach_mode = "global",
       layout = {
+        -- 画面の右端に置く（"window" だとカレントウィンドウの隣に開き、nvim-tree と並んでしまう）
+        placement = "edge",
         default_direction = "right",
         min_width = 30,
       },

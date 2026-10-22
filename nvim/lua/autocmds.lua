@@ -58,3 +58,43 @@ autocmd("FileType", {
     pcall(vim.treesitter.start, args.buf)
   end,
 })
+
+-- 起動時にサイドバーを開く。
+--   ファイルを指定して起動したとき: 左に nvim-tree、右に aerial を開き、フォーカスはファイルに残す
+--   指定なし / ディレクトリ指定のとき: nvim-tree を開いてフォーカスする
+-- ヘッドレス（herdr-nvim のデーモンなど）、diff モード、git のコミットメッセージ編集では開かない。
+autocmd("VimEnter", {
+  group = augroup("my_open_sidebars", { clear = true }),
+  callback = function(ev)
+    if #vim.api.nvim_list_uis() == 0 or vim.o.diff then
+      return
+    end
+    local ft = vim.bo[ev.buf].filetype
+    if ft == "gitcommit" or ft == "gitrebase" or vim.bo[ev.buf].buftype ~= "" then
+      return
+    end
+    local ok, tree = pcall(require, "nvim-tree.api")
+    if not ok then
+      return
+    end
+    local name = vim.api.nvim_buf_get_name(ev.buf)
+    local is_dir = name ~= "" and vim.fn.isdirectory(name) == 1
+    if name == "" or is_dir then
+      if is_dir then
+        vim.cmd.cd(name)
+        vim.api.nvim_buf_delete(ev.buf, { force = true })
+      end
+      tree.tree.open()
+      return
+    end
+    -- 他のプラグインの VimEnter 処理が終わってから、nvim-tree → aerial の順に開く
+    vim.schedule(function()
+      local file_win = vim.api.nvim_get_current_win()
+      tree.tree.open({ focus = false })
+      pcall(vim.cmd, "AerialOpen!")
+      if vim.api.nvim_win_is_valid(file_win) then
+        vim.api.nvim_set_current_win(file_win)
+      end
+    end)
+  end,
+})
