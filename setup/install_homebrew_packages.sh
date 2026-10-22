@@ -20,6 +20,10 @@ brew install direnv
 #brew install rbenv
 # Vim
 brew install vim --with-lua
+# Neovim（設定は nvim/、セットアップは setup/install_neovim.sh）
+brew install neovim
+# Neovim の LSP (intelephense) を npm で入れるために必要
+brew install node
 # topコマンドの高機能版
 brew install htop
 # 入力行をインタラクティブに曖昧検索する
@@ -41,6 +45,8 @@ brew install gh
 brew install ripgrep
 # nvim-treesitter のパーサをビルドするための CLI
 brew install tree-sitter-cli
+# AI コーディングエージェント向けのターミナルワークスペース（セットアップは setup/install_herdr.sh）
+brew install herdr
 
 # Gitクライアント
 # Jetbrains製品で諸々やるようになったのでコメントアウト

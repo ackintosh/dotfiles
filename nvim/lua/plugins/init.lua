@@ -81,6 +81,15 @@ return {
     end,
   },
 
+  -- herdr-nvim: herdr ワークスペース内でコードにコメントを付けてエージェントへ送る
+  -- （herdr 側のプラグインは `herdr plugin install ChmaraX/herdr-nvim` で別途導入）
+  -- キーマップは <leader>a 接頭辞: ac コメント / al 一覧 / as 貼り付け / aS 送信 / ai 行参照
+  {
+    "ChmaraX/herdr-nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+
   -- 囲み文字（括弧・クォート・タグ）の追加/変更/削除。vim-repeat で . 繰り返し対応
   {
     "tpope/vim-surround",

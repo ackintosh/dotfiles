@@ -7,6 +7,10 @@
 - [setup/install_fish_plugins.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_fish_plugins.sh)
   - 実行はfishコマンドで行う `fish setup/install_fish_plugins.sh`
 - [setup/put_symbolic_links.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/put_symbolic_links.sh)
+- [setup/install_neovim.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_neovim.sh)
+  - Neovim の Language Server・プラグイン・treesitter パーサを入れる（上 2 つの後に実行）
+- [setup/install_herdr.sh](https://github.com/ackintosh/dotfiles/blob/master/setup/install_herdr.sh)
+  - herdr と herdr-nvim（Neovim サイドバー）を入れてキー設定を追記する
 
 TODO: Brewfile https://qiita.com/d0ne1s/items/90974ad472c2d891e784
 

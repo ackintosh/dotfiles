@@ -43,6 +43,7 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 |---|---|
 | [tpope/vim-surround](https://github.com/tpope/vim-surround) + vim-repeat | 囲み文字の追加/変更/削除 |
 | [stevearc/aerial.nvim](https://github.com/stevearc/aerial.nvim) | クラス・メソッドなどファイル構造のサイドバー表示（LSP / treesitter） |
+| [ChmaraX/herdr-nvim](https://github.com/ChmaraX/herdr-nvim) | herdr ワークスペース内で、コードへのコメントを AI エージェントへ送る。herdr 側プラグインも必要 |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) + nui.nvim + nvim-notify | コマンドライン・メッセージ・通知 UI の置き換え |
 
 ## Language Server
@@ -55,16 +56,16 @@ Language Server は mason.nvim（`:Mason`）からも入れられる。追加す
 
 ## セットアップ
 
-```bash
-# ~/.config/nvim -> dotfiles/nvim のシンボリックリンク（setup/put_symbolic_links.sh）
-# intelephense（Node.js / npm が必要）
-npm install -g intelephense
-# ripgrep は telescope の全文検索、tree-sitter-cli は treesitter のパーサビルドに必要
-brew install ripgrep tree-sitter-cli
+クリーンインストール後は次の順に実行する。
 
-# 初回起動で lazy.nvim がプラグインを、nvim-treesitter がパーサをインストールする
-nvim
+```bash
+setup/install_homebrew_packages.sh   # neovim, ripgrep, tree-sitter-cli, node など
+setup/put_symbolic_links.sh          # ~/.config/nvim -> dotfiles/nvim
+setup/install_neovim.sh              # intelephense、プラグイン、treesitter パーサ
+setup/install_herdr.sh               # herdr と herdr-nvim（任意）
 ```
+
+`setup/install_neovim.sh` を使わない場合も、`nvim` を起動すれば lazy.nvim がプラグインを、NvChad が treesitter パーサを自動で入れる。intelephense だけは `npm install -g intelephense` が別途必要。
 
 アイコンには Nerd Font が必要。Ghostty は Nerd Font のシンボルを内蔵しているので追加設定は不要。
 
@@ -86,6 +87,10 @@ nvim
 | `<leader>o` | aerial のサイドバー（ファイル構造）を開閉 |
 | `<leader>fs` | ファイル内のシンボルを Telescope で検索してジャンプ |
 | `{` / `}` | 前 / 次のシンボルへ移動（aerial 読み込み後） |
+| `<leader>ac` | herdr: 現在行 / 選択範囲にコメントを付ける |
+| `<leader>al` | herdr: コメント一覧（Enter で編集、d で削除） |
+| `<leader>as` / `<leader>aS` | herdr: 全コメントをエージェントの入力欄へ貼り付け / 送信 |
+| `<leader>ai` | herdr: 現在行 / 選択範囲の `path:line` 参照をエージェントの入力欄へ |
 
 ### NvChad 既定でよく使うもの
 
@@ -143,6 +148,24 @@ nvim
 | `<C-v>` / `<C-x>` / `<C-t>` | 縦分割 / 横分割 / タブで開く |
 | `H` | 隠しファイルの表示切替 |
 | `R` | 再読み込み |
+
+## herdr 連携（herdr-nvim）
+
+[herdr](https://herdr.dev) のワークスペース内でだけ動く。2 つの半身からなる。
+
+1. **herdr 側プラグイン**（サイドバーとファイルピッカー）: `setup/install_herdr.sh` が `herdr plugin install ChmaraX/herdr-nvim` と `~/.config/herdr/config.toml` へのキー設定の追記を行う（herdr 0.7.5 以上）
+2. **Neovim 側プラグイン**（コメント・参照の送信）: `lua/plugins/init.lua` で lazy.nvim から導入済み
+
+herdr を更新した直後は旧サーバーが残っていてプラグイン操作が `protocol_mismatch` で失敗する。`herdr server stop` してから再実行する（開いているペインのプロセスは終了する）。
+
+| キー | 動作 |
+|---|---|
+| `prefix+e` | Neovim サイドバーの開閉（タブごとに Neovim が常駐し、閉じても状態が残る） |
+| `prefix+o` | エージェントが触ったファイルのピッカー。入力するとリポジトリ全体を曖昧検索 |
+
+サイドバーの Neovim は通常の `~/.config/nvim`（この NvChad 設定）で起動する。
+常駐している Neovim の確認と停止は `herdr-nvim daemons` / `herdr-nvim daemons stop <tab>`。
+動作確認は `herdr-nvim doctor`。
 
 ## メンテナンス
 
