@@ -42,6 +42,7 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | プラグイン | 説明 |
 |---|---|
 | [tpope/vim-surround](https://github.com/tpope/vim-surround) + vim-repeat | 囲み文字の追加/変更/削除 |
+| [stevearc/aerial.nvim](https://github.com/stevearc/aerial.nvim) | クラス・メソッドなどファイル構造のサイドバー表示（LSP / treesitter） |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) + nui.nvim + nvim-notify | コマンドライン・メッセージ・通知 UI の置き換え |
 
 ## Language Server
@@ -82,6 +83,9 @@ nvim
 | `t1`〜`t9` | n 番目のタブへ |
 | `tc` / `tx` / `tn` / `tp` | タブを新規 / 閉じる / 次 / 前 |
 | `<leader>rn` | LSP リネーム（LSP が付いたバッファのみ。それ以外は NvChad 既定の相対行番号トグル） |
+| `<leader>o` | aerial のサイドバー（ファイル構造）を開閉 |
+| `<leader>fs` | ファイル内のシンボルを Telescope で検索してジャンプ |
+| `{` / `}` | 前 / 次のシンボルへ移動（aerial 読み込み後） |
 
 ### NvChad 既定でよく使うもの
 
