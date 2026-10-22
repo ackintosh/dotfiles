@@ -95,6 +95,7 @@ setup/install_herdr.sh               # herdr と herdr-nvim（任意）
 | `<leader>as` / `<leader>aS` | herdr: 全コメントをエージェントの入力欄へ貼り付け / 送信 |
 | `<leader>ai` | herdr: 現在行 / 選択範囲の `path:line` 参照をエージェントの入力欄へ |
 | `<leader>ih` | inlay hint の表示切替（LSP が付いたバッファ） |
+| `<C-o>` / `<C-i>` | ジャンプリストを戻る / 進む（`gd` で飛んだ後に戻るなど）。`<C-i>` は下記の注意を参照 |
 
 ### NvChad 既定でよく使うもの
 
@@ -194,6 +195,15 @@ herdr を更新した直後は旧サーバーが残っていてプラグイン�
 - NvChad 本体の更新は `:Lazy update` に含まれる（`NvChad/NvChad` の `v2.5` ブランチ）
 
 ## トラブルシューティング
+
+### `<C-i>`（ジャンプを進む）が効かず、バッファが切り替わる
+
+端末は歴史的に Ctrl+i と Tab を同じコード (0x09) で送るため、NvChad の `<Tab>`（バッファ切替）が動いてしまう。
+Ghostty と Neovim は拡張キープロトコル（modifyOtherKeys / CSI u）で両者を区別できるので、間に入る tmux でも有効にしてある（`.tmux.conf` の `extended-keys on`）。
+さらに Neovim は `<C-I>` のマッピングが無いと `<Tab>` に単純化するので、`lua/mappings.lua` で `<C-I>` を明示的に割り当てている。
+
+tmux の設定を変えた直後は、Ghostty から tmux に接続し直す（デタッチして再アタッチ、またはウィンドウを開き直す）必要がある。
+
 
 ### シンタックスハイライトが効かない
 

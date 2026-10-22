@@ -11,6 +11,12 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", ":", ";", { desc = "repeat f/t motion" })
 
+-- Ctrl+i でジャンプリストを進む（Ctrl+o の逆）。
+-- NvChad は <Tab> をバッファ切替に使っており、Neovim は <C-I> のマッピングが無いと <Tab> に単純化して
+-- しまうので、<C-I> を明示的に組み込み動作へ割り当てて単純化を防ぐ。
+-- 端末が Ctrl+i と Tab を区別して送る必要がある（tmux は .tmux.conf の extended-keys で対応済み）。
+map("n", "<C-I>", "<C-I>", { desc = "jump forward (jumplist)" })
+
 -- 以前の fzf.vim <C-p> と同じ感覚でファイル検索
 map("n", "<C-p>", "<cmd>Telescope find_files<CR>", { desc = "telescope find files" })
 
