@@ -217,6 +217,12 @@ herdr を更新した直後は旧サーバーが残っていてプラグイン�
 
 ## トラブルシューティング
 
+### `Decoration provider "win" (ns=nvim.lsp.inlayhint): ... Invalid 'col': out of range` が大量に出る
+
+Neovim 0.12 の不具合。外部（herdr のエージェントなど）がファイルを書き換えてバッファが再読み込みされると、inlay hint のキャッシュが古い列位置のまま残り、再描画のたびにエラーになる。
+`lua/autocmds.lua` で再読み込み後に inlay hint を入れ直す回避策を入れてある。
+herdr-nvim のサイドバーは Neovim が常駐しているので、設定変更後は `herdr-nvim daemons stop <tab>` で止めてから開き直すと新しい設定が効く。
+
 ### `<C-i>`（ジャンプを進む）が効かず、バッファが切り替わる
 
 端末は歴史的に Ctrl+i と Tab を同じコード (0x09) で送るため、NvChad の `<Tab>`（バッファ切替）が動いてしまう。

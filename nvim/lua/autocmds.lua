@@ -51,6 +51,26 @@ autocmd("LspAttach", {
   end,
 })
 
+-- Neovim 0.12 の回避策: 外部でファイルが書き換わりバッファが再読み込みされると、inlay hint のキャッシュが
+-- 古い列位置のまま残り、再描画のたびに "Decoration provider ... Invalid 'col': out of range" が出る
+-- （herdr でエージェントがファイルを編集しているときに頻発）。再読み込み後に inlay hint を入れ直して
+-- キャッシュを捨て、サーバーから取り直す。
+autocmd({ "FileChangedShellPost", "BufReadPost" }, {
+  group = augroup("my_inlay_hint_reload", { clear = true }),
+  callback = function(args)
+    local bufnr = args.buf
+    if not vim.lsp.inlay_hint.is_enabled { bufnr = bufnr } then
+      return
+    end
+    vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
+    vim.schedule(function()
+      if vim.api.nvim_buf_is_valid(bufnr) then
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+      end
+    end)
+  end,
+})
+
 -- treesitter ハイライト（nvim-treesitter main ブランチではユーザーが有効化する）
 autocmd("FileType", {
   group = augroup("my_treesitter", { clear = true }),
