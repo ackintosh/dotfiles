@@ -120,6 +120,17 @@ return {
     end,
   },
 
+  -- gitlinker.nvim: カーソル行 / 選択範囲の GitHub などの permalink をクリップボードにコピー
+  -- （既定キーは無く、ここで定義した <leader>gl だけ。ブラウザで開くなら :GitLink!）
+  {
+    "linrongbin16/gitlinker.nvim",
+    cmd = "GitLink",
+    keys = {
+      { "<leader>gl", "<cmd>GitLink<cr>", mode = { "n", "v" }, desc = "git copy permalink" },
+    },
+    opts = {},
+  },
+
   -- aerial.nvim: ファイル内のクラス・メソッドなどの構造をサイドバーに表示
   {
     "stevearc/aerial.nvim",
