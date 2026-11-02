@@ -64,3 +64,9 @@ title = " "
 
 # メニューバーを透過しておく
 macos-titlebar-style = transparent
+
+# フォント
+# 日本語が見やすい UDEV Gothic 35NF（英字が幅広の3:5版。BIZ UDゴシック + JetBrains Mono + Nerd Fonts）
+# インストール: brew install --cask font-udev-gothic-nf（setup/install_homebrew_packages.sh）
+font-family = UDEV Gothic 35NF
+font-size = 14

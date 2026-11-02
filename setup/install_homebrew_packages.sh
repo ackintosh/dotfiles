@@ -53,3 +53,6 @@ brew install herdr
 # Gitクライアント
 # Jetbrains製品で諸々やるようになったのでコメントアウト
 # brew install tig
+
+# Ghostty 用の日本語フォント（BIZ UDゴシック + JetBrains Mono + Nerd Fonts）
+brew install --cask font-udev-gothic-nf

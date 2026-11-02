@@ -20,10 +20,21 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | `<leader>fo` | 最近開いたファイルから検索して開く |
 | `Ctrl+n` | nvim-tree（ファイラ）の開閉 |
 | `K` | カーソル下のホバー（型・ドキュメント） |
-| `<leader>gl` | カーソル行 / 選択範囲の GitHub permalink をコピー |
 | `<leader>ch` | 全キーマップのチートシート |
 
-起動時にファイルを指定して開くと、左に nvim-tree、右に aerial のサイドバーが自動で開く（`lua/autocmds.lua` と aerial の `open_automatic`）。
+**Git**
+
+| キー | 動作 |
+|---|---|
+| `]c` / `[c` | 次 / 前の変更箇所（ハンク）へ移動 |
+| `<leader>gp` | カーソル位置のハンクの差分をプレビュー |
+| `<leader>gs` / `<leader>gr` | ハンクをステージ / 変更を破棄 |
+| `<leader>gb` | 現在行の blame（誰がいつ変えたか） |
+| `<leader>gt` | git status のファイル一覧から開く（Telescope） |
+| `<leader>cm` | コミット一覧（Telescope） |
+| `<leader>gl` | カーソル行 / 選択範囲の GitHub permalink をコピー |
+
+起動時にファイルを指定して開くと、左に nvim-tree、右に aerial のサイドバーが自動で開く（`lua/autocmds.lua` の VimEnter autocmd）。
 ファイル指定なし、または `nvim .` のときは nvim-tree にフォーカスした状態で始まる。
 
 ## 構成ファイル
