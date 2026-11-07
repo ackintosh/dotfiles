@@ -33,6 +33,7 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | `<leader>gt` | git status のファイル一覧から開く（Telescope） |
 | `<leader>cm` | コミット一覧（Telescope） |
 | `<leader>gl` | カーソル行 / 選択範囲の GitHub permalink をコピー |
+| `<leader>gg` | Neogit（ブランチ・コミット・push/pull などの Git UI） |
 
 起動時にファイルを指定して開くと、左に nvim-tree、右に aerial のサイドバーが自動で開く（`lua/autocmds.lua` の VimEnter autocmd）。
 ファイル指定なし、または `nvim .` のときは nvim-tree にフォーカスした状態で始まる。
@@ -42,7 +43,7 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | ファイル | 説明 |
 |---|---|
 | `init.lua` | lazy.nvim のブートストラップと NvChad の読み込み（starter そのまま） |
-| `lua/chadrc.lua` | NvChad の UI 設定（テーマなど） |
+| `lua/chadrc.lua` | NvChad の UI 設定（テーマ、ステータスラインのファイルパス表示など） |
 | `lua/options.lua` | NvChad 既定に対するオプションの上書き・追加 |
 | `lua/mappings.lua` | NvChad 既定に対するキーマップの追加 |
 | `lua/autocmds.lua` | ファイルタイプ別インデント、全角スペース強調、LSP/treesitter の autocmd |
@@ -79,6 +80,7 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | [stevearc/aerial.nvim](https://github.com/stevearc/aerial.nvim) | クラス・メソッドなどファイル構造のサイドバー表示（LSP / treesitter） |
 | [ChmaraX/herdr-nvim](https://github.com/ChmaraX/herdr-nvim) | herdr ワークスペース内で、コードへのコメントを AI エージェントへ送る。herdr 側プラグインも必要 |
 | [linrongbin16/gitlinker.nvim](https://github.com/linrongbin16/gitlinker.nvim) | カーソル行 / 選択範囲の GitHub permalink をコピー（`<leader>gl`） |
+| [NeogitOrg/neogit](https://github.com/NeogitOrg/neogit) | magit 風の Git UI。ブランチの作成/切替/削除、merge、rebase、push/pull、コミット（`<leader>gg`） |
 | [mrcjkb/rustaceanvim](https://github.com/mrcjkb/rustaceanvim) | rust-analyzer の設定と Rust 向けコマンド（runnables、マクロ展開、エラー解説など） |
 | [saecki/crates.nvim](https://github.com/saecki/crates.nvim) | Cargo.toml で依存クレートのバージョン表示・更新・補完 |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) + nui.nvim + nvim-notify | コマンドライン・メッセージ・通知 UI の置き換え |
@@ -191,6 +193,29 @@ Cargo.toml では crates.nvim が各依存の最新バージョンを仮想テ�
 | `<leader>gb` | 現在行の blame |
 | `<leader>gt` | git status（Telescope、NvChad 既定） |
 | `<leader>gl` | カーソル行 / 選択範囲の GitHub permalink（コミットハッシュ付き）をクリップボードにコピー。ブラウザで開くなら `:GitLink!`、ブランチ URL なら `:GitLink current_branch` |
+| `<leader>gg` | Neogit のステータス画面を開く |
+| `<leader>gB` | Neogit のブランチメニュー（作成 / 切替 / 削除 / リネーム） |
+| `<leader>gC` | Neogit のコミットメニュー |
+
+### Neogit（`<leader>gg` で開くステータス画面内）
+
+ステータス画面で `?` を押すと操作一覧が出る。各メニューは magit と同じく 1 キーで開き、`q` または `<Esc>` で閉じる。
+
+| キー | 動作 |
+|---|---|
+| `b` | ブランチメニュー。`b` で切替、`c` で作成して切替、`n` で作成のみ、`D` で削除、`m` でリネーム |
+| `c` | コミットメニュー。`c` でコミット（メッセージ用バッファが開く。`:wq` で確定）、`a` で amend |
+| `m` / `r` | merge / rebase メニュー |
+| `p` / `F` | push / pull メニュー |
+| `l` | ログ（ブランチ指定や検索は `l` のあとにオプション） |
+| `Z` | stash メニュー |
+| `s` / `u` | カーソル位置のファイル / ハンクをステージ / アンステージ |
+| `x` | 変更を破棄 |
+| `<Tab>` | ファイルの差分を展開 / 折りたたみ |
+| `<CR>` | ファイルを開く |
+| `q` | 閉じる |
+
+ブランチの選択は Telescope のピッカーになる（`integrations.telescope`）。
 
 ### ファイラ（nvim-tree / NvChad 既定）
 

@@ -131,6 +131,25 @@ return {
     opts = {},
   },
 
+  -- Neogit: magit 風の Git UI。ブランチの作成/切替/削除、merge、rebase、push/pull、コミットなどを Neovim 内で行う
+  -- （ステータス画面で ? を押すと操作一覧。b でブランチ、c でコミット、p で push、F で pull）
+  {
+    "NeogitOrg/neogit",
+    cmd = "Neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim", -- ブランチ選択などのピッカーに使う
+    },
+    keys = {
+      { "<leader>gg", "<cmd>Neogit<cr>", desc = "neogit status" },
+      { "<leader>gB", "<cmd>Neogit branch<cr>", desc = "neogit branch" },
+      { "<leader>gC", "<cmd>Neogit commit<cr>", desc = "neogit commit" },
+    },
+    opts = {
+      integrations = { telescope = true },
+    },
+  },
+
   -- aerial.nvim: ファイル内のクラス・メソッドなどの構造をサイドバーに表示
   {
     "stevearc/aerial.nvim",
