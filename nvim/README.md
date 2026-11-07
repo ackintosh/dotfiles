@@ -81,6 +81,7 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | [ChmaraX/herdr-nvim](https://github.com/ChmaraX/herdr-nvim) | herdr ワークスペース内で、コードへのコメントを AI エージェントへ送る。herdr 側プラグインも必要 |
 | [linrongbin16/gitlinker.nvim](https://github.com/linrongbin16/gitlinker.nvim) | カーソル行 / 選択範囲の GitHub permalink をコピー（`<leader>gl`） |
 | [NeogitOrg/neogit](https://github.com/NeogitOrg/neogit) | magit 風の Git UI。ブランチの作成/切替/削除、merge、rebase、push/pull、コミット（`<leader>gg`） |
+| [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate) | カーソル下の単語の出現箇所をすべてハイライト（LSP / treesitter / 正規表現）。`]]` / `[[` で次 / 前の出現箇所へ |
 | [mrcjkb/rustaceanvim](https://github.com/mrcjkb/rustaceanvim) | rust-analyzer の設定と Rust 向けコマンド（runnables、マクロ展開、エラー解説など） |
 | [saecki/crates.nvim](https://github.com/saecki/crates.nvim) | Cargo.toml で依存クレートのバージョン表示・更新・補完 |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) + nui.nvim + nvim-notify | コマンドライン・メッセージ・通知 UI の置き換え |
@@ -133,6 +134,7 @@ setup/install_herdr.sh               # herdr と herdr-nvim（任意）
 | `<leader>ai` | herdr: 現在行 / 選択範囲の `path:line` 参照をエージェントの入力欄へ |
 | `<leader>ih` | inlay hint の表示切替（LSP が付いたバッファ） |
 | `<C-o>` / `<C-i>` | ジャンプリストを戻る / 進む（`gd` で飛んだ後に戻るなど）。`<C-i>` は下記の注意を参照 |
+| `]]` / `[[` | カーソル下の単語の次 / 前の出現箇所へ（vim-illuminate） |
 
 ### NvChad 既定でよく使うもの
 

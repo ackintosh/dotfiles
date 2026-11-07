@@ -198,6 +198,26 @@ return {
     opts = {},
   },
 
+  -- vim-illuminate: カーソル下の単語の出現箇所をすべてハイライトする（VSCode の同名シンボル強調と同じ）
+  -- LSP → treesitter → 正規表現 の順で使えるものを使うので、Language Server が無いファイルでも効く。
+  -- 色は NvChad(base46) が定義する LspReferenceText/Read/Write がそのまま使われる
+  {
+    "RRethy/vim-illuminate",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      delay = 150, -- カーソル停止からハイライトまでのミリ秒
+      providers = { "lsp", "treesitter", "regex" },
+      large_file_cutoff = 2000, -- この行数を超えるファイルでは regex プロバイダを使わない
+      filetypes_denylist = {
+        "NvimTree", "aerial", "TelescopePrompt", "lazy", "mason", "noice", "notify",
+        "NeogitStatus", "NeogitPopup", "NeogitCommitMessage", "NeogitLogView",
+      },
+    },
+    config = function(_, opts)
+      require("illuminate").configure(opts)
+    end,
+  },
+
   -- 囲み文字（括弧・クォート・タグ）の追加/変更/削除。vim-repeat で . 繰り返し対応
   {
     "tpope/vim-surround",
