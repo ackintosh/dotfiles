@@ -215,6 +215,18 @@ return {
     },
     config = function(_, opts)
       require("illuminate").configure(opts)
+      -- 色は chadrc.lua の base46.hl_add に定義してある。base46 はそれをキャッシュにコンパイルするが、
+      -- キャッシュが古いままになることがある（古い nvim セッションで load_all_highlights() を実行した場合など）ので、
+      -- ここでも直接適用して確実に効くようにする
+      local function apply_hl()
+        for name, spec in pairs(require("nvconfig").base46.hl_add or {}) do
+          if name:match "^IlluminatedWord" then
+            vim.api.nvim_set_hl(0, name, spec)
+          end
+        end
+      end
+      apply_hl()
+      vim.api.nvim_create_autocmd("ColorScheme", { group = vim.api.nvim_create_augroup("my_illuminate_hl", { clear = true }), callback = apply_hl })
     end,
   },
 
