@@ -82,6 +82,7 @@ Neovim の設定は [NvChad](https://nvchad.com/) v2.5 の [starter](https://git
 | [linrongbin16/gitlinker.nvim](https://github.com/linrongbin16/gitlinker.nvim) | カーソル行 / 選択範囲の GitHub permalink をコピー（`<leader>gl`） |
 | [NeogitOrg/neogit](https://github.com/NeogitOrg/neogit) | magit 風の Git UI。ブランチの作成/切替/削除、merge、rebase、push/pull、コミット（`<leader>gg`） |
 | [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate) | カーソル下の単語の出現箇所をすべてハイライト（LSP / treesitter / 正規表現）。`]]` / `[[` で次 / 前の出現箇所へ |
+| [nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) | Telescope のソーターを fzf に置き換える。`protocol pnp` のようにスペース区切りで AND 検索できる（`'foo` 完全一致、`^foo` 先頭、`foo$` 末尾、`!foo` 除外） |
 | [mrcjkb/rustaceanvim](https://github.com/mrcjkb/rustaceanvim) | rust-analyzer の設定と Rust 向けコマンド（runnables、マクロ展開、エラー解説など） |
 | [saecki/crates.nvim](https://github.com/saecki/crates.nvim) | Cargo.toml で依存クレートのバージョン表示・更新・補完 |
 | [folke/noice.nvim](https://github.com/folke/noice.nvim) + nui.nvim + nvim-notify | コマンドライン・メッセージ・通知 UI の置き換え |

@@ -150,6 +150,31 @@ return {
     },
   },
 
+  -- telescope-fzf-native: Telescope のソーターを fzf に置き換える（C 実装で速く、fzf の検索構文が使える）
+  --   protocol pnp   スペース区切りで AND（順不同）
+  --   'foo           完全一致    ^foo / foo$   先頭 / 末尾一致    !foo   除外
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
+    opts = function(_, opts)
+      opts.extensions = opts.extensions or {}
+      opts.extensions.fzf = {
+        fuzzy = true,
+        override_generic_sorter = true, -- 全文検索・バッファ一覧などにも適用
+        override_file_sorter = true, -- ファイル名検索に適用
+        case_mode = "smart_case",
+      }
+      return opts
+    end,
+    config = function(_, opts)
+      local telescope = require "telescope"
+      telescope.setup(opts)
+      telescope.load_extension "fzf"
+    end,
+  },
+
   -- aerial.nvim: ファイル内のクラス・メソッドなどの構造をサイドバーに表示
   {
     "stevearc/aerial.nvim",
