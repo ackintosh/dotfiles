@@ -52,8 +52,10 @@ fi
 #    初回起動で lazy.nvim がプラグインを、NvChad が ensure_installed のパーサを入れるが、
 #    ここではヘッドレスで先に済ませておく。
 # ------------------------------------------------------------------------------
-echo "nvim: installing plugins (lazy.nvim sync)"
-nvim --headless "+Lazy! sync" +qa
+# sync ではなく install を使う。sync は update も含むので全プラグインが lazy-lock.json を無視して最新になってしまう
+# （サプライチェーン対策。nvim/README.md の「プラグインの更新とサプライチェーン対策」を参照）
+echo "nvim: installing plugins (lazy.nvim install, pinned by lazy-lock.json)"
+nvim --headless "+Lazy! install" +qa
 
 echo "nvim: installing treesitter parsers"
 nvim --headless -c "lua local ts = require('nvim-treesitter'); local plugin = require('lazy.core.config').plugins['nvim-treesitter']; local want = require('lazy.core.plugin').values(plugin, 'opts', false).ensure_installed or {}; local have = ts.get_installed('parsers'); local missing = vim.tbl_filter(function(l) return not vim.tbl_contains(have, l) end, want); if #missing > 0 then ts.install(missing):wait(600000) end" +qa

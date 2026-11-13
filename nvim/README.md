@@ -335,6 +335,34 @@ herdr の `prefix` は `Ctrl+b`（tmux の prefix `Ctrl+s` とは別）。`prefi
 - `:NvCheatsheet` / `<leader>ch` でキーマップ一覧
 - NvChad 本体の更新は `:Lazy update` に含まれる（`NvChad/NvChad` の `v2.5` ブランチ）
 
+### プラグインの更新とサプライチェーン対策
+
+プラグインは GitHub から clone した Lua コードで、nvim 起動のたびに自分の権限でサンドボックス無しに実行される。
+メンテナのアカウント乗っ取りなどで悪意あるコミットが入ると、そのまま取り込んでしまうリスクがある（npm / PyPI で実際に起きている）。
+`lazy-lock.json` でコミットハッシュを固定しているので、悪意あるコミットが入り得るのは **更新したときだけ**。更新時の運用で防ぐ。
+
+**更新のしかた**
+
+1. 更新は月 1 回程度にとどめる。最新を追う必要はなく、問題のあるコミットが発見されるまでの時間を稼ぐ
+2. nvim 内で `:Lazy update` を実行し、表示される各プラグインの変更ログ（コミット一覧）に目を通す。見覚えのないメンテナによる大きな変更、難読化されたコード、ネットワークやシェルを触る変更があれば取り込まない
+3. 問題なければ `lazy-lock.json` をコミットする。特定のプラグインだけ戻したいときは `lazy-lock.json` のその行を `git checkout` で戻して `:Lazy restore`
+
+**やってはいけないこと**
+
+- `nvim --headless "+Lazy! sync"` を更新目的以外で実行しない。`sync` は install + update + clean なので、全プラグインが無確認で最新になる。
+  新しいプラグインを入れるときは `:Lazy install`（または `setup/install_neovim.sh`）を使う。lock にあるものは固定バージョンのまま、新しいものだけが入る
+- lazy.nvim の `checker.enabled`（自動で更新確認する機能）は有効にしない
+
+**新しいプラグインを入れるとき**
+
+- スター数・最終更新・メンテナが複数いるかを確認し、無名のものは避ける（利用者が多いほど悪意あるコミットが早く発見される）
+- `build =` でシェルコマンドを実行するものは中身を確認する（現状は telescope-fzf-native の `make` と nvim-treesitter のパーサビルドだけ）
+- GitHub 以外から取得するものは避ける（現状は cmp-async-path の codeberg だけ。NvChad の依存）
+
+**プラグイン以外**
+
+- Language Server などのバイナリは Mason ではなく、intelephense は npm、rust-analyzer は rustup で入れている。npm のグローバルパッケージは使うものだけにする（`npm ls -g --depth=0` で確認）
+
 ## トラブルシューティング
 
 ### `Decoration provider "win" (ns=nvim.lsp.inlayhint): ... Invalid 'col': out of range` が大量に出る
