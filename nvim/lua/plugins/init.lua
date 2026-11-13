@@ -148,6 +148,66 @@ return {
     opts = {
       integrations = { telescope = true },
     },
+    config = function(_, opts)
+      require("neogit").setup(opts)
+
+      -- コミットビュー（コミット一覧で Enter を押すと開く差分画面）の差分行から、ワークツリーのファイルを
+      -- 分割ウィンドウで開く。Neogit 既定では <cr> は同じウィンドウにそのコミット時点の読み取り専用ファイルを開き、
+      -- a はワークツリーのファイルを「Neogit 以外のウィンドウ」に開く（無ければ新しいタブ）。
+      -- Neogit のタブには Neogit 以外のウィンドウが無いので、先に空のウィンドウを分割で作ってから a と同じ処理を呼ぶ。
+      --   <cr>   差分行なら縦分割で開く。それ以外（ファイル名の行など）は Neogit 既定の動き（その差分へジャンプ）
+      --   <C-v> / <C-x>  縦分割 / 横分割で開く
+      -- Neogit は filetype を設定した後にキーマップを張るので、FileType の時点で上書きしても負ける。schedule で後回しにする。
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("my_neogit_commit_view", { clear = true }),
+        pattern = "NeogitCommitView",
+        callback = function(args)
+          vim.schedule(function()
+            if not vim.api.nvim_buf_is_valid(args.buf) then
+              return
+            end
+            local function maparg(lhs)
+              return vim.fn.maparg(lhs, "n", false, true).callback
+            end
+            local original_cr = maparg "<CR>"
+
+            local function on_diff_line()
+              local view = require("neogit.buffers.commit_view").instance
+              if not (view and view.buffer and view.buffer.handle == args.buf) then
+                return false
+              end
+              return view.buffer.ui:get_component_under_cursor(function(c)
+                local hl = c.options.line_hl
+                return hl == "NeogitDiffContext" or hl == "NeogitDiffAdd" or hl == "NeogitDiffDelete"
+              end) ~= nil
+            end
+
+            local function open_in_split(split_cmd)
+              local open_in_worktree = maparg "a"
+              if not open_in_worktree then
+                vim.notify("Neogit: a (OpenFileInWorktree) のマッピングが見つからない", vim.log.levels.WARN)
+                return
+              end
+              local view_win = vim.api.nvim_get_current_win()
+              vim.cmd(split_cmd)
+              vim.api.nvim_set_current_win(view_win)
+              open_in_worktree()
+            end
+
+            local o = { buffer = args.buf, nowait = true }
+            vim.keymap.set("n", "<CR>", function()
+              if on_diff_line() then
+                open_in_split "vnew"
+              elseif original_cr then
+                original_cr()
+              end
+            end, vim.tbl_extend("force", o, { desc = "neogit open file in vsplit / go to diff" }))
+            vim.keymap.set("n", "<C-v>", function() open_in_split "vnew" end, vim.tbl_extend("force", o, { desc = "neogit open file in vsplit" }))
+            vim.keymap.set("n", "<C-x>", function() open_in_split "new" end, vim.tbl_extend("force", o, { desc = "neogit open file in split" }))
+          end)
+        end,
+      })
+    end,
   },
 
   -- telescope-fzf-native: Telescope のソーターを fzf に置き換える（C 実装で速く、fzf の検索構文が使える）
